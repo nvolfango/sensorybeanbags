@@ -23,9 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The site is committed pre-built, so there is nothing to compile here.
-      # This step just proves the committed HTML matches src/pages/.
-      - name: Verify the built HTML is up to date
+      # The site is committed pre-built, so nothing is compiled here. This just
+      # proves the committed HTML still matches src/pages/.
+      - name: Check the built HTML is up to date
         run: |
           python3 tools/build.py
           if ! git diff --quiet -- '*.html'; then
@@ -34,13 +34,21 @@ jobs:
             exit 1
           fi
 
+      # Assemble only what should be served. src/, tools/ and .git stay behind.
+      - name: Collect the deployable files
+        run: |
+          mkdir _site
+          cp *.html robots.txt .nojekyll _site/
+          cp -r assets _site/
+          find _site -type f | sort
+
       - uses: actions/configure-pages@v5
         with:
           enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - id: deployment
         uses: actions/deploy-pages@v4
