@@ -1,0 +1,5 @@
+# PREVIEW SITE — this is a staging copy of sensorybeanbags.com hosted on GitHub Pages
+# for review only. It must not be indexed, or it will compete with the live site.
+# Delete this file (and the noindex meta tag in tools/build.py) before going live.
+User-agent: *
+Disallow: /
