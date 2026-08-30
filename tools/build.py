@@ -18,7 +18,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "pages"
 
 SITE_NAME = "Sensory Beanbags"
-TAGLINE = "a Julia Hannon original"
+TAGLINE = "a Julie Hannon original"
 EMAIL = "marihannon@gmail.com"
 PHONE_DISPLAY = "087 131 9619"
 PHONE_LINK = "+353871319619"
@@ -28,7 +28,7 @@ NAV = [
     ("index.html", "Home"),
     ("beanbags.html", "Sensory beanbags"),
     ("weighted.html", "Weighted products"),
-    ("about.html", "About Julia"),
+    ("about.html", "About Julie"),
     ("order.html", "How to order"),
 ]
 
@@ -142,11 +142,11 @@ CONTACT_PANEL = """<section>
     <div class="contact-panel">
       <div class="grid grid--2" style="gap:2rem;align-items:center">
         <div>
-          <h2>Talk to Julia</h2>
+          <h2>Talk to Julie</h2>
           <p>Every beanbag is made to order, so there is always someone to ask before you buy. Questions about sizes, fabrics, weights or delivery are all welcome.</p>
           <div class="btn-row">
             <a class="btn btn--primary" href="tel:{{PHONELINK}}">{{ICON:phone}} {{PHONE}}</a>
-            <a class="btn btn--ghost" href="mailto:{{EMAIL}}">{{ICON:mail}} Email Julia</a>
+            <a class="btn btn--ghost" href="mailto:{{EMAIL}}">{{ICON:mail}} Email Julie</a>
           </div>
         </div>
         <ul class="contact-list">

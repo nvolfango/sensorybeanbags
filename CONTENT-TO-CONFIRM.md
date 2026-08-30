@@ -1,10 +1,14 @@
-# Content to confirm with Julia
+# Content to confirm with Julie
 
-**Important context:** sensorybeanbags.com was unreachable from the machine this
-site was built on (blocked by the network policy), so **none of the copy was
-copied from the live site**. It was reconstructed from public search-engine
-results and then rewritten. Everything below needs a pass from Julia before
-this goes anywhere near a real domain.
+The first draft of this site was written without access to sensorybeanbags.com
+(the live site was unreachable from the build machine), so the copy was
+reconstructed from search-engine results. **It has since been checked against
+the live site**, and the prices, dimensions, colours, delivery terms and lead
+times below are now taken from sensorybeanbags.com itself rather than guessed.
+
+Two of the reconstructed prices were wrong — Large was shown as €245 against an
+actual €225, and X-Large as €280 against €260. Both are now corrected. That is
+worth knowing when reading anything else that is still marked unconfirmed.
 
 Anything still unconfirmed is marked in the pages with an orange dashed
 `to confirm` chip, so it is obvious on screen. Search the built HTML for
@@ -12,48 +16,61 @@ Anything still unconfirmed is marked in the pages with an orange dashed
 `<span class="tbd">…</span>` wrapper; when they are all gone, delete the
 `.tbd` rule at the bottom of `assets/css/site.css`.
 
-## 1. Prices — the biggest gap
+## 1. Still open
 
-Only two prices could be verified. Everything else is showing a placeholder.
+- **XXX-Large price.** The shop says **€425**; the price-list page says **€415**.
+  The site currently shows €425. Which is right?
+- **Colour range.** The price list and the shop dropdowns disagree. The price
+  list gives Royal Blue, Purple, Bottle Green, Chocolate Brown, Mid Grey,
+  Mid Tan, Wine, Fire Engine Red, Cerise Pink, Turquoise, Emerald Green and
+  Orange — that is what the site shows. The shop instead offers Mid Blue and
+  Pale Lavender, and omits Mid Grey, Emerald and Orange. Which list is current?
+- **Returns / cancellations.** Nothing is stated on the live site either.
+  Made-to-order goods are exempt from the usual EU distance-selling cooling-off
+  period, but the policy still has to be written down.
+- **Safety wording.** "CE approved" is carried over from the old site. Confirm
+  what the certification actually covers, and whether fire-retardancy wording
+  should appear. There is a Declaration of Conformity dated 2017 on the old
+  site that has not been carried across.
+- **Delivery outside Ireland.** Not mentioned anywhere. Northern Ireland, UK?
+- **Weighted-product washing instructions.** Still a sensible guess, not
+  sourced from the live site.
+- **More testimonials.** Only one survived (Tania, on her son Mark). Julie is
+  said to have a folder of them.
 
-| Product | Status |
-|---|---|
-| Beanbag, Large | €245 — confirm still current |
-| Beanbag, X-Large | €280 — confirm still current |
-| Beanbag, Medium | **needed** |
-| Beanbag, XX-Large | **needed** |
-| Beanbag, XXX-Large | **needed** |
-| Lycra beanbags (all sizes) | **needed** — or keep as "price on request" |
-| Weighted blankets | **needed** |
-| Weighted lap pads | **needed** |
-| Weighted snakes | **needed** |
+## 2. Confirmed from the live site
 
-Prices live in `src/pages/beanbags.html` and `src/pages/weighted.html`.
+Beanbags (fleece): Medium 24 in / 61 cm €195 · Large 30 in / 76 cm €225 ·
+X-Large 36 in / 92 cm €260 · XX-Large 46 in / 117 cm €345 ·
+XXX-Large 56 in / 143 cm €425.
 
-## 2. Dimensions
+Lycra beanbags: made on request by email, Large €250, X-Large €285.
 
-| Size | Status |
-|---|---|
-| Medium | "a little over 2 ft across, 16 in high" — confirm |
-| Large | **needed** |
-| X-Large | "3 ft / 1 m across, 48 cm high" — confirm |
-| XX-Large | **needed** |
-| XXX-Large | "110 cm / 56 in" — confirm |
+Weighted blankets €170–€330 — Medium 72×92 cm, Large 92×122 cm,
+X-Large 102×158 cm, 4–14 lb. Large suits children of about seven and under.
+Lap pads €60–€85, 3–6 lb. Snakes €75–€95, 4–6 lb, short/wide or long/narrow.
 
-Ideally give each size a weight and a bead volume too — people ask.
+Delivery €15 by courier anywhere in Ireland, next day after dispatch.
+Beanbags five to seven working days to make; custom weighted products around
+ten days. Payment by PayPal, bank transfer, or cash on delivery in Cork city.
+
+The spelling is **Julie**, not Julia — confirmed by her own banner,
+"A Julie Hannon Original". The first draft had this wrong throughout.
 
 ## 3. Photographs
 
-There are **no real photographs** on the site yet. Every image is a dashed
-placeholder box describing the shot that belongs there:
+Photographs have been taken from the live site, resized for the web and
+committed to `assets/img/`. They are adequate for review but they are the old
+site's images, some of them cut out by hand with visible edges. **Better
+originals from Julie would improve the site more than anything else on this
+list.**
 
-- Home hero — a child settled into a large fleece beanbag
-- The beanbag range, several sizes together
-- A weighted blanket, lap pad and snake together
-- Fleece beanbag, close enough to show the texture
-- Blue stretch lycra beanbag
-- Weighted blanket / lap pad / weighted snake (one each)
-- Julia at work, or a finished beanbag in the workshop
+Two placeholders remain, because the live site had nothing usable:
+
+- The **lycra beanbag** on `beanbags.html`. Every beanbag photo on the old site
+  is fleece, and labelling a fleece photo as lycra would be misleading.
+- **Julie at work**, on `about.html`. There is no photograph of her anywhere on
+  the old site.
 
 To drop a real photo in, replace the placeholder with a normal image tag:
 
@@ -64,36 +81,35 @@ To drop a real photo in, replace the placeholder with a normal image tag:
 ```
 
 Write real alt text — many visitors to this site use screen readers or have
-children who do. If a photo shows an identifiable child, get the parent's
-written permission first.
+children who do. The photographs carried over show an identifiable child; they
+were already public on the live site, but if any new photograph shows an
+identifiable child, get the parent's written permission first.
 
-## 4. Wording and policy
+## 4. The shop — a decision, not a detail
 
-- **"Julia" or "Julie"?** The old site used both spellings, sometimes on the
-  same page. This build standardises on **Julia**. Confirm which is right.
-- **Returns / cancellations.** Nothing is stated anywhere. Made-to-order goods
-  are exempt from the usual EU distance-selling cooling-off period, but the
-  policy still has to be written down. Currently a placeholder on the FAQ.
-- **Safety wording.** "CE approved" is carried over from the old site. Confirm
-  what the certification actually covers, and whether there is fire-retardancy
-  wording that should appear (bean bags are regulated for this in some markets).
-- **Delivery outside Ireland.** Not mentioned anywhere. Northern Ireland and UK?
-- **Lead time.** How long from order to dispatch? Buyers ask this constantly and
-  it is not currently answered.
-- **Washing instructions for the weighted products.** The beanbag washing
-  instructions are from the old FAQ and should be accurate; the weighted ones
-  are a sensible guess and need checking.
-- **More testimonials.** Only one survived (Tania, on her son Mark). Julia is
-  said to have a folder of them.
+The live site is **WooCommerce** and has a working cart, with PayPal, bank
+transfer and cash on delivery. This rebuild dropped the checkout and says to
+order by phone or email. That was a guess made when the live site could not be
+read, and it needs a deliberate decision:
+
+- **Keep it phone and email.** Simplest, cheapest, no ongoing cost. Fine if
+  most orders already come that way — bespoke sizes and weights are awkward to
+  buy through a checkout anyway.
+- **Add a checkout back.** A static site can take payments through Stripe or a
+  hosted cart, but it is a real feature with a real running cost, and made-to-
+  order products with size, weight and colour options are fiddly to model.
+
+Ask Julie how many orders actually come through the WooCommerce cart today.
 
 ## 5. Legal
 
 There is no privacy or cookie policy, because the site sets no cookies, runs no
-analytics and has no forms — nothing is collected. If analytics or a contact
-form is ever added, a privacy policy becomes necessary.
+analytics and has no forms — nothing is collected. If analytics, a contact form
+or a checkout is ever added, a privacy policy becomes necessary.
 
 ## 6. Before going live
 
+- [ ] Settle the shop question in section 4
 - [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site)
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
 - [ ] Update `BASE_URL` in `tools/build.py` to the real domain

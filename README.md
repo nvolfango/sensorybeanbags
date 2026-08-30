@@ -5,9 +5,10 @@ the WordPress site. Plain HTML and CSS: no framework, no build tooling required
 to deploy, no database, no server-side code, nothing to keep patched.
 
 **This is a draft for review.** Read `CONTENT-TO-CONFIRM.md` before showing it
-to anyone — the copy was reconstructed from public search results (the live site
-was not reachable from the build machine) and the prices, dimensions and photos
-are incomplete.
+to anyone. Prices, dimensions, colours, delivery terms and photographs have been
+checked against the live site and corrected, but a handful of things still need
+Julie's confirmation — and the rebuild drops the WooCommerce checkout the live
+site has, which is a decision she has to make rather than a detail.
 
 ## What changed from the old site
 
@@ -19,7 +20,7 @@ This one has five, each with a clear job:
 | `index.html` | Home |
 | `beanbags.html` | Shop, individual product pages, Sensory Beanbag Information |
 | `weighted.html` | Weighted Products Information |
-| `about.html` | About Julia, Testimonials |
+| `about.html` | About Julie, Testimonials |
 | `order.html` | FAQ, ordering and delivery information |
 
 Dropped: the four long "reference articles on autism" pages. They read as search
@@ -79,7 +80,7 @@ index.html, beanbags.html, …   built pages — these are what get served
 robots.txt                     blocks indexing (PREVIEW ONLY — delete before launch)
 assets/css/site.css            the entire stylesheet
 assets/js/site.js              mobile menu toggle, and nothing else
-assets/img/                    product photographs go here
+assets/img/                    product photographs, carried over from the live site
 src/pages/                     page content, edit these
 tools/build.py                 wraps page content in the shared header and footer
 .github/workflows/pages.yml    deploys to GitHub Pages on push to main

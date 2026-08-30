@@ -500,3 +500,46 @@ blockquote.quote footer { color: var(--ink-3); font-size: .95rem; font-weight: 6
   padding: .05rem .55rem; font-size: .78rem; font-weight: 700;
   letter-spacing: .02em; white-space: nowrap;
 }
+
+/* --- Photographs -------------------------------------------------------- */
+.shot {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface-2);
+  aspect-ratio: 4 / 3;
+}
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.shot--wide   { aspect-ratio: 16 / 9; }
+.shot--tall   { aspect-ratio: 3 / 4; }
+.shot--square { aspect-ratio: 1 / 1; }
+
+/* Cut-out product shots sit on white, so they keep a light backdrop in both
+   themes rather than floating on a dark panel with a white halo. */
+.shot--product { background: #f7f5f1; }
+.shot--product img { object-fit: contain; }
+
+.card--link .shot {
+  margin: -1.5rem -1.5rem 1.25rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* --- Fabric swatches ---------------------------------------------------- */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 8.5rem), 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.swatches li { text-align: center; }
+.swatches img {
+  display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: var(--radius); border: 1px solid var(--line);
+}
+.swatches span {
+  display: block; margin-top: .5rem;
+  font-size: .85rem; font-weight: 600; color: var(--ink-2);
+}
