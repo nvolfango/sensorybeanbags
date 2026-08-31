@@ -16,6 +16,41 @@ Anything still unconfirmed is marked in the pages with an orange dashed
 `<span class="tbd">…</span>` wrapper; when they are all gone, delete the
 `.tbd` rule at the bottom of `assets/css/site.css`.
 
+## 0. Ask Julie for
+
+The short version, for sending on. Everything below is the detail behind it.
+
+**Photographs**
+
+- [ ] **A photograph of a lycra beanbag.** Nothing in her 134-item media
+      library is identifiably lycra, so the site has a placeholder where the
+      lycra product should be. It is the only product with nothing to show for
+      it, and it is the one being actively promoted as new. If she has no
+      photo, this is the one thing worth pointing a phone at.
+- [ ] **A photograph of Julie**, at work or in the workshop. There is none
+      anywhere on the old site.
+- [ ] Better originals generally — the photographs in use are hers, but most
+      date from 2011 to 2015.
+
+**Prices and range**
+
+- [ ] Is XXX-Large **€425** (the shop) or **€415** (the price list)?
+- [ ] Which colour list is current? The price list and the shop disagree.
+- [ ] Does she still make **mini beanbags**, **hand beanbags**, or a **Small**
+      size? They are in her media library but on neither site.
+
+**The shop**
+
+- [ ] Has anyone actually checked out through the cart, and how many a year?
+      See section 4 — this is the question that decides the most.
+
+**Policies**
+
+- [ ] Returns and cancellations — nothing is written down anywhere today.
+- [ ] What does "CE approved" actually cover? There is a signed 2017
+      Declaration of Conformity in her media library that the site does not show.
+- [ ] Does she deliver outside Ireland?
+
 ## 1. Still open
 
 - **XXX-Large price.** The shop says **€425**; the price-list page says **€415**.
