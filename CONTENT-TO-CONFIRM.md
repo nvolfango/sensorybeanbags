@@ -1,4 +1,4 @@
-# Content to confirm with Julie
+# Content to confirm with Julie — working notes
 
 The first draft of this site was written without access to sensorybeanbags.com
 (the live site was unreachable from the build machine), so the copy was
@@ -16,40 +16,24 @@ Anything still unconfirmed is marked in the pages with an orange dashed
 `<span class="tbd">…</span>` wrapper; when they are all gone, delete the
 `.tbd` rule at the bottom of `assets/css/site.css`.
 
-## 0. Ask Julie for
+## 0. What Julie sees
 
-The short version, for sending on. Everything below is the detail behind it.
+**Do not send her this file.** It is working notes — it assumes you can open a
+Markdown file and read talk of build scripts and CSS classes.
 
-**Photographs**
+Her copy is a page on the preview site itself:
 
-- [ ] **A photograph of a lycra beanbag.** Nothing in her 134-item media
-      library is identifiably lycra, so the site has a placeholder where the
-      lycra product should be. It is the only product with nothing to show for
-      it, and it is the one being actively promoted as new. If she has no
-      photo, this is the one thing worth pointing a phone at.
-- [ ] **A photograph of Julie**, at work or in the workshop. There is none
-      anywhere on the old site.
-- [ ] Better originals generally — the photographs in use are hers, but most
-      date from 2011 to 2015.
+    https://nvolfango.github.io/sensorybeanbags/notes.html
 
-**Prices and range**
+Plain English, no jargon, opens in any browser on any phone or laptop, nothing
+to download. It carries the same asks as the sections below — photographs, the
+two prices that disagree, the discontinued products, the shop question and the
+missing policies — written for someone who does not build websites, and it
+explains up front that the draft is private and her real site is untouched.
 
-- [ ] Is XXX-Large **€425** (the shop) or **€415** (the price list)?
-- [ ] Which colour list is current? The price list and the shop disagree.
-- [ ] Does she still make **mini beanbags**, **hand beanbags**, or a **Small**
-      size? They are in her media library but on neither site.
-
-**The shop**
-
-- [ ] Has anyone actually checked out through the cart, and how many a year?
-      See section 4 — this is the question that decides the most.
-
-**Policies**
-
-- [ ] Returns and cancellations — nothing is written down anywhere today.
-- [ ] What does "CE approved" actually cover? There is a signed 2017
-      Declaration of Conformity in her media library that the site does not show.
-- [ ] Does she deliver outside Ireland?
+It is not in the site's navigation, so a casual visitor will not find it. Send
+her the link directly. Source is `src/pages/notes.html`; keep the two in step
+when either changes.
 
 ## 1. Still open
 
