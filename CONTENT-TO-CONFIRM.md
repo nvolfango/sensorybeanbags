@@ -85,21 +85,34 @@ children who do. The photographs carried over show an identifiable child; they
 were already public on the live site, but if any new photograph shows an
 identifiable child, get the parent's written permission first.
 
-## 4. The shop — a decision, not a detail
+## 4. The shop — questions for Julie
 
-The live site is **WooCommerce** and has a working cart, with PayPal, bank
-transfer and cash on delivery. This rebuild dropped the checkout and says to
-order by phone or email. That was a guess made when the live site could not be
-read, and it needs a deliberate decision:
+The live site is **WooCommerce** and has a working cart, taking PayPal, bank
+transfer and cash on delivery in Cork city. This rebuild dropped the checkout
+and says to order by phone or email. That was a guess made when the live site
+could not be read, and it is not a decision to make on her behalf.
 
-- **Keep it phone and email.** Simplest, cheapest, no ongoing cost. Fine if
-  most orders already come that way — bespoke sizes and weights are awkward to
-  buy through a checkout anyway.
-- **Add a checkout back.** A static site can take payments through Stripe or a
-  hosted cart, but it is a real feature with a real running cost, and made-to-
-  order products with size, weight and colour options are fiddly to model.
+Nothing here blocks the preview. These are questions to put to her along with
+her feedback on the design:
 
-Ask Julie how many orders actually come through the WooCommerce cart today.
+- **Has anyone actually checked out through the website?** Roughly how many
+  orders a year come through the cart, versus phone and email? This is the
+  number that decides everything else.
+- **Would she miss it?** Every product is made to order in a chosen size,
+  weight and colour, which is a conversation more than a transaction. If she is
+  already having that conversation on the phone, the cart may be doing very
+  little.
+- **If she wants a checkout, can it be replaced wholesale?** Stripe (or a
+  similar provider) can take over payments entirely. Card details would never
+  touch her site, and beanbags map cleanly onto it because the price depends
+  only on size — colour comes free. Weighted products are fiddlier, because the
+  price moves on a size-by-weight grid.
+- **What does she pay today?** PayPal fees are already coming out of every cart
+  order, so moving to another provider is a fee swap rather than a new cost.
+
+Worth knowing while she thinks about it: none of the options require this site
+to be private, and none of them require moving off free hosting. The simplest
+route adds no running cost at all beyond the transaction fee.
 
 ## 5. Legal
 
@@ -109,7 +122,7 @@ or a checkout is ever added, a privacy policy becomes necessary.
 
 ## 6. Before going live
 
-- [ ] Settle the shop question in section 4
+- [ ] Get Julie's answers on the shop, section 4, and decide from there
 - [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site)
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
 - [ ] Update `BASE_URL` in `tools/build.py` to the real domain
