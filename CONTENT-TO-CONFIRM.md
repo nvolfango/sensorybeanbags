@@ -60,23 +60,57 @@ The spelling is **Julie**, not Julia — confirmed by her own banner,
 ## 3. Photographs
 
 Photographs have been taken from the live site, resized for the web and
-committed to `assets/img/`. They are adequate for review but they are the old
-site's images, some of them cut out by hand with visible edges. **Better
-originals from Julie would improve the site more than anything else on this
-list.**
+committed to `assets/img/`. Her WordPress media library holds **134 items**,
+far more than the pages actually use, and the best of them have been pulled in.
+They are adequate for review, but they are old — most date from 2011 to 2015 —
+and **better originals from Julie would improve the site more than anything
+else on this list.**
 
-Two placeholders remain, because the live site had nothing usable:
+### The lycra beanbag — still missing, and worth asking about
 
-- The **lycra beanbag** on `beanbags.html`. Every beanbag photo on the old site
-  is fleece, and labelling a fleece photo as lycra would be misleading.
-- **Julie at work**, on `about.html`. There is no photograph of her anywhere on
-  the old site.
+Nothing in the 134-item media library is identifiably a lycra beanbag. Nothing
+is named for it, and the lycra range is described as "new" in an FAQ written
+years after the newest beanbag photograph was uploaded.
 
-To drop a real photo in, replace the placeholder with a normal image tag:
+There are a few shiny turquoise and blue beanbags in the older group shots that
+could plausibly be lycra, but they date from 2011–2013 and calling one lycra
+would be a guess. Since lycra is a *cooling, slippery* fabric sold precisely on
+how different it feels from fleece, a photo of the wrong fabric is worse than
+no photo. The placeholder stays until Julie sends one.
+
+**This is the single most useful photograph she could take** — it is the only
+product on the site with nothing to show for it.
+
+### Also still missing
+
+- **A photograph of Julie.** There is none anywhere on the old site.
+
+### Products the rebuild does not cover
+
+The media library shows two products that appear nowhere in this rebuild, and
+neither is in the current shop either:
+
+- **Mini beanbags** and **small hand beanbags** — small, textured, clearly a
+  distinct product.
+- A **Small** beanbag size, below the Medium the price list starts at.
+
+Are these discontinued, or just never carried over? If she still makes them,
+they need a place on the site.
+
+### Other things in the library worth a decision
+
+- A **CE mark** graphic and a signed **Declaration of Conformity** dated 2017.
+  The site claims "CE approved" in the footer with nothing to back it — if that
+  claim stays, the certificate should probably be visible.
+- **Older fleece swatches** from 2015 including a camouflage "Jungle" print,
+  which is not in the colour list the site currently shows.
+- Scanned **price lists from 2014 and 2015**, useful only as history.
+
+### Adding a photograph
 
 ```html
 <img src="assets/img/beanbag-large.jpg"
-     alt="A child lying back in a large grey fleece sensory beanbag"
+     alt="A child lying back in a large purple fleece sensory beanbag"
      width="1200" height="900" loading="lazy">
 ```
 
