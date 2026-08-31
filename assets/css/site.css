@@ -543,3 +543,6 @@ blockquote.quote footer { color: var(--ink-3); font-size: .95rem; font-weight: 6
   display: block; margin-top: .5rem;
   font-size: .85rem; font-weight: 600; color: var(--ink-2);
 }
+
+/* A tick list followed by a closing remark needs air between them. */
+.ticks + p { margin-top: 1.25rem; }
