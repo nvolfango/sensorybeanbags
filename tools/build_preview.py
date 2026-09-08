@@ -24,7 +24,7 @@ OUT = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "preview.html"
 
 BANNER = """<div class="preview-banner" role="note">
   <strong>Draft preview</strong>
-  <span>Not the live site. Prices, photographs and some wording are still to be confirmed &mdash; the dashed orange marks show what is outstanding.</span>
+  <span>Not the live site. A draft for review &mdash; see the &ldquo;Round two&rdquo; notes for what is still open.</span>
 </div>
 """
 

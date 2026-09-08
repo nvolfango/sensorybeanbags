@@ -80,7 +80,8 @@ index.html, beanbags.html, …   built pages — these are what get served
 robots.txt                     blocks indexing (PREVIEW ONLY — delete before launch)
 assets/css/site.css            the entire stylesheet
 assets/js/site.js              mobile menu toggle, and nothing else
-assets/img/                    product photographs, carried over from the live site
+assets/img/                    product photographs — see assets/img/README.md
+assets/docs/                   the 2017 safety test reports, linked from the FAQ
 src/pages/                     page content, edit these
 tools/build.py                 wraps page content in the shared header and footer
 .github/workflows/pages.yml    deploys to GitHub Pages on push to main
@@ -110,4 +111,5 @@ the old paths that redirect to the new page. `404.html` catches anything missed.
 
 The old paths worth mapping: `/shop`, `/shop/*`, `/sensory-beanbag-information`,
 `/weighted-products-information`, `/frequently-asked-questions-faq`,
-`/about-julie-hannon`, `/testimonials`, `/reference-articles-autism/*`.
+`/about-julie-hannon`, `/testimonials`, `/agency-testing-approvals`,
+`/reference-articles-autism/*`.

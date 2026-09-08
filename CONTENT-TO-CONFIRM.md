@@ -1,183 +1,139 @@
 # Content to confirm with Julie — working notes
 
-The first draft of this site was written without access to sensorybeanbags.com
-(the live site was unreachable from the build machine), so the copy was
-reconstructed from search-engine results. **It has since been checked against
-the live site**, and the prices, dimensions, colours, delivery terms and lead
-times below are now taken from sensorybeanbags.com itself rather than guessed.
+Round one of Julie's feedback arrived on 2 September 2026 as a Word document
+(`Sensory Beanbags that help children settle.docx` in the repository root).
+Everything she answered clearly has been applied. This file records what is
+still open and the answers that were applied, so nobody re-asks them.
 
-Two of the reconstructed prices were wrong — Large was shown as €245 against an
-actual €225, and X-Large as €280 against €260. Both are now corrected. That is
-worth knowing when reading anything else that is still marked unconfirmed.
-
-Anything still unconfirmed is marked in the pages with an orange dashed
-`to confirm` chip, so it is obvious on screen. Search the built HTML for
-`class="tbd"` to find them all. Once a value is filled in, delete the
-`<span class="tbd">…</span>` wrapper; when they are all gone, delete the
-`.tbd` rule at the bottom of `assets/css/site.css`.
+The `to confirm` chips and the `.tbd` CSS rule are gone: nothing on the site is
+marked unconfirmed any more.
 
 ## 0. What Julie sees
 
-**Do not send her this file.** It is working notes — it assumes you can open a
-Markdown file and read talk of build scripts and CSS classes.
+**Do not send her this file.** It is working notes.
 
 Her copy is a page on the preview site itself:
 
     https://nvolfango.github.io/sensorybeanbags/notes.html
 
-Plain English, no jargon, opens in any browser on any phone or laptop, nothing
-to download. It carries the same asks as the sections below — photographs, the
-two prices that disagree, the discontinued products, the shop question and the
-missing policies — written for someone who does not build websites, and it
-explains up front that the draft is private and her real site is untouched.
-
-It is not in the site's navigation, so a casual visitor will not find it. Send
-her the link directly. Source is `src/pages/notes.html`; keep the two in step
-when either changes.
+It now reads as a "Round two" page: what changed from her answers, and the
+short list of things still open. Not in the navigation; send her the link
+directly. Source is `src/pages/notes.html`; keep it in step with this file.
 
 ## 1. Still open
 
-- **XXX-Large price.** The shop says **€425**; the price-list page says **€415**.
-  The site currently shows €425. Which is right?
-- **Colour range.** The price list and the shop dropdowns disagree. The price
-  list gives Royal Blue, Purple, Bottle Green, Chocolate Brown, Mid Grey,
-  Mid Tan, Wine, Fire Engine Red, Cerise Pink, Turquoise, Emerald Green and
-  Orange — that is what the site shows. The shop instead offers Mid Blue and
-  Pale Lavender, and omits Mid Grey, Emerald and Orange. Which list is current?
-- **Returns / cancellations.** Nothing is stated on the live site either.
-  Made-to-order goods are exempt from the usual EU distance-selling cooling-off
-  period, but the policy still has to be written down.
-- **Safety wording.** "CE approved" is carried over from the old site. Confirm
-  what the certification actually covers, and whether fire-retardancy wording
-  should appear. There is a Declaration of Conformity dated 2017 on the old
-  site that has not been carried across.
-- **Delivery outside Ireland.** Not mentioned anywhere. Northern Ireland, UK?
-- **Weighted-product washing instructions.** Still a sensible guess, not
-  sourced from the live site.
-- **More testimonials.** Only one survived (Tania, on her son Mark). Julie is
-  said to have a folder of them.
+- **Lycra price.** Julie says lycra is "€20 more" than fleece. The live site
+  says Large lycra €250 and X-Large €285, which is €25 more. The site still
+  shows €250 / €285 until she picks.
+- **Logo.** She sent a photo of a screen showing an "SB+ Sensory Beanbags +
+  More" logo. Unusable as-is; the original file is needed. Also unclear
+  whether "Sensory Beanbags + More" is a rename — it would change the site
+  name in the header, footer, page titles and `tools/build.py`.
+- **15-year guarantee.** Her draft home-page copy says "Fleece and lining that
+  survives real life 15-year guarantee". Not on the site yet: a guarantee is a
+  commitment and its scope needs a sentence from her. The softer, factual line
+  (no parent has come back with a rip in years) is on the home page.
+- **Courier cost.** She says "10/15 euro courier". The site says "€10–15"
+  without saying what decides it (size? distance?).
+- **Northern Ireland.** She said "delivery outside of Ireland: not at the
+  moment". The site says "within Ireland only". Whether that means the island
+  or the Republic is unconfirmed.
+- **PayPal.** Her list of ways to pay was "online, cash on delivery, bank
+  transfer, Revolut" and she says most people don't use PayPal. PayPal has
+  been dropped from the site accordingly. Easy to put back if she wants it.
+- **Shopping cart.** She wants one, "more fluid" than WooCommerce, and asked
+  about Stripe: pay-as-you-go, is it a lot to set up. This is a conversation
+  to have with her, not a page change. Nothing has been built.
+- **Google reviews.** She is considering a Google Business listing for reviews
+  without showing her address, and has schools she could ask. When it exists,
+  link it from the About page.
+- **Returns wording.** She said there has never been a return in twenty years
+  and corrections were gladly covered, and asked for "the proper way to say
+  that". The FAQ on `order.html` is a first draft of that; the cancellation
+  sentence ("get in touch as soon as you can") is ours, not hers.
+- **Lap pad dimensions.** From her photo captions: 4 lb is 15 × 90 cm, 6 lb is
+  38 × 8.5 in. The site says "roughly 90 cm long and 15–20 cm wide". Worth a
+  glance from her.
 
-## 2. Confirmed from the live site
+## 2. Answered (applied)
+
+- XXX-Large is **€425**.
+- The **colour range** shown (the price-list version) is fine "for now".
+- **Mini and small beanbags are discontinued.** Left off.
+- **No photo of Julie** on the site. Placeholder removed.
+- **Lycra photo**: she sent one (three lycra beanbags in a sensory room),
+  plus a turquoise one on artificial grass. Both are in.
+- **Snake and lap pad** carry the descriptions from the live shop. Her new
+  photos are used (same products as the shop photos, better quality).
+- **CE**: she went through the CE process in 2017, sending fabrics to the UK
+  for testing. The live site's "Agency Testing / Approvals" page has the
+  signed Declaration of Conformity (beanbags, Toy Safety Directive, EN 71-1/2/3)
+  and three SATRA test reports (EN 71-2 fire on beanbag and weighted blanket,
+  EN 71-3 chemical on fleece and lycra). All four are now in `assets/img/`
+  and `assets/docs/` and linked from the safety FAQ.
+- **Care and washing**: two PDFs were embedded in her document (lycra beanbag
+  care; weighted blanket care). Both applied, lightly shortened.
+- **Delivery**: Ireland only. Free in Cork city. €10–15 courier elsewhere.
+- **Payment**: Revolut, bank transfer, cash on delivery in Cork city.
+- **Testimonials**: the live Testimonials page has around forty. Twelve are
+  on `about.html`; the rest can be swapped in on request.
+- **Home page copy**: her phrases ("not a pillow", rough and tumble, running
+  into it from a distance, jumping from a trampoline or swing, rolling around
+  and underneath, hand-made in Cork, matched to each child) are folded in.
+  "Clinically designed tool" and "engineered through hundreds of hours" were
+  left out as claims that are hard to stand behind; "OT recommended" and
+  "used in schools and therapy spaces" are in.
+- **Fleece vs lycra comparison**: her table is on `beanbags.html` under the
+  two fabric cards. She was unsure whether to have both; both are in, easy to
+  remove.
+- Business context, for copy decisions: she sells mostly fleece and very few
+  lycra; weighted blankets and lap pads; not really to the domestic market.
+  Most orders come from OT recommendations and school visits, so customers
+  have usually heard of the product before they arrive.
+
+## 3. Confirmed from the live site
 
 Beanbags (fleece): Medium 24 in / 61 cm €195 · Large 30 in / 76 cm €225 ·
 X-Large 36 in / 92 cm €260 · XX-Large 46 in / 117 cm €345 ·
 XXX-Large 56 in / 143 cm €425.
 
-Lycra beanbags: made on request by email, Large €250, X-Large €285.
+Lycra beanbags: made on request by email, Large €250, X-Large €285 (see open
+question above).
 
 Weighted blankets €170–€330 — Medium 72×92 cm, Large 92×122 cm,
-X-Large 102×158 cm, 4–14 lb. Large suits children of about seven and under.
-Lap pads €60–€85, 3–6 lb. Snakes €75–€95, 4–6 lb, short/wide or long/narrow.
+X-Large 102×158 cm, 4–14 lb. Lap pads €60–€85, 3–6 lb, blue / rainbow check /
+request a colour. Snakes €75–€95, 4–6 lb, short/wide or long/narrow, mid grey /
+royal blue / rainbow check.
 
-Delivery €15 by courier anywhere in Ireland, next day after dispatch.
 Beanbags five to seven working days to make; custom weighted products around
-ten days. Payment by PayPal, bank transfer, or cash on delivery in Cork city.
+ten days.
 
-The spelling is **Julie**, not Julia — confirmed by her own banner,
-"A Julie Hannon Original". The first draft had this wrong throughout.
+The spelling is **Julie**, not Julia.
 
-## 3. Photographs
+## 4. Photographs
 
-Photographs have been taken from the live site, resized for the web and
-committed to `assets/img/`. Her WordPress media library holds **134 items**,
-far more than the pages actually use, and the best of them have been pulled in.
-They are adequate for review, but they are old — most date from 2011 to 2015 —
-and **better originals from Julie would improve the site more than anything
-else on this list.**
+`assets/img/README.md` lists what each file is. New from Julie in September
+2026: `beanbag-lycra-room.jpg`, `beanbag-lycra-turquoise.jpg`,
+`school-hall.jpg` (Douglas Boys school), `beanbag-snake.jpg`,
+`lap-pads-fleece-lycra.jpg`, `lap-pad-royal-blue.jpg`. She says she does not
+have a great variety; anything more is welcome but nothing is blocking.
 
-### The lycra beanbag — still missing, and worth asking about
-
-Nothing in the 134-item media library is identifiably a lycra beanbag. Nothing
-is named for it, and the lycra range is described as "new" in an FAQ written
-years after the newest beanbag photograph was uploaded.
-
-There are a few shiny turquoise and blue beanbags in the older group shots that
-could plausibly be lycra, but they date from 2011–2013 and calling one lycra
-would be a guess. Since lycra is a *cooling, slippery* fabric sold precisely on
-how different it feels from fleece, a photo of the wrong fabric is worse than
-no photo. The placeholder stays until Julie sends one.
-
-**This is the single most useful photograph she could take** — it is the only
-product on the site with nothing to show for it.
-
-### Also still missing
-
-- **A photograph of Julie.** There is none anywhere on the old site.
-
-### Products the rebuild does not cover
-
-The media library shows two products that appear nowhere in this rebuild, and
-neither is in the current shop either:
-
-- **Mini beanbags** and **small hand beanbags** — small, textured, clearly a
-  distinct product.
-- A **Small** beanbag size, below the Medium the price list starts at.
-
-Are these discontinued, or just never carried over? If she still makes them,
-they need a place on the site.
-
-### Other things in the library worth a decision
-
-- A **CE mark** graphic and a signed **Declaration of Conformity** dated 2017.
-  The site claims "CE approved" in the footer with nothing to back it — if that
-  claim stays, the certificate should probably be visible.
-- **Older fleece swatches** from 2015 including a camouflage "Jungle" print,
-  which is not in the colour list the site currently shows.
-- Scanned **price lists from 2014 and 2015**, useful only as history.
-
-### Adding a photograph
-
-```html
-<img src="assets/img/beanbag-large.jpg"
-     alt="A child lying back in a large purple fleece sensory beanbag"
-     width="1200" height="900" loading="lazy">
-```
-
-Write real alt text — many visitors to this site use screen readers or have
-children who do. The photographs carried over show an identifiable child; they
-were already public on the live site, but if any new photograph shows an
-identifiable child, get the parent's written permission first.
-
-## 4. The shop — questions for Julie
-
-The live site is **WooCommerce** and has a working cart, taking PayPal, bank
-transfer and cash on delivery in Cork city. This rebuild dropped the checkout
-and says to order by phone or email. That was a guess made when the live site
-could not be read, and it is not a decision to make on her behalf.
-
-Nothing here blocks the preview. These are questions to put to her along with
-her feedback on the design:
-
-- **Has anyone actually checked out through the website?** Roughly how many
-  orders a year come through the cart, versus phone and email? This is the
-  number that decides everything else.
-- **Would she miss it?** Every product is made to order in a chosen size,
-  weight and colour, which is a conversation more than a transaction. If she is
-  already having that conversation on the phone, the cart may be doing very
-  little.
-- **If she wants a checkout, can it be replaced wholesale?** Stripe (or a
-  similar provider) can take over payments entirely. Card details would never
-  touch her site, and beanbags map cleanly onto it because the price depends
-  only on size — colour comes free. Weighted products are fiddlier, because the
-  price moves on a size-by-weight grid.
-- **What does she pay today?** PayPal fees are already coming out of every cart
-  order, so moving to another provider is a fee swap rather than a new cost.
-
-Worth knowing while she thinks about it: none of the options require this site
-to be private, and none of them require moving off free hosting. The simplest
-route adds no running cost at all beyond the transaction fee.
+Write real alt text — many visitors use screen readers. If any new photograph
+shows an identifiable child, get the parent's written permission first.
 
 ## 5. Legal
 
 There is no privacy or cookie policy, because the site sets no cookies, runs no
 analytics and has no forms — nothing is collected. If analytics, a contact form
-or a checkout is ever added, a privacy policy becomes necessary.
+or a checkout (see the Stripe question) is added, a privacy policy becomes
+necessary, and Stripe's own terms will need linking.
 
 ## 6. Before going live
 
-- [ ] Get Julie's answers on the shop, section 4, and decide from there
+- [ ] Settle the shop question with Julie (Stripe or no cart) and decide from there
+- [ ] Settle the logo / "Sensory Beanbags + More" name question
 - [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site)
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
 - [ ] Update `BASE_URL` in `tools/build.py` to the real domain
 - [ ] Update the paths in `404.html` (they assume the `/sensorybeanbags/` preview subdirectory)
-- [ ] Set up redirects from the old WordPress URLs — see `README.md`
+- [ ] Set up redirects from the old WordPress URLs — see `README.md`. Add `/agency-testing-approvals` to the list; it is now the safety FAQ on `order.html`.

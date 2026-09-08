@@ -26,7 +26,6 @@
 
   --accent:      #B25733;
   --accent-soft: #FAE9DF;
-  --tbd-ink:     #9E4926;   /* 5.18:1 on --accent-soft */
 
   --line:        #E6DCCB;
   --line-strong: #D6C8B2;
@@ -70,7 +69,6 @@
 
     --accent:      #E8926A;
     --accent-soft: #3A2419;
-    --tbd-ink:     #E8926A;
 
     --line:        #34302B;
     --line-strong: #453F38;
@@ -430,6 +428,16 @@ blockquote.quote p {
 }
 blockquote.quote footer { color: var(--ink-3); font-size: .95rem; font-weight: 600; }
 
+/* A run of quotes (About page): smaller type, stacked with a gap. */
+.quotes { display: grid; gap: 1rem; }
+.quotes blockquote.quote p { font-size: 1.05rem; line-height: 1.55; }
+.quotes blockquote.quote { padding: 1.5rem; box-shadow: none; }
+
+/* --- Figure ------------------------------------------------------------- */
+.figure { margin: 0; }
+.figure figcaption { margin-top: .6rem; font-size: .875rem; color: var(--ink-3); }
+.small { font-size: .875rem; color: var(--ink-3); }
+
 /* --- FAQ ---------------------------------------------------------------- */
 .faq { display: grid; gap: .75rem; }
 .faq details {
@@ -490,16 +498,6 @@ blockquote.quote footer { color: var(--ink-3); font-size: .95rem; font-weight: 6
   font-size: .875rem; color: var(--ink-3);
 }
 
-/* --- Draft markers -------------------------------------------------------
-   Every .tbd is a detail that still needs confirming with Julia.
-   See CONTENT-TO-CONFIRM.md. Delete the markup (and this rule) once filled in. */
-.tbd {
-  display: inline-block;
-  background: var(--accent-soft); color: var(--tbd-ink);
-  border: 1px dashed currentColor; border-radius: 999px;
-  padding: .05rem .55rem; font-size: .78rem; font-weight: 700;
-  letter-spacing: .02em; white-space: nowrap;
-}
 
 /* --- Photographs -------------------------------------------------------- */
 .shot {
