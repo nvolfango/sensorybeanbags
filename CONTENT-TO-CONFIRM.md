@@ -22,9 +22,10 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 
 ## 1. Still open
 
-- **Lycra price.** Julie says lycra is "€20 more" than fleece. The live site
-  says Large lycra €250 and X-Large €285, which is €25 more. The site still
-  shows €250 / €285 until she picks.
+- **Lycra price.** Julie wrote "Lycra beanbags are 20 euro more" and nothing
+  else. She does not say more than what: it could be €20 over the fleece price
+  (Large €245, X-Large €280) or €20 over the €250 / €285 the live site shows
+  (€270 / €305). The site keeps €250 / €285 until she says.
 - **Logo.** She sent a photo of a screen showing an "SB+ Sensory Beanbags +
   More" logo. Unusable as-is; the original file is needed. Also unclear
   whether "Sensory Beanbags + More" is a rename — it would change the site
