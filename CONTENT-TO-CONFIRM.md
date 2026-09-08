@@ -52,6 +52,29 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   and corrections were gladly covered, and asked for "the proper way to say
   that". The FAQ on `order.html` is a first draft of that; the cancellation
   sentence ("get in touch as soon as you can") is ours, not hers.
+- **Home page photo.** In her document the purple beanbag with the snake sits
+  directly under the title "Sensory Beanbags that help children settle",
+  labelled "photo". She may have meant it as the home page hero. It is on the
+  snake card on `weighted.html`; the hero still uses the old cut-out.
+- **Naming the school.** She labelled the hall photo "Douglas Boys school".
+  The photo is on the home page but the school is not named. Ask her, and if
+  yes, check the school is happy to be named.
+- **Weighted blanket CE.** The live "Agency Testing / Approvals" page says the
+  weighted blanket technical file was "being assembled" in 2017. The
+  Declaration of Conformity covers beanbags only. The footer says "CE
+  approved" on every page. Ask whether the blanket file was completed.
+- **"Online" as a way to pay.** Her list was "Online or cash on delivery bank
+  transfer Revolut". "Online" presumably means card payment through the site,
+  which does not exist until the Stripe question is settled.
+- **Shop photos.** She asked for the shop's snake and lap pad photos to be
+  transferred. Her own newer photos of the same two products are used instead
+  (higher quality). The shop originals were downloaded and can be swapped in
+  if she prefers them; they are not in the repo.
+- **Words of hers left out.** "A clinically designed tool for sensory
+  regulation", "engineered through hundreds of hours of design" and "school
+  and classroom approved" are not on the site. The first two read as claims
+  that would be hard to substantiate; the third is vague. "OT recommended"
+  and "targeted sensory input where an ordinary cushion fails" are in.
 - **Lap pad dimensions.** From her photo captions: 4 lb is 15 × 90 cm, 6 lb is
   38 × 8.5 in. The site says "roughly 90 cm long and 15–20 cm wide". Worth a
   glance from her.
