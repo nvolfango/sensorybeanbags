@@ -54,22 +54,6 @@ def expand(html):
     return html
 
 
-def dark_theme_stamp(css):
-    """
-    site.css defines its dark tokens inside a prefers-color-scheme query. The
-    artifact viewer can also stamp data-theme="dark" explicitly, so re-emit the
-    same tokens under that selector. Generated from the source block rather than
-    hand-copied, so the two cannot drift apart.
-    """
-    m = re.search(
-        r"@media \(prefers-color-scheme: dark\) \{\s*:root:not\(\[data-theme=\"light\"\]\) \{(.*?)\n  \}\n\}",
-        css,
-        re.S,
-    )
-    if not m:
-        raise SystemExit("could not find the dark token block in site.css")
-    return '\n:root[data-theme="dark"] {%s\n}\n' % m.group(1)
-
 
 def main():
     css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
@@ -134,7 +118,9 @@ def main():
 
     out = []
     out.append("<title>Sensory Beanbags</title>")
-    out.append("<style>\n%s\n%s\n%s</style>" % (css, dark_theme_stamp(css), EXTRA_CSS))
+    # Apply a remembered theme choice before first paint, as the real pages do.
+    out.append('<script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>')
+    out.append("<style>\n%s\n%s</style>" % (css, EXTRA_CSS))
     out.append(BANNER)
     out.append(header.strip())
     out.append('<main id="main">')
