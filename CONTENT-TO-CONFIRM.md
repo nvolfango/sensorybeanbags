@@ -42,9 +42,13 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 - **PayPal.** Her list of ways to pay was "online, cash on delivery, bank
   transfer, Revolut" and she says most people don't use PayPal. PayPal has
   been dropped from the site accordingly. Easy to put back if she wants it.
-- **Shopping cart.** She wants one, "more fluid" than WooCommerce, and asked
-  about Stripe: pay-as-you-go, is it a lot to set up. This is a conversation
-  to have with her, not a page change. Nothing has been built.
+- **Card payments.** Recommendation to Julie (in the Round-two PDF, section
+  8): Stripe, used as Payment Links sent after the order is agreed, not a cart
+  on the site. September 2026 fees on a €225 order, EU consumer card: Stripe
+  1.5% + €0.25 = €3.63 (+23% VAT on the fee); SumUp 1.69% = €3.80, no
+  monthly fee; Revolut Business 1% + €0.20 = €2.45 but €10/month; PayPal
+  3.49% + €0.49 = €8.34. Waiting on her yes. Setup needs her ID, IBAN and
+  business details. Site change is one line under "how to pay".
 - **Google reviews.** She is considering a Google Business listing for reviews
   without showing her address, and has schools she could ask. When it exists,
   link it from the About page.
