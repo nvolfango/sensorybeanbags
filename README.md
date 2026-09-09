@@ -44,7 +44,8 @@ Other changes:
   Each page is a single HTML file plus one shared stylesheet.
 - **Mobile first.** The size table restacks into cards on small screens so the
   price never hides behind a sideways scroll.
-- **Dark mode**, following the visitor's system setting.
+- **Dark mode**, following the visitor's system setting by default, with a
+  light / auto / dark switch in the header that is remembered per browser.
 
 ## Editing it
 

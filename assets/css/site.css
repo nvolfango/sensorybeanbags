@@ -46,6 +46,9 @@
           "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
+/* Dark tokens. Applied when the device is set to dark and the visitor has not
+   chosen light, or when the visitor has chosen dark. The two blocks must stay
+   identical; the theme switch in the header sets data-theme on <html>. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
@@ -78,6 +81,37 @@
     --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
     --shadow:    0 2px 6px rgba(0,0,0,.35), 0 12px 28px rgba(0,0,0,.35);
   }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:        #171614;
+  --bg-alt:    #1F1D1A;
+  --surface:   #211F1C;
+  --surface-2: #262320;
+
+  --ink:       #F2EDE4;
+  --ink-2:     #C3BAAC;
+  --ink-3:     #9A9083;
+
+  --brand:       #6FBFB6;
+  --brand-hover: #8FD3CA;
+  --brand-ink:   #BFE5E0;
+  --brand-soft:  #1D3A38;
+  --on-brand:    #10312F;   /* brand is light in dark mode, so this must be dark */
+  --panel-bg:    #17403D;
+  --panel-ink:   #123B39;
+
+  --accent:      #E8926A;
+  --accent-soft: #3A2419;
+
+  --line:        #34302B;
+  --line-strong: #453F38;
+
+  --focus:       #7FB6F5;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow:    0 2px 6px rgba(0,0,0,.35), 0 12px 28px rgba(0,0,0,.35);
 }
 
 /* --- Base --------------------------------------------------------------- */
@@ -182,7 +216,7 @@ section.tight { padding-block: clamp(2rem, 1.5rem + 2vw, 3rem); }
 }
 
 .header-bar {
-  display: flex; align-items: center; gap: 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
   min-height: 68px;
 }
 
@@ -205,7 +239,9 @@ section.tight { padding-block: clamp(2rem, 1.5rem + 2vw, 3rem); }
 .nav-toggle:hover { border-color: var(--brand); }
 .nav-toggle svg { width: 18px; height: 18px; }
 
-.nav { display: none; }
+/* Below 1080px the nav is a panel that drops below the header bar when the
+   Menu button opens it. From 1080px it is a row of links in the bar itself. */
+.nav { display: none; flex-basis: 100%; }
 .nav ul { list-style: none; margin: 0; padding: 0; }
 .nav a {
   display: block; text-decoration: none; color: var(--ink-2);
@@ -216,12 +252,37 @@ section.tight { padding-block: clamp(2rem, 1.5rem + 2vw, 3rem); }
 .nav a[aria-current="page"] { color: var(--brand-ink); }
 
 .nav.is-open { display: block; padding-bottom: 1rem; }
+.nav.is-open .theme-switch { margin-top: 1rem; }
 
-@media (min-width: 860px) {
+/* --- Theme switch ------------------------------------------------------- */
+/* Light / Auto / Dark. Lives inside the nav: at the foot of the mobile menu
+   with labels, and at the end of the link row on wider screens as icons only
+   (each button keeps an aria-label and a title). */
+.theme-switch {
+  display: inline-flex; align-items: center; gap: 2px; padding: 3px;
+  background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: 999px; flex: none;
+}
+.theme-switch button {
+  display: inline-flex; align-items: center; gap: .35rem;
+  background: transparent; color: var(--ink-3); border: 0; border-radius: 999px;
+  padding: .45rem .7rem; font: inherit; font-size: .8rem; font-weight: 600;
+  line-height: 1; cursor: pointer;
+}
+.theme-switch button:hover { color: var(--ink); }
+.theme-switch button[aria-pressed="true"] { background: var(--brand-soft); color: var(--brand-ink); }
+.theme-switch svg { width: 16px; height: 16px; flex: none; }
+@media (min-width: 1080px) {
+  .theme-switch button { padding: .45rem .55rem; }
+  .theme-switch span { display: none; }
+}
+
+@media (min-width: 1080px) {
+  .header-bar { flex-wrap: nowrap; }
   .nav-toggle { display: none; }
-  .nav { display: block !important; }
-  .nav ul { display: flex; align-items: center; gap: .35rem; }
-  .nav a { padding: .5rem .75rem; border: 0; border-radius: 999px; }
+  .nav { display: flex !important; align-items: center; gap: .6rem; flex-basis: auto; }
+  .nav ul { display: flex; align-items: center; gap: .3rem; }
+  .nav a { padding: .5rem .7rem; border: 0; border-radius: 999px; white-space: nowrap; }
   .nav a:hover { background: var(--surface); }
   .nav a[aria-current="page"] { background: var(--brand-soft); color: var(--brand-ink); }
   .nav .nav-cta a {
