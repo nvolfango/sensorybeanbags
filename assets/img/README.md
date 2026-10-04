@@ -21,18 +21,18 @@ it for now).
 with `pdfimages`, re-encoded at quality 82):
 
 - `swatch-forest-green.jpg` — forest green fleece, new colour on `beanbags.html`.
-- `lap-pads-snake-group.jpg` — pink lap pads (108 × 21 cm, 5 lb), turquoise
-  lycra/fleece lap pads (90 × 19 cm, 4 lb) and a navy snake. The home page
+- `lap-pads-snake-group.jpg` — a long pink lap pad (108 × 21 cm, 5 lb), a
+  turquoise lycra/fleece lap pad (90 × 19 cm, 4 lb) and a navy snake. The home page
   "Weighted blankets, lap pads & snakes" card, replacing `weighted-group.jpg`
   per her instruction.
-- `sensory-room-lycra.jpg` — X-Large lycra beanbags (navy and turquoise) in a
+- `sensory-room-lycra.jpg` — X-Large lycra beanbags (turquoise, royal blue, navy) in a
   school sensory room with therapy balls and mats. `schools.html`.
 
 Sent but not used (kept out to avoid crowding; in her PDF if wanted): a
 turquoise/cerise weighted blanket on grass (the existing rainbow blanket photo
-is better and she said keep it if so), a navy lycra/fleece 4 lb snake, lap pads
-and snakes piled on a green beanbag, and a close-up of a cerise lap pad on
-rainbow check.
+is better and she said keep it if so), a navy lycra/fleece 4 lb snake, three
+snakes (pink, spotted, rainbow stripe) on a green fleece beanbag, and a
+close-up of a pink snake head on a rainbow-check body.
 
 **From the live sensorybeanbags.com** — flattened onto white, resized and
 re-encoded as progressive JPEG at quality 82. They are the old site's images,

@@ -40,14 +40,24 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   large and xlarge." Read as fleece price + €15, so Large €240 and X-Large
   €275 are on the site (was €250 / €285 from the old site). Flagged on the
   notes page for her to confirm the two figures.
-- **School reference wording.** The Clonakilty Community College reference is
-  on `schools.html` unnamed ("ASD class teacher, secondary school, Co. Cork"),
-  per her answer "leave it out until I make contact with the school". The
-  teacher wrote "Sensory Products" twice; those mentions were trimmed/worded
-  around. Name (Maureen Lucey, Clonakilty Community College) goes on only when
-  she confirms the school is happy.
-- **Swatch price currency.** She wrote "5 fabric swatches for $5"; the site
-  says €5. Flagged to her.
+- **School reference wording.** The reference is on `schools.html` in full,
+  signed Maureen Lucey, Clonakilty Community College, April 2026, as she sent
+  it. (Her "Naming the school: leave it out" answered the Douglas Boys
+  hall-photo question, not this.) The teacher wrote "Sensory Products" twice;
+  both read "[Sensory Beanbags]". Open: brackets, word for word, or ask Maureen.
+- **"Best used for" row.** Her round-two lines ("gentle gradual sink-in",
+  "flops" / "instant deep sink-in") were added in front of the existing row
+  text. She may have meant them to replace it; if so the order-page FAQ on
+  fleece vs lycra should follow.
+- **Swatch offer.** She wrote "5 fabric swatches for $5"; the site says €5.
+  How to order them, whether postage is included and whether the €5 comes off
+  a later order are not stated; the note on `beanbags.html` says none of it.
+- **Sizes for the new lap pad photo.** Pink 108 × 21 cm, 5 lb; turquoise
+  lycra/fleece 90 × 19 cm, 4 lb. Not shown anywhere: the home card has no
+  caption, and the lap pad card keeps her page-nine "roughly 90 cm long to
+  15–20 wide". Could be a "Pictured: …" line on the card.
+- **Held-back photos.** Three of her "more photos" are not used (see
+  section 4). She left it to us.
 - **Northern Ireland.** Unchanged from round one: the site says "within
   Ireland only"; whether that means the island or the Republic is unconfirmed.
 - **Weighted blanket CE.** Unchanged from round one and not answered in round
@@ -71,28 +81,37 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   (Nathan's ask, October 2026 — was "settle").
 - "Made one at a time by Julie Hannon **and her team**" — home page lede and
   the About page closing line.
-- Her **12-year guarantee paragraph** is the third card on the home page
-  (outer cover and inner lining, playdays to teenage years, removable cover,
-  beads top-up). Replaces the softer "no rips in years" line.
+- Her **12-year guarantee paragraph** is the third card on the home page,
+  nearly word for word, under her round-one heading "Fleece and lining that
+  survive real life" (she said add, so her heading stays). It replaces the
+  softer "no rips in years" body text.
+- Ordering page lede no longer says "made to order by one person", which
+  contradicted "Julie and team".
 - About page: "…watching how children use movement and play **to explore
   their physical capabilities and make sense of the world around them**."
 - **XXX-Large is €415** (was €425). **Lycra is €15 more than fleece**: Large
   €240, X-Large €275.
-- **Courier is €10–15 depending on weight** — home, ordering steps and FAQ.
+- **Delivery is €10–15 depending on weight, by courier or An Post** (her
+  answer was headed "Courier/An post") — home, ordering steps, FAQ, schools.
 - Comparison table: fleece is "**medium stretch**" (was "limited"); best used
   for now leads with "a gentle, gradual sink-in" + **flops** (fleece) and "an
-  instant, deep sink-in" (lycra).
-- Fleece washing rewritten per her edit: "the cover is easily removed for
-  washing"; "a Medium beanbag can be washed in your washing machine and
-  tumble dried as one unit — the beads stay in the bag". ("Beeds… tumble
-  tried" in her PDF read as beads/dried.) Lycra: "wash it on its own" removed.
-  Weighted items: "**soaking overnight** or hand washing" inserted.
+  instant, deep sink-in" (lycra). See Still open.
+- Fleece washing: she said remove the second and third sentences, which were
+  "The cover also comes off easily on its own…" and "In an industrial
+  machine, put the whole thing in as one piece." They are replaced with her
+  two: "the cover is easily removed for washing"; "a Medium beanbag can be
+  washed in your washing machine and tumble dried as one unit — the beads
+  stay in the bag". ("Beeds… tumble tried" read as beads/dried.) The first
+  sentence stays; the fourth now opens "For the larger sizes" so it does not
+  contradict the Medium line. Lycra: "wash it on its own" removed; "Unlike
+  fleece" (from her own care sheet) kept. Weighted items: "**soaking
+  overnight** or hand washing" inserted. The order-page FAQ matches.
 - **Forest Green** swatch added (her photo).
 - **Fabric sample swatches** offer under the colours: up to five for €5.
 - **New page `schools.html`** ("For schools" in the nav): two-week trial for
   schools and professionals in Cork, her trial story (suggested 2025, begun
   spring 2026), calm/focus/regulation bullets, her "I'd love you to try it"
-  quote, the new Sinead Moynihan quote, the unnamed school reference,
+  quote, the new Sinead Moynihan quote, the Clonakilty school reference,
   **Request a quote** / **Request a visit** mailto buttons, **ETB registered**,
   **discounts when you purchase more than one product**. Home page and
   ordering page link to it. Her "I'll call back in two weeks" became "Julie
@@ -100,8 +119,10 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 - ETB registered + the multi-product discount are also in the ordering page's
   schools note and "How do I pay?" FAQ.
 - **The photo under the title is fine** (child reading a book) — hero stays.
-- **Naming the school: leave out** until she makes contact — hall photo stays
-  unnamed; school reference unnamed (see Still open).
+- **Naming the school: leave out** until she makes contact. That answered the
+  round-two question about the Douglas Boys hall photo, which stays unnamed.
+  It does not cover the Clonakilty reference, which she sent with its
+  attribution.
 - **Rainbow blanket photo kept** — she offered a replacement (blanket on
   grass) but said keep the rainbow one if better, and it is better.
 - **"The picture under weighted blankets laps and snakes"** is the image on
@@ -109,7 +130,8 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   shows her pink/turquoise lap pads with the navy snake, replacing the old
   `weighted-group.jpg`. The lap pad figure on `weighted.html` keeps her
   round-one photo (`lap-pads-fleece-lycra.jpg`), which she did not ask to
-  change; her measurements are in the lap pad card text there.
+  change. The two items are lap pads: her round-one caption for the same kind
+  was "4lb lap Lycra/fleece", and she labels snakes as snakes.
 - Her new photos: see section 4. Three used, four held back by design.
 
 **From round one (September 2026):**
@@ -183,8 +205,9 @@ New from Julie in October 2026 (embedded in her round-two PDF; extracted with
 `sensory-room-lycra.jpg` (`schools.html`). She asked "add if it would benefit
 the website or be too much… whatever you think"; four were held back to keep
 the pages uncluttered — the blanket on grass (rainbow photo kept instead), the
-navy 4 lb snake, the pile on the green beanbag and the cerise lap pad
-close-up. All are in her PDF if wanted.
+navy 4 lb lycra/fleece snake, three snakes (pink, spotted, rainbow stripe) on
+a green fleece beanbag, and a close-up of a pink snake head on a rainbow-check
+body. All are in her PDF if wanted.
 
 Write real alt text — many visitors use screen readers. If any new photograph
 shows an identifiable child, get the parent's written permission first.
