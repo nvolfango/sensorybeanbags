@@ -2,7 +2,9 @@
 
 Round one of Julie's feedback arrived on 2 September 2026 as a Word document
 (`Sensory Beanbags that help children settle.docx` in the repository root).
-Everything she answered clearly has been applied. This file records what is
+Round two arrived on 4 October 2026 as a PDF (`Natan_response_Round_2.pdf`,
+also in the root): change requests in red, answers to the round-one questions,
+and new photographs, all applied the same day. This file records what is
 still open and the answers that were applied, so nobody re-asks them.
 
 The `to confirm` chips and the `.tbd` CSS rule are gone: nothing on the site is
@@ -16,76 +18,102 @@ Her copy is a page on the preview site itself:
 
     https://nvolfango.github.io/sensorybeanbags/notes.html
 
-It now reads as a "Round two" page: what changed from her answers, and the
+It now reads as a "Round three" page: what changed from her answers, and the
 short list of things still open. Not in the navigation; send her the link
 directly. Source is `src/pages/notes.html`; keep it in step with this file.
 
 ## 1. Still open
 
-- **Lycra price.** Julie wrote "Lycra beanbags are 20 euro more" and nothing
-  else. She does not say more than what: it could be €20 over the fleece price
-  (Large €245, X-Large €280) or €20 over the €250 / €285 the live site shows
-  (€270 / €305). The site keeps €250 / €285 until she says.
-- **Logo.** She sent a photo of a screen showing an "SB+ Sensory Beanbags +
-  More" logo. Unusable as-is; the original file is needed. Also unclear
-  whether "Sensory Beanbags + More" is a rename — it would change the site
-  name in the header, footer, page titles and `tools/build.py`.
-- **15-year guarantee.** Her draft home-page copy says "Fleece and lining that
-  survives real life 15-year guarantee". Not on the site yet: a guarantee is a
-  commitment and its scope needs a sentence from her. The softer, factual line
-  (no parent has come back with a rip in years) is on the home page.
-- **Courier cost.** She says "10/15 euro courier". The site says "€10–15"
-  without saying what decides it (size? distance?).
-- **Northern Ireland.** She said "delivery outside of Ireland: not at the
-  moment". The site says "within Ireland only". Whether that means the island
-  or the Republic is unconfirmed.
-- **PayPal.** Her list of ways to pay was "online, cash on delivery, bank
-  transfer, Revolut" and she says most people don't use PayPal. PayPal has
-  been dropped from the site accordingly. Easy to put back if she wants it.
-- **Card payments.** Recommendation to Julie (in the Round-two PDF, section
-  8): Stripe, used as Payment Links sent after the order is agreed, not a cart
-  on the site. September 2026 fees on a €225 order, EU consumer card: Stripe
-  1.5% + €0.25 = €3.63 (+23% VAT on the fee); SumUp 1.69% = €3.80, no
-  monthly fee; Revolut Business 1% + €0.20 = €2.45 but €10/month; PayPal
-  3.49% + €0.49 = €8.34. Waiting on her yes. Setup needs her ID, IBAN and
-  business details. Site change is one line under "how to pay".
-- **Google reviews.** She is considering a Google Business listing for reviews
-  without showing her address, and has schools she could ask. When it exists,
-  link it from the About page.
-- **Returns wording.** She said there has never been a return in twenty years
-  and corrections were gladly covered, and asked for "the proper way to say
-  that". The FAQ on `order.html` is a first draft of that; the cancellation
-  sentence ("get in touch as soon as you can") is ours, not hers.
-- **Home page photo.** In her document the purple beanbag with the snake sits
-  directly under the title "Sensory Beanbags that help children settle",
-  labelled "photo". She may have meant it as the home page hero. It is on the
-  snake card on `weighted.html`; the hero still uses the old cut-out.
-- **Naming the school.** She labelled the hall photo "Douglas Boys school".
-  The photo is on the home page but the school is not named. Ask her, and if
-  yes, check the school is happy to be named.
-- **Weighted blanket CE.** The live "Agency Testing / Approvals" page says the
-  weighted blanket technical file was "being assembled" in 2017. The
-  Declaration of Conformity covers beanbags only. The footer says "CE
-  approved" on every page. Ask whether the blanket file was completed.
-- **"Online" as a way to pay.** Her list was "Online or cash on delivery bank
-  transfer Revolut". "Online" presumably means card payment through the site,
-  which does not exist until the Stripe question is settled.
-- **Shop photos.** She asked for the shop's snake and lap pad photos to be
-  transferred. Her own newer photos of the same two products are used instead
-  (higher quality). The shop originals were downloaded and can be swapped in
-  if she prefers them; they are not in the repo.
-- **Words of hers left out.** "A clinically designed tool for sensory
-  regulation", "engineered through hundreds of hours of design" and "school
-  and classroom approved" are not on the site. The first two read as claims
-  that would be hard to substantiate; the third is vague. "OT recommended"
-  and "targeted sensory input where an ordinary cushion fails" are in.
-- **Lap pad dimensions.** From her photo captions: 4 lb is 15 × 90 cm, 6 lb is
-  38 × 8.5 in. The site says "roughly 90 cm long and 15–20 cm wide". Worth a
-  glance from her.
+- **Google review button.** She asked for a "Google Review link button". No
+  Google Business listing / review link exists yet (or none was sent). The
+  button cannot go on without the URL; when it arrives, put it on `about.html`
+  beside the testimonials and on `schools.html`.
+- **Logo.** Round two: the sample image she has is the same unusable screen
+  photo; she will follow up with the designer for the correct file, "but I can
+  leave it for now". Parked. The possible "Sensory Beanbags + More" rename
+  question is parked with it.
+- **Guarantee: 12 or 15 years.** Her answer: "Can't decide whether to put 12
+  or 15. In reality they haven't broken in 21 years… whichever sounds
+  believable." Her own home-page paragraph says 12, so **12 is on the site**.
+  She may still switch to 15.
+- **Lycra price figures.** Round two: "15 euro more instead of 20 euro on
+  large and xlarge." Read as fleece price + €15, so Large €240 and X-Large
+  €275 are on the site (was €250 / €285 from the old site). Flagged on the
+  notes page for her to confirm the two figures.
+- **Which picture she meant.** "Instead of the picture under weighted
+  blankets laps and snakes… put in the above one" — read as the lap pad
+  figure on `weighted.html`, which now shows her pink/turquoise lap pads with
+  the navy snake. If she meant the group photo on the home page card, swap
+  that instead (`assets/img/weighted-group.jpg` is still referenced there).
+- **School reference wording.** The Clonakilty Community College reference is
+  on `schools.html` unnamed ("ASD class teacher, secondary school, Co. Cork"),
+  per her answer "leave it out until I make contact with the school". The
+  teacher wrote "Sensory Products" twice; those mentions were trimmed/worded
+  around. Name (Maureen Lucey, Clonakilty Community College) goes on only when
+  she confirms the school is happy.
+- **Swatch price currency.** She wrote "5 fabric swatches for $5"; the site
+  says €5. Flagged to her.
+- **Northern Ireland.** Unchanged from round one: the site says "within
+  Ireland only"; whether that means the island or the Republic is unconfirmed.
+- **Weighted blanket CE.** Unchanged from round one and not answered in round
+  two: was the weighted blanket technical file ever completed? The footer says
+  "CE approved" on every page; the Declaration covers beanbags.
+- **Returns wording.** Unchanged: the cancellation sentence on `order.html`
+  ("get in touch as soon as you can") is ours, not hers.
+- **Card payments / Stripe.** Round two: "Stripe — can leave it for the
+  moment." Parked at her request; the fee comparison from the round-two
+  document still stands. "Online" as a way to pay is parked with it.
+- **Trial logistics.** The schools page says Julie calls back after the two
+  weeks (her flyer text says "I'll call back in two weeks"). Nothing on the
+  page about deposits or collection — if the trial needs conditions, she
+  should say.
 
 ## 2. Answered (applied)
 
-- XXX-Large is **€425**.
+**From round two (October 2026):**
+
+- Home page h1 helps "children **and adults**" (her ask) and ends "…regulate"
+  (Nathan's ask, October 2026 — was "settle").
+- "Made one at a time by Julie Hannon **and her team**" — home page lede and
+  the About page closing line.
+- Her **12-year guarantee paragraph** is the third card on the home page
+  (outer cover and inner lining, playdays to teenage years, removable cover,
+  beads top-up). Replaces the softer "no rips in years" line.
+- About page: "…watching how children use movement and play **to explore
+  their physical capabilities and make sense of the world around them**."
+- **XXX-Large is €415** (was €425). **Lycra is €15 more than fleece**: Large
+  €240, X-Large €275.
+- **Courier is €10–15 depending on weight** — home, ordering steps and FAQ.
+- Comparison table: fleece is "**medium stretch**" (was "limited"); best used
+  for now leads with "a gentle, gradual sink-in" + **flops** (fleece) and "an
+  instant, deep sink-in" (lycra).
+- Fleece washing rewritten per her edit: "the cover is easily removed for
+  washing"; "a Medium beanbag can be washed in your washing machine and
+  tumble dried as one unit — the beads stay in the bag". ("Beeds… tumble
+  tried" in her PDF read as beads/dried.) Lycra: "wash it on its own" removed.
+  Weighted items: "**soaking overnight** or hand washing" inserted.
+- **Forest Green** swatch added (her photo).
+- **Fabric sample swatches** offer under the colours: up to five for €5.
+- **New page `schools.html`** ("For schools" in the nav): two-week trial for
+  schools and professionals in Cork, her trial story (suggested 2025, begun
+  spring 2026), calm/focus/regulation bullets, her "I'd love you to try it"
+  quote, the new Sinead Moynihan quote, the unnamed school reference,
+  **Request a quote** / **Request a visit** mailto buttons, **ETB registered**,
+  **discounts when you purchase more than one product**. Home page and
+  ordering page link to it. Her "I'll call back in two weeks" became "Julie
+  calls back" (website voice).
+- ETB registered + the multi-product discount are also in the ordering page's
+  schools note and "How do I pay?" FAQ.
+- **The photo under the title is fine** (child reading a book) — hero stays.
+- **Naming the school: leave out** until she makes contact — hall photo stays
+  unnamed; school reference unnamed (see Still open).
+- **Rainbow blanket photo kept** — she offered a replacement (blanket on
+  grass) but said keep the rainbow one if better, and it is better.
+- Her new photos: see section 4. Three used, four held back by design.
+
+**From round one (September 2026):**
+
+- XXX-Large is ~~€425~~ (superseded in round two: €415).
 - The **colour range** shown (the price-list version) is fine "for now".
 - **Mini and small beanbags are discontinued.** Left off.
 - **No photo of Julie** on the site. Placeholder removed.
@@ -123,14 +151,16 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 
 Beanbags (fleece): Medium 24 in / 61 cm €195 · Large 30 in / 76 cm €225 ·
 X-Large 36 in / 92 cm €260 · XX-Large 46 in / 117 cm €345 ·
-XXX-Large 56 in / 143 cm €425.
+XXX-Large 56 in / 143 cm €415 (round two; the live site still says €425).
 
-Lycra beanbags: made on request by email, Large €250, X-Large €285 (see open
-question above).
+Lycra beanbags: made on request by email, €15 over the fleece price — Large
+€240, X-Large €275 (round two; see open question above).
 
 Weighted blankets €170–€330 — Medium 72×92 cm, Large 92×122 cm,
 X-Large 102×158 cm, 4–14 lb. Lap pads €60–€85, 3–6 lb, blue / rainbow check /
-request a colour. Snakes €75–€95, 4–6 lb, short/wide or long/narrow, mid grey /
+request a colour; roughly 90–108 cm long, 15–21 cm wide (her round-two photo
+captions: pink long 108 × 21 cm at 5 lb, turquoise lycra/fleece 90 × 19 cm at
+4 lb). Snakes €75–€95, 4–6 lb, short/wide or long/narrow, mid grey /
 royal blue / rainbow check.
 
 Beanbags five to seven working days to make; custom weighted products around
@@ -145,6 +175,15 @@ The spelling is **Julie**, not Julia.
 `school-hall.jpg` (Douglas Boys school), `beanbag-snake.jpg`,
 `lap-pads-fleece-lycra.jpg`, `lap-pad-royal-blue.jpg`. She says she does not
 have a great variety; anything more is welcome but nothing is blocking.
+
+New from Julie in October 2026 (embedded in her round-two PDF; extracted with
+`pdfimages`): `swatch-forest-green.jpg` (colour range), `lap-pads-snake-group.jpg`
+(figure on `weighted.html`, replacing `lap-pads-fleece-lycra.jpg` there) and
+`sensory-room-lycra.jpg` (`schools.html`). She asked "add if it would benefit
+the website or be too much… whatever you think"; four were held back to keep
+the pages uncluttered — the blanket on grass (rainbow photo kept instead), the
+navy 4 lb snake, the pile on the green beanbag and the cerise lap pad
+close-up. All are in her PDF if wanted.
 
 Write real alt text — many visitors use screen readers. If any new photograph
 shows an identifiable child, get the parent's written permission first.

@@ -22,6 +22,7 @@ This one has five, each with a clear job:
 | `weighted.html` | Weighted Products Information |
 | `about.html` | About Julie, Testimonials |
 | `order.html` | FAQ, ordering and delivery information |
+| `schools.html` | New in October 2026 — the two-week trial for schools and professionals in Cork; no old-site equivalent |
 
 Dropped: the four long "reference articles on autism" pages. They read as search
 filler rather than something a buyer needs, and the genuinely useful parts (how

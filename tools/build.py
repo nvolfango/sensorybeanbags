@@ -28,6 +28,7 @@ NAV = [
     ("index.html", "Home"),
     ("beanbags.html", "Sensory beanbags"),
     ("weighted.html", "Weighted products"),
+    ("schools.html", "For schools"),
     ("about.html", "About Julie"),
     ("order.html", "How to order"),
 ]
