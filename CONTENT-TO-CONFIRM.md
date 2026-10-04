@@ -40,11 +40,6 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   large and xlarge." Read as fleece price + €15, so Large €240 and X-Large
   €275 are on the site (was €250 / €285 from the old site). Flagged on the
   notes page for her to confirm the two figures.
-- **Which picture she meant.** "Instead of the picture under weighted
-  blankets laps and snakes… put in the above one" — read as the lap pad
-  figure on `weighted.html`, which now shows her pink/turquoise lap pads with
-  the navy snake. If she meant the group photo on the home page card, swap
-  that instead (`assets/img/weighted-group.jpg` is still referenced there).
 - **School reference wording.** The Clonakilty Community College reference is
   on `schools.html` unnamed ("ASD class teacher, secondary school, Co. Cork"),
   per her answer "leave it out until I make contact with the school". The
@@ -109,6 +104,11 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   unnamed; school reference unnamed (see Still open).
 - **Rainbow blanket photo kept** — she offered a replacement (blanket on
   grass) but said keep the rainbow one if better, and it is better.
+- **"The picture under weighted blankets laps and snakes"** is the image on
+  the home page card of that name (Nathan confirmed, October 2026): it now
+  shows her pink/turquoise lap pads with the navy snake, replacing the old
+  `weighted-group.jpg`. The same photo is also the figure on `weighted.html`,
+  captioned with her measurements.
 - Her new photos: see section 4. Three used, four held back by design.
 
 **From round one (September 2026):**
