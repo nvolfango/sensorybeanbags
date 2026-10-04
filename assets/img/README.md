@@ -23,9 +23,8 @@ with `pdfimages`, re-encoded at quality 82):
 - `swatch-forest-green.jpg` — forest green fleece, new colour on `beanbags.html`.
 - `lap-pads-snake-group.jpg` — pink lap pads (108 × 21 cm, 5 lb), turquoise
   lycra/fleece lap pads (90 × 19 cm, 4 lb) and a navy snake. The home page
-  "Weighted blankets, lap pads & snakes" card (replacing `weighted-group.jpg`,
-  per her instruction) and the figure on `weighted.html` (replacing
-  `lap-pads-fleece-lycra.jpg` there).
+  "Weighted blankets, lap pads & snakes" card, replacing `weighted-group.jpg`
+  per her instruction.
 - `sensory-room-lycra.jpg` — X-Large lycra beanbags (navy and turquoise) in a
   school sensory room with therapy balls and mats. `schools.html`.
 
@@ -44,9 +43,8 @@ mostly 2011–2015, and several are hand-cut-outs with visible edges:
 `swatch-*.jpg` the fleece colour swatches on `beanbags.html`.
 
 Not referenced by any page: `weighted-snake.jpg`, `weighted-lap-pad.jpg` and
-`weighted-group.jpg` (superseded by Julie's photos),
-`lap-pads-fleece-lycra.jpg` (superseded by `lap-pads-snake-group.jpg`),
-`beanbag-chocolate.jpg`, and the patterned
+`weighted-group.jpg` (superseded by Julie's photos), `beanbag-chocolate.jpg`,
+and the patterned
 fleeces `swatch-rainbow-check`, `swatch-rainbow-stripe`, `swatch-spot`,
 `swatch-urban`, `swatch-lime-green`, `swatch-hyacinth`. Kept in case they are
 wanted.

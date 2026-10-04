@@ -107,8 +107,9 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 - **"The picture under weighted blankets laps and snakes"** is the image on
   the home page card of that name (Nathan confirmed, October 2026): it now
   shows her pink/turquoise lap pads with the navy snake, replacing the old
-  `weighted-group.jpg`. The same photo is also the figure on `weighted.html`,
-  captioned with her measurements.
+  `weighted-group.jpg`. The lap pad figure on `weighted.html` keeps her
+  round-one photo (`lap-pads-fleece-lycra.jpg`), which she did not ask to
+  change; her measurements are in the lap pad card text there.
 - Her new photos: see section 4. Three used, four held back by design.
 
 **From round one (September 2026):**
@@ -178,7 +179,7 @@ have a great variety; anything more is welcome but nothing is blocking.
 
 New from Julie in October 2026 (embedded in her round-two PDF; extracted with
 `pdfimages`): `swatch-forest-green.jpg` (colour range), `lap-pads-snake-group.jpg`
-(figure on `weighted.html`, replacing `lap-pads-fleece-lycra.jpg` there) and
+(home page weighted card, replacing `weighted-group.jpg`) and
 `sensory-room-lycra.jpg` (`schools.html`). She asked "add if it would benefit
 the website or be too much… whatever you think"; four were held back to keep
 the pages uncluttered — the blanket on grass (rainbow photo kept instead), the
