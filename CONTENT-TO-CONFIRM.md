@@ -221,9 +221,10 @@ necessary, and Stripe's own terms will need linking.
 
 ## 6. Before going live
 
+- [ ] **While the old site is still live:** run `python3 tools/mirror_legacy.py`, check it reports no broken links, browse `/legacy/` on the preview, and commit `legacy/`. Once the domain points here the old site can no longer be copied from sensorybeanbags.com. Keep the WordPress hosting until this is done.
 - [ ] Settle the shop question with Julie (Stripe or no cart) and decide from there
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
-- [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site)
+- [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site). Do not replace it with one that blocks `/legacy/`: those pages carry their own `noindex`, which search engines only see if they can fetch them.
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
 - [ ] Update `BASE_URL` in `tools/build.py` to the real domain
 - [ ] Update the paths in `404.html` (they assume the `/sensorybeanbags/` preview subdirectory)

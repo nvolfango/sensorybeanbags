@@ -86,6 +86,8 @@ assets/img/                    product photographs — see assets/img/README.md
 assets/docs/                   the 2017 safety test reports, linked from the FAQ
 src/pages/                     page content, edit these
 tools/build.py                 wraps page content in the shared header and footer
+tools/mirror_legacy.py         copies the old WordPress site into legacy/
+legacy/                        archived copy of the old site, served at /legacy/
 .github/workflows/pages.yml    deploys to GitHub Pages on push to main
 ```
 
@@ -115,3 +117,32 @@ The old paths worth mapping: `/shop`, `/shop/*`, `/sensory-beanbag-information`,
 `/weighted-products-information`, `/frequently-asked-questions-faq`,
 `/about-julie-hannon`, `/testimonials`, `/agency-testing-approvals`,
 `/reference-articles-autism/*`.
+
+## The old website, kept as a backup
+
+`legacy/` holds a static copy of the old WordPress site, served at `/legacy/`
+with every page at its original path: `sensorybeanbags.com/about-julie-hannon/`
+is kept as `sensorybeanbags.com/legacy/about-julie-hannon/`, and links between
+old pages stay inside `/legacy/`. To make or refresh it:
+
+```bash
+python3 tools/mirror_legacy.py
+```
+
+It reads the live WordPress site, so **run it before the domain moves** — after
+that, sensorybeanbags.com answers with the new site. It replaces `legacy/`
+completely each time, then checks every link inside the copy and prints any
+that are broken. Commit `legacy/` afterwards; the deploy picks it up.
+
+What it does and does not keep:
+
+- Pages, images (every size in `srcset`), stylesheets, scripts, fonts and the
+  PDFs and documents the pages link to. Files from other hosts, such as web
+  fonts, go under `legacy/_ext/<host>/`.
+- Not the cart, checkout, account pages, search or feeds: they only worked
+  with WordPress running. Links to them lead to `legacy/_unavailable.html`.
+  Forms, including add-to-cart buttons, do nothing.
+- Each page gets `noindex`, so search engines never rank the archive above the
+  new site, and a one-line banner linking to the new site
+  (`--no-banner` leaves it out). Do not block `/legacy/` in `robots.txt`:
+  search engines have to be able to fetch a page to see its `noindex`.

@@ -35,12 +35,15 @@ jobs:
           fi
 
       # Assemble only what should be served. src/, tools/ and .git stay behind.
+      # legacy/ is the archived copy of the old WordPress site (tools/mirror_legacy.py).
       - name: Collect the deployable files
         run: |
           mkdir _site
           cp *.html robots.txt .nojekyll _site/
           cp -r assets _site/
-          find _site -type f | sort
+          if [ -d legacy ]; then cp -r legacy _site/; fi
+          find _site -type f -not -path '_site/legacy/*' | sort
+          echo "legacy/: $(find _site/legacy -type f 2>/dev/null | wc -l) files"
 
       - uses: actions/configure-pages@v5
         with:
