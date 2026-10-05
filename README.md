@@ -122,15 +122,24 @@ Moving to Cloudflare, in this order:
    `3.11`.
 3. Check the `*.pages.dev` address Cloudflare gives: the pages, an old address
    such as `/about-julie-hannon/` (it should redirect), and `/legacy/`.
-4. **While the old site is still live**, make the copy of it — see "The old
+4. Move the domain's **DNS** to Cloudflare, which keeps showing the old site.
+   Pages will not take `sensorybeanbags.com` until Cloudflare runs its DNS:
+   Custom domains → Set up a custom domain → Begin DNS transfer, Free plan.
+   Cloudflare imports the existing records. Check them against the list at
+   Netfronts — keep every `MX` (email) and `TXT` (verification) record — and
+   set the records for `sensorybeanbags.com` and `www` that point at Netfronts
+   to **DNS only** (grey cloud), so visitors still reach the old site exactly
+   as now. Make sure DNSSEC is off at Netfronts, then change the domain's
+   nameservers there to the two Cloudflare gives. When Cloudflare shows the
+   domain as Active, check the old site still loads and email still arrives.
+5. **While the old site is still showing**, make the copy of it — see "The old
    website, kept as a backup" below.
-5. Add `sensorybeanbags.com` to Cloudflare (free plan). It imports the
-   existing DNS records; compare them with the list at Netfronts, especially
-   any `MX` (email) and `TXT` (verification) records, before going further.
 6. Work through "Before going live" in `CONTENT-TO-CONFIRM.md`.
-7. At Netfronts, change the domain's nameservers to the two Cloudflare gives.
-   In the Pages project → Custom domains, add `sensorybeanbags.com` and
-   `www.sensorybeanbags.com`. Cloudflare sets up HTTPS itself.
+7. **Go live:** in the Pages project → Custom domains, add
+   `sensorybeanbags.com` and `www.sensorybeanbags.com`, letting Cloudflare
+   replace the old records that point at Netfronts. Cloudflare sets up HTTPS
+   itself, usually within minutes. This, not the nameserver change, is the
+   moment the new site replaces the old one.
 8. Once the new site is live and settled, cancel the Netfronts hosting, turn
    off GitHub Pages for this repository, and transfer the domain registration
    to Cloudflare Registrar, with **Julie as the registrant contact** — that is
