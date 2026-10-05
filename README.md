@@ -87,7 +87,9 @@ assets/docs/                   the 2017 safety test reports, linked from the FAQ
 src/pages/                     page content, edit these
 tools/build.py                 wraps page content in the shared header and footer
 tools/mirror_legacy.py         copies the old WordPress site into legacy/
+tools/redirects.py             forwarding pages for the old addresses (run by build.py)
 legacy/                        archived copy of the old site, served at /legacy/
+redirects/                     generated; deployed to the site root, not to /redirects/
 .github/workflows/pages.yml    deploys to GitHub Pages on push to main
 ```
 
@@ -108,15 +110,21 @@ To point sensorybeanbags.com at it later:
 
 ### Old URLs
 
-GitHub Pages cannot issue redirects, so if the old WordPress URLs matter for
-search rankings, either put the site behind something that can redirect
-(Cloudflare and Netlify both do this on free tiers), or add small HTML files at
-the old paths that redirect to the new page. `404.html` catches anything missed.
+GitHub Pages cannot send real redirects, so every old WordPress address gets a
+small forwarding page instead, in `redirects/` (the deploy copies it to the
+site root): `redirects/about-julie-hannon/index.html` is served at
+`/about-julie-hannon/` and sends the visitor straight to `about.html`.
+`tools/build.py` regenerates them, so there is nothing to maintain by hand.
 
-The old paths worth mapping: `/shop`, `/shop/*`, `/sensory-beanbag-information`,
-`/weighted-products-information`, `/frequently-asked-questions-faq`,
-`/about-julie-hannon`, `/testimonials`, `/agency-testing-approvals`,
-`/reference-articles-autism/*`.
+Where they go is set in `tools/redirects.py`. The old addresses already known
+— `/shop`, `/sensory-beanbag-information`, `/weighted-products-information`,
+`/frequently-asked-questions-faq`, `/agency-testing-approvals`,
+`/about-julie-hannon`, `/testimonials`, and the cart, checkout and account
+pages — go to their new equivalents. Once `legacy/` exists, every page in it
+gets a forwarding page as well: shop and product pages go to the beanbags or
+weighted products page, depending on the product, and pages the new site has
+no equivalent for, such as the reference articles, go to their archived copy.
+`404.html` catches anything else.
 
 ## The old website, kept as a backup
 

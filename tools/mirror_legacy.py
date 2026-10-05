@@ -18,8 +18,9 @@ lead to legacy/_unavailable.html. Forms do not submit.
 
 Every archived page gets a noindex tag, so search engines never rank it above
 the new site, and a one-line banner linking to the new site (--no-banner to
-leave that out). Each run replaces legacy/ completely. Python 3 with no
-packages installed is all it needs.
+leave that out). Each run replaces legacy/ completely, then rewrites
+redirects/ so every old address forwards somewhere (see redirects.py). Python 3
+with no packages installed is all it needs.
 """
 
 import argparse
@@ -38,6 +39,8 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from collections import deque
 from html.parser import HTMLParser
+
+import redirects
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "legacy"
@@ -535,6 +538,7 @@ def main():
         print("Copying %s into %s/" % (mirror.start, OUT.relative_to(ROOT)), flush=True)
         mirror.run()
         mirror.report()
+        print("Wrote %d forwarding pages for old addresses in redirects/." % redirects.write())
     sys.exit(0 if check(mirror.hosts) else 1)
 
 

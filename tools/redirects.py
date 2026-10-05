@@ -1,0 +1,99 @@
+#!/usr/bin/env python3
+"""
+Forwarding pages for the old WordPress addresses.
+
+GitHub Pages cannot send real redirects, so each old address gets a tiny page
+that sends the visitor straight on. They are written to redirects/, which the
+deploy copies to the site root: redirects/about-julie-hannon/index.html is
+served at /about-julie-hannon/ and forwards to about.html.
+
+The addresses known from the old site are in OLD. Once legacy/ holds the copy
+of the old site, every page in it gets a forwarding page too: shop and product
+pages go to the matching new page, and anything with no equivalent on the new
+site (the reference articles, for instance) goes to its archived copy.
+
+tools/build.py and tools/mirror_legacy.py both run this, so there is no need to
+run it by hand.
+"""
+
+import pathlib
+import re
+import shutil
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+OUT = ROOT / "redirects"
+LEGACY = ROOT / "legacy"
+
+OLD = {
+    "shop": "beanbags.html",
+    "sensory-beanbag-information": "beanbags.html",
+    "weighted-products-information": "weighted.html",
+    "frequently-asked-questions-faq": "order.html",
+    "agency-testing-approvals": "order.html",
+    "about-julie-hannon": "about.html",
+    "testimonials": "about.html",
+    "cart": "order.html",
+    "checkout": "order.html",
+    "my-account": "order.html",
+}
+SHOP_SECTIONS = {"shop", "product", "product-category", "product-tag"}
+WEIGHTED = re.compile(r"weight|blanket|lap|snake", re.I)
+NOT_OLD_PAGES = {"_ext", "wp-content", "wp-includes", "wp-admin", "wp-json"}
+
+PAGE = """<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>This page has moved | Sensory Beanbags</title>
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url=__HREF__">
+<script>location.replace("__HREF__");</script>
+</head>
+<body>
+<p>This page has moved. <a href="__HREF__">Continue to the new page</a>.</p>
+</body>
+</html>
+"""
+
+
+def old_pages():
+    """Every old address to forward, as a path without leading or trailing slash."""
+    paths = set(OLD)
+    if LEGACY.is_dir():
+        for page in LEGACY.rglob("index.html"):
+            path = page.parent.relative_to(LEGACY).as_posix()
+            if path != "." and path.split("/")[0] not in NOT_OLD_PAGES:
+                paths.add(path)
+    return paths
+
+
+def destination(path):
+    if path in OLD:
+        return OLD[path]
+    if path.split("/")[0] in SHOP_SECTIONS:
+        return "weighted.html" if WEIGHTED.search(path) else "beanbags.html"
+    if (LEGACY / path / "index.html").exists():
+        return "legacy/%s/" % path
+    return "index.html"
+
+
+def write():
+    """Rewrites redirects/ from scratch. Returns how many forwarding pages it wrote."""
+    if OUT.exists():
+        shutil.rmtree(OUT)
+    taken = {p.name for p in ROOT.iterdir()}
+    count = 0
+    for path in sorted(old_pages()):
+        if path.split("/")[0] in taken:
+            continue  # a real file or folder of the new site already lives there
+        href = "../" * (path.count("/") + 1) + destination(path)
+        target = OUT / path / "index.html"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(PAGE.replace("__HREF__", href), encoding="utf-8")
+        count += 1
+    return count
+
+
+if __name__ == "__main__":
+    print("wrote %d forwarding pages in redirects/" % write())

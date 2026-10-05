@@ -6,13 +6,16 @@ Page bodies live in src/pages/*.html. This script wraps each one in the shared
 header/footer and writes plain .html files to the repository root, which is what
 GitHub Pages serves. There is no runtime dependency on this script: the built
 HTML is committed and works on its own. Re-run it only after editing the shared
-chrome below or a file in src/pages/.
+chrome below or a file in src/pages/. It also rewrites redirects/, the
+forwarding pages for the old site's addresses (see redirects.py).
 
     python3 tools/build.py
 """
 
 import pathlib
 import re
+
+import redirects
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "pages"
@@ -242,6 +245,8 @@ def build():
 
         (ROOT / name).write_text(html, encoding="utf-8")
         print("built %s" % name)
+
+    print("wrote %d forwarding pages for old addresses in redirects/" % redirects.write())
 
 
 if __name__ == "__main__":

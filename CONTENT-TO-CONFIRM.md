@@ -228,4 +228,4 @@ necessary, and Stripe's own terms will need linking.
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
 - [ ] Update `BASE_URL` in `tools/build.py` to the real domain
 - [ ] Update the paths in `404.html` (they assume the `/sensorybeanbags/` preview subdirectory)
-- [ ] Set up redirects from the old WordPress URLs — see `README.md`. Add `/agency-testing-approvals` to the list; it is now the safety FAQ on `order.html`.
+- [x] Forwarding pages from the old WordPress addresses to the new pages — `redirects/`, made by `tools/redirects.py`; see "Old URLs" in `README.md`. Only the ten known addresses until `legacy/` exists; making the copy adds the rest automatically.
