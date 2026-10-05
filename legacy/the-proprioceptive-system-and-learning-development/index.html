@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8" />
+
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="../wp-content/themes/twentyten/style.css" />
+    <!-- Slider Template -->
+    <script type="text/template" id="wc_product_slider_widget_item_tpl">
+    	{{ var srcset = '', sizes = ''; }}
+		{{ if ( typeof img_srcset !== 'undefined' ) { srcset = img_srcset; } }}
+		{{ if ( typeof img_sizes !== 'undefined' ) { sizes = img_sizes; } }}
+
+		{{ var item_title_html = ''; }}
+				{{ if ( item_title != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-name"><a href="' + item_link + '">' + item_title + '</a></div>'; }}
+		{{ } }}
+				{{ if ( product_price != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-price">'+ product_price +'</div>'; }}
+		{{ } }}
+				{{ var cycle_desc = '<a class="cycle-product-linked" href="' + item_link + '">View this Product</a>'; }}
+				<img class="cycle-wc-product-image"			data-cycle-number="{{= index_product }}"			srcset="{{- srcset }}"			sizes="{{- sizes }}"			src="{{= img_url }}"			name="{{- item_title_html }}"			title=""			data-cycle-desc="{{ if ( item_link != "" ) { }} {{- cycle_desc }}{{ } }}"            style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "            {{ if ( typeof extra_attributes !== "undefined" && extra_attributes != "" ) { }} {{= extra_attributes }} {{ } }}        />
+	</script>
+
+    <script type="text/template" id="wc_product_slider_mobile_item_tpl">
+    	{{ var srcset = '', sizes = ''; }}
+		{{ if ( typeof img_srcset !== 'undefined' ) { srcset = img_srcset; } }}
+		{{ if ( typeof img_sizes !== 'undefined' ) { sizes = img_sizes; } }}
+
+		{{ var item_title_html = ''; }}
+		{{ if ( item_title != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-name"><a href="' + item_link + '">' + item_title + '</a></div>'; }}
+		{{ } }}
+		{{ if ( product_price != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-price">'+ product_price +'</div>'; }}
+		{{ } }}
+		{{ var category_tag_link = ''; }}
+		{{ if ( category_link != '' ) { }}
+			{{ category_tag_link = '<div class="cycle-mobile-skin-category-linked-container"><a class="cycle-category-linked" href="' + category_link + '">View all Products in this Category</a></div>'; }}
+		{{ } }}
+		{{ if ( tag_link != '' ) { }}
+			{{ category_tag_link = '<div class="cycle-mobile-skin-tag-linked-container"><a class="cycle-tag-linked" href="' + tag_link + '">View all Products in this Tag</a></div>'; }}
+		{{ } }}
+		{{ if ( is_used_mobile_skin == 'true' ) { }}
+			<img class="cycle-wc-product-image"				srcset="{{- srcset }}"				sizes="{{- sizes }}"				src="{{= img_url }}"				title="{{- item_title_html }}"				data-cycle-desc="{{- category_tag_link }}"				style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "			/>
+		{{ } else { }}
+			<img class="cycle-wc-product-image"				srcset="{{- srcset }}"				sizes="{{- sizes }}"				src="{{= img_url }}"				title="{{- item_title_html }}"				alt=""				style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "			/>		{{ } }}
+	</script>
+
+    <script type="text/template" id="wc_product_slider_card_item_tpl"><div></div>
+	</script>
+
+    
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Proprioceptive System</title>
+<meta name="description" content="The Proprioceptive System and Learning / Development"/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Proprioceptive System" />
+<meta property="og:description" content="The Proprioceptive System and Learning / Development" />
+<meta property="og:url" content="./" />
+<meta property="og:site_name" content="a Julia Hannon original" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="The Proprioceptive System and Learning / Development" />
+<meta name="twitter:title" content="Proprioceptive System" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"..\/","sameAs":[],"@id":"..\/#organization","name":"SensoryBeanBags","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"..\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='../wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flowplayer-css-css'  href='../wp-content/plugins/easy-video-player/lib/skin/skin.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fbshare-stylesheet-css'  href='../wp-content/plugins/woocommerce-facebook-share-like-button/css/fbshare.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce.css' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='bxslidercss-css'  href='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/css/jquery.bxslider.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='column-styles-css'  href='../wp-content/plugins/wens-responsive-column-layout-shortcodes/assets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyten-block-style-css'  href='../wp-content/themes/twentyten/blocks.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SDT_DATA = {"ajaxurl":"https:\/\/www.sensorybeanbags.com\/wp-admin\/admin-ajax.php","siteUrl":"..\/","pluginsUrl":"..\/wp-content\/plugins","isAdmin":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/easy-video-player/lib/flowplayer.min.js'></script>
+<meta name="generator" content="WordPress 5.0.22" />
+<meta name="generator" content="WooCommerce 3.5.10" />
+<!-- This content is generated with the Easy Video Player plugin v1.1.7 - http://noorsplugin.com/wordpress-video-plugin/ --><script>flowplayer.conf.embed = false;flowplayer.conf.keyboard = false;</script><!-- Easy Video Player plugin -->	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	</head>
+
+<body class="page-template-default page page-id-950 custom-background woocommerce-demo-store woocommerce-no-js">
+<div role="note" style="position:relative;z-index:2147483647;margin:0;padding:10px 16px;background:#1F5F5B;color:#fff;font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:center">This is an archived copy of the old Sensory Beanbags website, kept as a backup. <a href="../../" style="color:#fff;font-weight:700;text-decoration:underline">Go to the current website</a></div>
+
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="../" title="a Julia Hannon original" rel="home">a Julia Hannon original</a>
+					</span>
+				</div>
+				<div id="site-description">An excellent tool for sensory input for kids. Handmade in Ireland</div>
+
+										<img src="../wp-content/uploads/2018/08/SensoryBanner-Transparent.jpg" width="940" height="198" alt="" />
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu-header"><ul id="menu-sidemenu" class="menu"><li id="menu-item-1930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1930"><a href="../">#1892 (no title)</a></li>
+<li id="menu-item-660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="../shop/">Shop</a></li>
+<li id="menu-item-944" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-944"><a href="../product-information/">Product Information</a>
+<ul class="sub-menu">
+	<li id="menu-item-2882" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2882"><a href="../choosing-fabric-colours/">Choosing Fabric Colours and pictures below.</a></li>
+	<li id="menu-item-514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-514"><a href="../sensory-beanbag-information/">Sensory Beanbag Information</a></li>
+	<li id="menu-item-945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-945"><a href="../weighted-products-information/">Weighted Products Information</a></li>
+	<li id="menu-item-1669" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-950 current_page_item menu-item-1669"><a href="./">The Proprioceptive System and Learning / Development</a></li>
+</ul>
+</li>
+<li id="menu-item-506" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-506"><a href="../reference-articles-autism/">Reference Articles Autism</a>
+<ul class="sub-menu">
+	<li id="menu-item-508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-508"><a href="../reference-articles-autism/therapeutic-beanbags-children/">Therapeutic Beanbags (Children Autism)</a></li>
+	<li id="menu-item-513" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513"><a href="../reference-articles-autism/home-2/">Therapeutic Sensory Products – Handmade in Cork, Ireland</a></li>
+	<li id="menu-item-509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-509"><a href="../reference-articles-autism/sensory-beanbags-and-children/">Sensory Beanbags and Children</a></li>
+	<li id="menu-item-507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-507"><a href="../reference-articles-autism/beanbags-sensory-integartion-therapy-autism/">Beanbags – Sensory Integration Therapy (Autism)</a></li>
+	<li id="menu-item-953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-953"><a href="../reference-articles-autism/proprioceptive-system-sensory-seeking-behaviours/">Proprioceptive System – Sensory Seeking Bahaviours</a></li>
+	<li id="menu-item-952" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-950 current_page_item menu-item-952"><a href="./">The Proprioceptive System and Learning / Development</a></li>
+</ul>
+</li>
+<li id="menu-item-511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-511"><a href="../testimonials/">Testimonials</a></li>
+<li id="menu-item-646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-646"><a href="../frequently-asked-questions-faq/">Frequently Asked Questions (FAQ)</a></li>
+<li id="menu-item-673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-673"><a href="../about-julie-hannon/">About Julia</a></li>
+<li id="menu-item-782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-782"><a href="../contact-julie-hannon/">Contact Julie Hannon</a></li>
+<li id="menu-item-1716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1716"><a href="../agency-testing-approvals/">Agency Testing / Approvals</a></li>
+<li id="menu-item-1452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1452"><a href="../product-information/price-list/">Price List</a></li>
+<li id="menu-item-1817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1817"><a href="../_unavailable.html">Cart</a></li>
+<li id="menu-item-1820" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1820"><a href="../_unavailable.html">Checkout</a></li>
+<li id="menu-item-1819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1819"><a href="../_unavailable.html">My Account</a></li>
+<li id="menu-item-2886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2886"><a href="../videos/">Videos</a></li>
+</ul></div>			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="post-950" class="post-950 page type-page status-publish hentry">
+											<h1 class="entry-title">The Proprioceptive System and Learning / Development</h1>
+					
+					<div class="entry-content">
+						<p><b>Part-I  </b></p>
+<p>There is a widely-held belief that if we just start teaching children to write, read, and spell in preschool, they will become better writers, readers, and spellers by the time they reach the first and second grades. This is, however, not true. The truth is that children only should be taught to write, read, and spell when their neurological pathways for writing, reading, and spelling have fully formed. There are many neuropsychologists, developmental specialists, occupational therapists and teachers who are concerned that our current trend in this country of pushing “academics” in preschool and kindergarden will result in even greater increases in the number of children, particularly boys, diagnosed with attentional problems and visual processing types of learning disabilities.</p>
+<p>In order for children to be able to sit still, pay attention, and remember abstract shapes, like letters and numbers, they first need to have developed their proprioceptive system. In my clinical practice I see children who are being asked to sit still at a desk who can’t yet “feel” where they are in space. They have to keep their muscles and body moving all the time or sit on their feet or wrap their feet around the legs of their chair in order for their mind to locate the position of their body. They also have difficulty balancing on one foot while their eyes are closed. Their drawing of a person is more like that of a younger child, being stick-like in form and lacking hands and feet. These children are often given the label of Attention Deficit Disorder because they appear fidgety in their movements, have difficulty paying attention, and have poorly developed fine-motor skills. In addition, these same children are often labeled as having learning disabilities in visual processing (for example, dyslexia or other types of non-verbal learning disabilities). They have difficulty recalling letters, numbers, and shapes that are shown to them, and they are unable to recognize letters, numbers, and shapes that are drawn with a finger on their back. These children have difficulty remembering the orientation and direction of letters and numbers when writing, reading, or spelling. They often will confuse the letter “b” with the letter “d” and may write the number 2 or number 3 backwards and not even notice.</p>
+<p>The proprioceptive system is strengthened by physical movements, like sweeping with a broom, pushing a wheelbarrow, carrying groceries, emptying the trash, pulling weeds, or hanging from monkey bars. When children do these types of activities they stimulate pressure receptors within their muscles, tendons, and joints, thereby allowing their minds to make a map of the location of these various pressure receptors within the body. A connection is made between the mind of children and the various parts of their physical body. In this way children develop a sense of where their body is in space (proprioception), and even if their eyes are closed, the children will be able to feel or sense the location of muscles, joints and tendons within their trunk, arms, legs, fingers, and toes. In addition, as the children move their arms, legs, hands, and feet forwards, backwards, up, down, left and right, they will start to gain a sense of the spaces around them. Now, when these children look at the shapes of letters and numbers, their eyes will follow and track the lines and curves. The memory of these movements will then imprint upon their mind. They will have the capacity to make mental pictures or images of these numbers and letters. They will easily remember the correct orientation of numbers like 2 and 3 when they are writing. There will be no more confusion between the letter “b” and the letter “d”. The correct orientation of the letter or number will be seen within the mind before it is written.</p>
+<p>This proprioceptive system impacts other areas in children’s life beyond being able to sit still and having a visual memory for abstract forms. It also affects their ability to fall asleep by themselves at night and to stay asleep throughout the night. When the proprioceptive system is not fully developed, children will have difficulties falling asleep at night by themselves. They will frequently wake up during the night and then need physical contact with their parents in order to fall back to sleep. Since their own proprioceptive system is not yet developed, lying next to their parent will activate their pressure receptors and allow them to feel their body, relax, and fall back to sleep. For these children, closing their eyes at night makes their body disappear because their mind has not made a connection to the pressure receptors within their muscles, tendons, and joints. This is why so many children want the light on at night when they go to bed. They need to see their body and the spaces around them since they can not “feel” their body when in darkness.</p>
+<p><b>Part II— Reading, Spelling, and Writing</b></p>
+<p>Our current educational system is teaching children to read in a way that doesn’t make sense developmentally. Children in preschool and kindergarten are expected to memorize letters and words before their minds have developed the necessary pathways to identify letters, easily read words, and comprehend what they are reading. We are asking these young children to read, when the only part of their brain that is developed and available for reading words is the right hemisphere.</p>
+<p>The right hemisphere first develops for reading, usually around four to seven years of age. This right part of the brain allows children to recognize words by sight. It enables children to focus on the first and last letters in a word and the overall length and shape of the word. It allows children to guess at words without paying much attention to spelling or matching sounds to letters (phonics). In contrast, the reading center in the left brain and the connecting bridge-like pathway between the left and the right brain don’t start developing until seven to nine years of age (girls may develop these pathways a little earlier, while some boys won’t develop these pathways until ten or eleven years of age). It is this reading center in the left brain that allows children to match sounds to letters and enables them to sound out words phonetically. Now they can remember more accurately how words are spelled.</p>
+<p>Because the reading center in the right brain sees abstract forms like letters and numbers as pictures, it makes sense to first teach children to read by relating the shapes of letters to actual pictures that children can relate to and draw. For example, the letter “M” can be represented by two mountain peaks with a valley in between. As teachers we can tell children that the sound “M” is the first sound one hears when saying the word “mountains”. Other examples might include drawing a king out of the letter “K”, a bunny out of the letter “B” or waves out of a “W”. What doesn’t make developmental sense is expecting children to just memorize the abstract shape of the letter “F” or memorize phrases like “F” as in the word FOX, “B” as in the word BOY, or “C” as in the word CROCODILE. These words do not make any visual sense to the reading center in the right brain. The letter “F” doesn’t look like a FOX, the letter “B” doesn’t look like a BOY, and the letter “C” does not look like a CROCODILE.</p>
+<p>When we push young children to read and they only have access to their right hemisphere for reading, we create learning problems for them in the future. Since children using the reading center of the right hemisphere look at the first and last letters of a word, the length of that word, and then make a guess, they will look at a word like “STAMP” and may guess that the word is “STOP’ or “STUMP”. If you show them the word, “TGOEHTER” they may read the word as “TOGETHER” but will not realize that the word is mis-spelled. Words like “FRIEND, FIND, and FOUND’’ as well as ‘’FILLED, FILED, and FLOOD’’, will all seem the same.</p>
+<p>It takes a lot of mental effort to read words using only sight memory. Sight memory was meant to be used for only small words. Children who are reading using only their right hemisphere often are exhausted after reading just a few paragraphs, and can only parrot back words or sentences by memory. In addition, their minds are busy deciphering each word and therefore are not free to create the pictures and actual scenes associated with the words they are reading. This limits their overall comprehension. These are the children who plagerize or copy a text verbatim, word by word, when they are doing a report. This is because they can only recall the exact words they read and therefore can’t summarize, condense, or comprehend ideas very easily.</p>
+<p>For all of these reasons, reading should be taught in school only after children have developed both their right and left reading centers. This will enable children to use sight memory for small words and the more efficient method of phonics for larger words. In addition, children need to have developed the “bridge” pathway that connects the two reading centers together. When children have developed this connection between the right and left cerebral hemispheres (bilateral integration), they can access both the right and left reading centers of their brain at the same time, and therefore can decide at any given moment whether to read a word by sight, if the word is short (a right hemisphere activity), or sound out the word phonetically if the word is long (a left hemisphere activity).</p>
+<p>A physical sign that children have developed bilateral integration and can now read both by sight memory and phonics is shown by their ability to do do the cross-lateral skip (swinging their opposite leg with opposite arm forward at the same time) without thinking or concentrating. This is because movements on the right side of the body are connected to the left hemisphere of the brain, while movements on the left side of the body are connected to the right side of the brain. If children can move their opposite arm and leg at the same time, then the right and left hemispheres of the brain are “talking” or connected to each other. If children can only skip using their feet or only skip extending the same arm with the same leg (the homolateral skip), they are not ready to read, since they can’t access both sides of the brain simultaneously.</p>
+<p>Children who can simultaneously access their reading centers in the right and left hemispheres of their brain will read easily and will create visual images and pictures in their mind related to the content of what they are reading. They will be able to discuss or write about what they have read using their own words, because they can replay the scenes in their mind and don’t have to think so much about the specific words used in each sentence. Therefore, they will have an easier time understanding the meaning behind the stories and books they are reading. Learning to spell will be easier too.</p>
+<p>Besides pushing children to read and spell before their minds are developed, we also ask them to hold a pencil and write before they are developmentally ready. I see very young children being asked to write with one hand while they still have overflow movements occuring in the fingers of the opposite hand. Before six or seven years of age, the vertical midline of the child is not fully integrated. When a child moves the fingers of one hand, the fingers on the other hand will also move, often without the child’s conscious awareness. Children should not be forced to write until this vertical midline is integrated. If we force children to hold a pencil or pen and write before they have integrated this vertical midline, they will develop a tense pencil grip, a cramped writing style, and a spatially compromised and jerky penmenship. It makes more sense first to teach children to write the small letters of the alphabet in cursive before teaching them to print these lower case letters. When doing form drawings or writing in cursive the right and left hemispheres are both active and working together. Printing of the lower case letters is a more abstract and advanced developmental task that requires the left hemisphere, which often isn’t developed enough for this task until seven to nine years of age. Girls may be ready to do this task by age six while boys often can’t do this task until after nine years of age.</p>
+<p>My greatest concern is that I am seeing more and more fourth, fifth, sixth, and even seventh graders from public and private schools who can’t spell easily and are still reading mostly by sight memory. They can now use their left brain to sound out words, but they approach every word they read first by using the reading center in right brain (by sight). For example, when I give these children a sentence to read like “Six byos wnet on a vaccaiton tohgeter and tehy wnet fsihing in a bule baot”, they often do not notice any of the misspelled words. Furthermore, when I have these same children read another paragraph where every word is spelled correctly, they often tell me that both paragraphs are exactly the same or only note one or two words where the spelling is different.</p>
+<p>My worry is that these children were pushed to read too early, when only their right brain was developed enough for reading. They compensated by learning to read everything using only sight memory. When the reading center in their left hemisphere finally developed, the habit was still to read by using the reading center of the right hemisphere. Therefore, these children first looked at the words in a sentence using sight memory, and if the words didn’t make any sense, then they accessed the left reading center to sound out the words. The problem was they weren’t using the reading centers in the right and left brains simultaneously. Many of these children still lacked bilateral integration in their physical movements as well as in their reading. For some of the children, reading was slow and took a tremendous amount of effort. For other children, their sight memory was so strong that they could read quickly but their comprehension and spelling were still poor. Neither group of children could easily picture the scenes from the words they read or remember how individual words were spelled.</p>
+<p>Many of these children need cranial therapy because of a history of a c-section birth, prolonged labor, induced labor, or use of suction forceps at delivery. In addition, these children need lots of cross-lateral types of movements (where the opposite arm moves at the same time as the opposite leg) to strengthen bilateral integration. Movements like walking or hiking with the arms swinging, swimming the various strokes, rock climbing and playing tennis will all strengthen bilateral integration. Also, specific movement therapies such as Therapeutic Eurythmy, Extra Lesson, Parelli horseback riding, Spacial Dynamics, Bal-A-Vis-X, Brain Gym, HANDLE, and sensory integration therapy will foster the development of these neurological pathways. These movements need to be non-competitive, and the therapists needs to avoid overstimulating the children or activating their fight and flight “stress” nervous systems. For neurological pathways do not form well when children are stressed. Once these pathways and connections are formed, many of these children will need tutoring to re-learn the rules of spelling and phonics and to start using their left brains for reading. Even if these children were taught phonics in the first or second grade, they need to revisit these reading skills because they didn’t have access yet to the reading center in their left brain.</p>
+<p>In addition, when children feel loved unconditionally (loved for who they are and not what they do), they will work hard to overcome any challenges. As parents, teachers and therapist for our children, we need to BE PRESENT when working with children and experience the joy in each moment. Being fully present with children when doing any type of movement work or therapy will create the most profound healing environment for their mind and their entire Being will flourish.</p>
+<p><b>Part III— Prevention of Learning Disabilities</b></p>
+<p>Overall, schools and parents can support a child’s learning by serving healthy foods rich in protein, good quality fats (especially omega 3 fatty acids), fresh fruits, and vegetables, while eliminating partially-hydrogenated oils and trans fats, which occur when cooking or frying foods in corn oil. Adequate sleep will increase the percentage of rapid eye movement or REM sleep. A lack of sleep leads to less REM sleep and therefore, less consolidation of the previous day’s learning. Extremely limiting screen time (television, videos, and computer games) and eliminating it altogether on school nights, will keep the mind free to do its own picturing and not stress it with violent images and rapid sequences of pictures that the brain can not fully process. Regular rhythms and routines in eating and sleeping as well as daily activites will promote a more relaxed nervous system for learning.</p>
+<p>In addition, children can’t learn and neurological pathways can’t form as easily when children’s nervous systems are experiencing stress. Forcing children to write, read, and spell and giving them “standardized” tests before they are developmentally ready, will stress their nervous systems. Furthermore, children will dislike reading and will not want to go to school. If we insist on pushing writing, reading and spelling before the children’s minds are ready, we will continue to create an epidemic of behavior and learning difficulties, especially in our boys.</p>
+<p>First grade is the time to introduce lots of form drawing, learn the capital letters as pictures that children can draw, and practice cursive writing by drawing each small case letter in a repetitive series (eg. drawing the cursive form of “c” ,over and over like the waves of the ocean). Over the next year or two, as the majority of children in the classroom strengthen their proprioceptive skills and integrate their right and left hemispheres (as evidenced by their ability to stand on one foot with their eyes closed, remember the shapes that are drawn on their backs, jump rope forward and backwards by themselves, and easily perform the cross lateral skip), the children can be more formally taught to read, spell, and print the lower case letters.</p>
+<p>It is time to remove the desks from kindergartens and preschools. Our preschools and kindergartens need to fill their curriculculms with play consisting of lots of sensory intergration activities that will strengthen fine motor movements, visual motor abilities, balance, muscle tone, proprioception, as well as strengthen children’s social and emotional development. Activities like imaginary play, climbing, running, jumping, hopping, skipping, walking the balance beam, playing circle games, singing, playing catch, doing meaningful chores, painting, coloring, playing hand clapping games, doing string games, and fingerknitting will strengthen their minds for learning. Children need these healthy, harmonious, rhythmic, and non-competitive movements to develop their brains. For it is the movements of their body and their love for learning that create the pathways in their mind for reading, writing, spelling, mathematics, and creative thinking.</p>
+<p>Ref:  www.youandyourchildshealth.org Susan R. Johnson</p>
+																	</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+
+				
+			<div id="comments">
+
+
+
+
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+
+			<li id="search" class="widget-container widget_search">
+				<form role="search" method="get" id="searchform" class="searchform" action="../">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form>			</li>
+
+			<li id="archives" class="widget-container">
+				<h3 class="widget-title">Archives</h3>
+				<ul>
+						<li><a href='../2026/06/'>June 2026</a></li>
+	<li><a href='../2026/05/'>May 2026</a></li>
+				</ul>
+			</li>
+
+			<li id="meta" class="widget-container">
+				<h3 class="widget-title">Meta</h3>
+				<ul>
+										<li><a rel="nofollow" href="../_unavailable.html">Log in</a></li>
+									</ul>
+			</li>
+
+					</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="footer-widget-area" role="complementary">
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+											</ul>
+				</div><!-- #first .widget-area -->
+
+
+
+
+			</div><!-- #footer-widget-area -->
+
+			<div id="site-info">
+				<a href="../" title="a Julia Hannon original" rel="home">
+					a Julia Hannon original				</a>
+							</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress.				</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<p class="woocommerce-store-notice demo_store">Irish Hand-Made Beanbags and other Sensory Products <a href="#" class="woocommerce-store-notice__dismiss-link">Dismiss</a></p>	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"..\/_unavailable.html","is_cart":"","cart_redirect_after_add":"yes"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_1c825ef898de51a8fa6ebada1d1920ed","fragment_name":"wc_fragments_1c825ef898de51a8fa6ebada1d1920ed"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/js/jquery.zoom_.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/js/jquery.bxSlider_2.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var obj = {"zlevel":"3"};
+var wdm_zwoom_object = {"sourceimageurl":null,"previous_image":"..\/wp-content\/plugins\/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs\/images\/prev.png","next_image":"..\/wp-content\/plugins\/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs\/images\/next.png","thumbnail_image_height":"","thumbnail_image_width":"150","single_image_width":"300","single_image_height":"","admin_ajax_url":"https:\/\/www.sensorybeanbags.com\/wp-admin\/admin-ajax.php","sourceimageurlforzoom":null,"sourceimagesinglesrc":null,"zoomleveloption":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/js/swap_images.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/wens-responsive-column-layout-shortcodes/assets/js/custom.js'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min.js'></script>
+    	<script type="text/javascript">
+		(function($) {
+		$(function(){
+			if( typeof(wc_product_sliders_app) !== 'undefined' ) {
+				wc_product_sliders_app.start();
+			}
+		});
+		})(jQuery);
+		</script>
+    </body>
+</html>

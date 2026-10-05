@@ -229,6 +229,17 @@ body. All are in her PDF if wanted.
 Write real alt text — many visitors use screen readers. If any new photograph
 shows an identifiable child, get the parent's written permission first.
 
+## 4b. The old WordPress site
+
+WordPress 5.0 and WooCommerce 3.5 (2018), Twenty Ten theme. Two posts appeared
+on it in 2026 by an author "Oliver": "0xc14fa6a5" (13 May) and "0x9a0aa386"
+(29 June), each saying only "Testing …" and tagged with its own title. On
+software this old that looks like automated probing — something checking it
+can publish — rather than anything Julie wrote. They are in the archived copy
+as they were (sidebar "Archives: June 2026, May 2026"). Worth checking who
+"Oliver" is in the WordPress users, and changing the admin passwords; the site
+should be switched off soon after the move rather than left running.
+
 ## 5. Legal
 
 There is no privacy or cookie policy, because the site sets no cookies, runs no
@@ -238,7 +249,8 @@ provider's own terms will need linking.
 
 ## 6. Before going live
 
-- [ ] **While the old site is still live:** run `python3 tools/mirror_legacy.py`, check it reports no broken links, browse `/legacy/` on the preview, and commit `legacy/`. Once the domain points here the old site can no longer be copied from sensorybeanbags.com. Keep the WordPress hosting until this is done.
+- [x] Copy of the old site in `legacy/`, made 5 October 2026 with `python3 tools/mirror_legacy.py --start https://www.sensorybeanbags.com/`: 190 pages, 600 files, 65 MB, no broken links. Only 28 are real pages and 8 products; the rest are pages WordPress makes by itself (83 image pages, 59 shop filter pages, archives). Missing on the old site too, so not copied: `/author`, `/product-information/order-form-2`, two zoom-plugin images. To refresh it, run the same command while the old site is still up.
+- [ ] Nathan to browse `/legacy/` on the preview before the domain moves.
 - [x] Shop question settled (October 2026): no cart or card payments at launch; orders by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
 - [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site). Do not replace it with one that blocks `/legacy/`: those pages carry their own `noindex`, which search engines only see if they can fetch them.

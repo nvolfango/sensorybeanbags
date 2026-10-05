@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8" />
+
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="../wp-content/themes/twentyten/style.css" />
+    <!-- Slider Template -->
+    <script type="text/template" id="wc_product_slider_widget_item_tpl">
+    	{{ var srcset = '', sizes = ''; }}
+		{{ if ( typeof img_srcset !== 'undefined' ) { srcset = img_srcset; } }}
+		{{ if ( typeof img_sizes !== 'undefined' ) { sizes = img_sizes; } }}
+
+		{{ var item_title_html = ''; }}
+				{{ if ( item_title != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-name"><a href="' + item_link + '">' + item_title + '</a></div>'; }}
+		{{ } }}
+				{{ if ( product_price != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-price">'+ product_price +'</div>'; }}
+		{{ } }}
+				{{ var cycle_desc = '<a class="cycle-product-linked" href="' + item_link + '">View this Product</a>'; }}
+				<img class="cycle-wc-product-image"			data-cycle-number="{{= index_product }}"			srcset="{{- srcset }}"			sizes="{{- sizes }}"			src="{{= img_url }}"			name="{{- item_title_html }}"			title=""			data-cycle-desc="{{ if ( item_link != "" ) { }} {{- cycle_desc }}{{ } }}"            style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "            {{ if ( typeof extra_attributes !== "undefined" && extra_attributes != "" ) { }} {{= extra_attributes }} {{ } }}        />
+	</script>
+
+    <script type="text/template" id="wc_product_slider_mobile_item_tpl">
+    	{{ var srcset = '', sizes = ''; }}
+		{{ if ( typeof img_srcset !== 'undefined' ) { srcset = img_srcset; } }}
+		{{ if ( typeof img_sizes !== 'undefined' ) { sizes = img_sizes; } }}
+
+		{{ var item_title_html = ''; }}
+		{{ if ( item_title != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-name"><a href="' + item_link + '">' + item_title + '</a></div>'; }}
+		{{ } }}
+		{{ if ( product_price != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-price">'+ product_price +'</div>'; }}
+		{{ } }}
+		{{ var category_tag_link = ''; }}
+		{{ if ( category_link != '' ) { }}
+			{{ category_tag_link = '<div class="cycle-mobile-skin-category-linked-container"><a class="cycle-category-linked" href="' + category_link + '">View all Products in this Category</a></div>'; }}
+		{{ } }}
+		{{ if ( tag_link != '' ) { }}
+			{{ category_tag_link = '<div class="cycle-mobile-skin-tag-linked-container"><a class="cycle-tag-linked" href="' + tag_link + '">View all Products in this Tag</a></div>'; }}
+		{{ } }}
+		{{ if ( is_used_mobile_skin == 'true' ) { }}
+			<img class="cycle-wc-product-image"				srcset="{{- srcset }}"				sizes="{{- sizes }}"				src="{{= img_url }}"				title="{{- item_title_html }}"				data-cycle-desc="{{- category_tag_link }}"				style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "			/>
+		{{ } else { }}
+			<img class="cycle-wc-product-image"				srcset="{{- srcset }}"				sizes="{{- sizes }}"				src="{{= img_url }}"				title="{{- item_title_html }}"				alt=""				style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "			/>		{{ } }}
+	</script>
+
+    <script type="text/template" id="wc_product_slider_card_item_tpl"><div></div>
+	</script>
+
+    
+<!-- This site is optimized with the Yoast SEO plugin v9.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Weighted Products Information &raquo; a Julia Hannon original</title>
+<meta name="description" content="Weighted products Information including information on Weighted Blankets, Weighted Snakes, Weighted Lap-Pads and Care and Washing."/>
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Weighted Products Information &raquo; a Julia Hannon original" />
+<meta property="og:description" content="Weighted products Information including information on Weighted Blankets, Weighted Snakes, Weighted Lap-Pads and Care and Washing." />
+<meta property="og:url" content="./" />
+<meta property="og:site_name" content="a Julia Hannon original" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Weighted products Information including information on Weighted Blankets, Weighted Snakes, Weighted Lap-Pads and Care and Washing." />
+<meta name="twitter:title" content="Weighted Products Information &raquo; a Julia Hannon original" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"..\/","sameAs":[],"@id":"..\/#organization","name":"SensoryBeanBags","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"..\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='../wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-theme-css'  href='../wp-includes/css/dist/block-library/theme.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flowplayer-css-css'  href='../wp-content/plugins/easy-video-player/lib/skin/skin.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fbshare-stylesheet-css'  href='../wp-content/plugins/woocommerce-facebook-share-like-button/css/fbshare.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='../wp-content/plugins/woocommerce/assets/css/woocommerce.css' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='bxslidercss-css'  href='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/css/jquery.bxslider.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='column-styles-css'  href='../wp-content/plugins/wens-responsive-column-layout-shortcodes/assets/css/style.css' type='text/css' media='all' />
+<link rel='stylesheet' id='twentyten-block-style-css'  href='../wp-content/themes/twentyten/blocks.css' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SDT_DATA = {"ajaxurl":"https:\/\/www.sensorybeanbags.com\/wp-admin\/admin-ajax.php","siteUrl":"..\/","pluginsUrl":"..\/wp-content\/plugins","isAdmin":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/easy-video-player/lib/flowplayer.min.js'></script>
+<meta name="generator" content="WordPress 5.0.22" />
+<meta name="generator" content="WooCommerce 3.5.10" />
+<!-- This content is generated with the Easy Video Player plugin v1.1.7 - http://noorsplugin.com/wordpress-video-plugin/ --><script>flowplayer.conf.embed = false;flowplayer.conf.keyboard = false;</script><!-- Easy Video Player plugin -->	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	</head>
+
+<body class="page-template-default page page-id-941 custom-background woocommerce-demo-store woocommerce-no-js">
+<div role="note" style="position:relative;z-index:2147483647;margin:0;padding:10px 16px;background:#1F5F5B;color:#fff;font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif;text-align:center">This is an archived copy of the old Sensory Beanbags website, kept as a backup. <a href="../../" style="color:#fff;font-weight:700;text-decoration:underline">Go to the current website</a></div>
+
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="../" title="a Julia Hannon original" rel="home">a Julia Hannon original</a>
+					</span>
+				</div>
+				<div id="site-description">An excellent tool for sensory input for kids. Handmade in Ireland</div>
+
+										<img src="../wp-content/uploads/2018/08/SensoryBanner-Transparent.jpg" width="940" height="198" alt="" />
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu-header"><ul id="menu-sidemenu" class="menu"><li id="menu-item-1930" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1930"><a href="../">#1892 (no title)</a></li>
+<li id="menu-item-660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-660"><a href="../shop/">Shop</a></li>
+<li id="menu-item-944" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-944"><a href="../product-information/">Product Information</a>
+<ul class="sub-menu">
+	<li id="menu-item-2882" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2882"><a href="../choosing-fabric-colours/">Choosing Fabric Colours and pictures below.</a></li>
+	<li id="menu-item-514" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-514"><a href="../sensory-beanbag-information/">Sensory Beanbag Information</a></li>
+	<li id="menu-item-945" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-941 current_page_item menu-item-945"><a href="./">Weighted Products Information</a></li>
+	<li id="menu-item-1669" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1669"><a href="../the-proprioceptive-system-and-learning-development/">The Proprioceptive System and Learning / Development</a></li>
+</ul>
+</li>
+<li id="menu-item-506" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-506"><a href="../reference-articles-autism/">Reference Articles Autism</a>
+<ul class="sub-menu">
+	<li id="menu-item-508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-508"><a href="../reference-articles-autism/therapeutic-beanbags-children/">Therapeutic Beanbags (Children Autism)</a></li>
+	<li id="menu-item-513" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-513"><a href="../reference-articles-autism/home-2/">Therapeutic Sensory Products – Handmade in Cork, Ireland</a></li>
+	<li id="menu-item-509" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-509"><a href="../reference-articles-autism/sensory-beanbags-and-children/">Sensory Beanbags and Children</a></li>
+	<li id="menu-item-507" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-507"><a href="../reference-articles-autism/beanbags-sensory-integartion-therapy-autism/">Beanbags – Sensory Integration Therapy (Autism)</a></li>
+	<li id="menu-item-953" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-953"><a href="../reference-articles-autism/proprioceptive-system-sensory-seeking-behaviours/">Proprioceptive System – Sensory Seeking Bahaviours</a></li>
+	<li id="menu-item-952" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-952"><a href="../the-proprioceptive-system-and-learning-development/">The Proprioceptive System and Learning / Development</a></li>
+</ul>
+</li>
+<li id="menu-item-511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-511"><a href="../testimonials/">Testimonials</a></li>
+<li id="menu-item-646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-646"><a href="../frequently-asked-questions-faq/">Frequently Asked Questions (FAQ)</a></li>
+<li id="menu-item-673" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-673"><a href="../about-julie-hannon/">About Julia</a></li>
+<li id="menu-item-782" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-782"><a href="../contact-julie-hannon/">Contact Julie Hannon</a></li>
+<li id="menu-item-1716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1716"><a href="../agency-testing-approvals/">Agency Testing / Approvals</a></li>
+<li id="menu-item-1452" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1452"><a href="../product-information/price-list/">Price List</a></li>
+<li id="menu-item-1817" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1817"><a href="../_unavailable.html">Cart</a></li>
+<li id="menu-item-1820" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1820"><a href="../_unavailable.html">Checkout</a></li>
+<li id="menu-item-1819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1819"><a href="../_unavailable.html">My Account</a></li>
+<li id="menu-item-2886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2886"><a href="../videos/">Videos</a></li>
+</ul></div>			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="post-941" class="post-941 page type-page status-publish hentry">
+											<h1 class="entry-title">Weighted Products Information</h1>
+					
+					<div class="entry-content">
+						<p style="margin-bottom: 16.3pt;"> Sensory Seeking Behaviours associated with the Proprioceptive System.  See the Reference Article &#8216;<a href="../reference-articles-autism/proprioceptive-system-sensory-seeking-behaviours/">The Proprioceptive System &#8211; Sensory Seeking Behaviours</a>&#8216; for a more detailed explanation.</p>
+<p><strong>A guide when choosing a weighted blanket.</strong></p>
+<p>Some of the things we take into consideration when choosing the weight.  A child&#8217;s deep pressure needs can change from day to day.  There will be days when there is a craving for more weight than usual to calm the nervous system.  Other times a mere suggestion of weight is enough to make a difference.  We look for the middle ground, remembering there is a response time and the longer  a blanket is placed on a person the more body feedback is available.  In 10 to 20 minutes there is a noticable difference and then it might not change alot after that.  We generally say 10% of the childs weight give or take a lb or two.  We take the age, weight, mustle tone, health and deep pressure needs into account.   It is importand that the blanket is not cumbersome in any way, that it be so heavy which might lead to it not being used. A  user friendly blanket can be picked up easily and  carried around from room to room.  See table guide followed by FAQs.</p>
+<p>The table below gives a guideline  for a Large size weighted blanket &#8211; 94cm x  124cm &#8211; three quarters the length of a single bed.   Suitable for ages 3 to 7  years approx.</p>
+<p>For a blanket the full length of a single bed &#8211; 102cm x 158cm an additional  1 lb is added to the blanket weight.  Suitable for ages 6 years and  upwards.</p>
+<table style="height: 1146px;" width="644">
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Age</strong></td>
+<td><strong>Height</strong>              <strong> kg </strong>                     <strong>lbs </strong>                   <strong>Blanket  94cm x 124</strong></td>
+</tr>
+<tr>
+<td> 3</td>
+<td> 95.2cm                 14.0 kg                31.0lbs                              3lb</td>
+</tr>
+<tr>
+<td> 4</td>
+<td> 102.3cm              (16.3 kg)             36.0bs                                3.5/4lb</td>
+</tr>
+<tr>
+<td> 5</td>
+<td> 109.2cm              (18.4kg)            40.5lbs                                 4.5lb</td>
+</tr>
+<tr>
+<td> 6</td>
+<td> 115.5cm               (20.6kg)            45.5lbs                                5lb</td>
+</tr>
+<tr>
+<td> 7</td>
+<td> 121.9cm                (22.9kg)          50.5lbs                               5lb</td>
+</tr>
+<tr>
+<td> 8</td>
+<td> 128cm                  (25.6 kg)         56.5lbs                                 5.5/6lb</td>
+</tr>
+<tr>
+<td> 9</td>
+<td> 133.3cm               (28.6 kg)          63.0bs                               6lb</td>
+</tr>
+<tr>
+<td> 10</td>
+<td> 138.4cm               (32.0 kg)         70.5lbs                                7lb</td>
+</tr>
+<tr>
+<td> 11</td>
+<td> 143.5cm                (35.6 kg)          78.5lbs                               8lb</td>
+</tr>
+<tr>
+<td> 12</td>
+<td> 149.1                    (39.9 kg)           88.0lbs                               9lb</td>
+</tr>
+<tr>
+<td> 13</td>
+<td> 156.2cm               (45.3 kg)          100.0lbs                             10lb</td>
+</tr>
+<tr>
+<td> 14</td>
+<td> 163.8cm               (50.8 kg)        112.0lbs                                11lb</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2><strong><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: black;">Weighted Blankets  FAQ</span></strong></h2>
+<p>My son is  10 years old but quite slight 54.5lbs.  What blanket weight would you suggest. I want that he be able to carry it around.</p>
+<p><strong>I would suggest a 6lb Large blanket 94cm x 124cm at the time.  Later on had certain thoughts about the weight.  So on visiting I brought  both a  5lb and a 6lb to try out.  As the 10 year old was interacting with the blanket I could see a bit of floppy muscle tone control demonstrated.  Even though he seamed perfectly relaxed and ok when the blanket was placed on his body it was only  when he was picking up both blankets that the parent and myself noticed  that he struggled a bit more to pick up the 6lb.  A little bit of struggle is good.  Too much and the blanket may not get used.  So we decided to go with 5lb large blanket.</strong></p>
+<p>Hi,  I am wondering do you have any weighted blankets in stock.  It&#8217;s for my Godson for Christmas he is 5 yrs old .  I don&#8217;t fully understand how to buy the correct one but I am told a 10lb one would be suitable for him?<br />
+Thanking you in Advance.</p>
+<p><strong>Generally,  when choosing a weighted blanket  we take into account the child&#8217;s body weight ,temperament, health, well being and sensory needs.  The general rule of thumb is 10% of the child’s body weight (give or take a lb or two). Depending on the child and their deep pressure needs &#8211; for example a very active energetic child we might add on 1lb to the 10% of the body weight.  For a more passive quite child we might stay at the 10%.   If the parent is unsure we work together in getting the correct weight.  </strong><strong>A 10lb</strong> <strong>blanket would NOT be suitable for a 5 year old.  Much too heavy.  </strong><strong>The average weight of a 5 year old  boy is  18.4kg (40.5lbs)  </strong><strong>  Recommended blanket weight for this age  is 5lb.  R</strong><strong>ecommended blanket size  Large  94cm x 125cm  or X Large.                                                        </strong></p>
+<p>Hi,  I&#8217;m an OT and I  have a friend who is interested in a weighted blanket for her daughter.  I don’t work in early intervention so I have never prescribed for this age group.  She will be three shortly and weighs 13kg ( 28lbs)</p>
+<p>Do you think it would be ok to use a weighted blanket with a child this small?  I know the lightest you do is slbs. Would a snake or lap pad be better?  It is mostly for winding down to sleep and watching tv too. Thanks</p>
+<p><strong>My experience  is mostly with 4 year olds and upwards, however a blanket with a low weight  2lb/ 2.5lbs and a  blanket size 97cm x 92cm could  be very beneficial for this age.  Just a suggestion of weight can be enough to give that little bit of deep pressure, can be reassuring and helps with self soothing.  A child can carry this around and it will cover their whole body. A lap can be used but may be more suitable to the organisation of a slightly other child.  One way to try out the blanket (and parents have told me this) &#8211; it could be used for the period of winding down to sleep and then removed or throughout the day used for 10 to 20 minute intervals or when there is a need</strong></p>
+<p><strong>Depending on the child, their health/vitality and deep pressure needs there are the extra precautions to be taken with this age.   The child would need to be able to remove the blanket independently.  Generally the warm velvety hug given from these blankets are very reassuring and comforting for the young child and offer good body regulation in times of need,</strong></p>
+<p><strong>Choosing a lap pad, 5% of the child&#8217;s weight  is recommended.     </strong><strong>Recommended blanket medium for 3 year old.   2lb /2.5lb to 3lb       </strong><strong>Recommended  lap  for 3 year old  1.5lbs or 2lbs.</strong></p>
+<p>We got a sensory beanbag from you for our son in 2016.  He really gets great use out of the sensory beanbag.  I recently attended a Kondident Kidz Social Skills course, where Sinead Moynihan OT was displaying your products.  We would like to get a lap pad from you please.  I think you had them in blue.   Is one colour more suitable?   That is the plain one without  the eyes and tongue.</p>
+<p><strong> Yes I do a plain lap 18cm 92cm in blue.  I sort of  want this  lap pad to have the sensation of how it might feel to have a cat or puppy sitting on your lap.  It would feel silky soft and malleable and fluid as opposed to a flat fixed item that might leave little to the imagination.    One  colour for flow and ease on the  eye.</strong></p>
+<p>I got your details from Irish Society of Autism. My interest is in a weighted blanket for adult male (in care) who may benefit from same as he has symptoms of being Hyposensitive.</p>
+<p>He has not been diagnosed as same.   I&#8217;m trying to understand his needs and from his need to squeeze people&#8217;s arms tightly at random times which seems to be him looking for pressure in order to feel something.   I&#8217;m following it up with your help.</p>
+<p>I live in Cork city and wonder would it be possible at all that this person could try out a blanket at your location to see if he would feel the benefit of it? Or what else would you suggest.</p>
+<p><strong> Thanks for your enquiry.  </strong><strong>The squeezing as you say could be an indicator that this person could benefit  from deep pressure, a tool to help him be more at home in his own body.   Certainly worth trying out.</strong></p>
+<p><strong>I do not have a shop to visit but I can visit you at your location to try out the blankets. If that works for you can let me know weight, height and age of this person.</strong></p>
+<p>How long does it take for weighted blanket order?</p>
+<p><strong>Often we have blankets already made up.  If not it can take 10 days or so from time of order.</strong></p>
+<p>Can you please supply me with fire retardant information about the materials used in the weighted blankets please.</p>
+<p><strong>I can forward Fire Retardant Certification.  This assessment can also be found on the Home Page on website</strong></p>
+<p>I am just inquiring about your weighted blankets on your website :).  I am quite a restless sleeper and suffer from a bit of anixety and I have just discovered the weighted blankets a very impressive idea :). I want to inquire about the different weights of blankets for the adults, does the weight of the blanket correspond with the weight of the person don&#8217;t know how it works. Just want to double check before I buy one as I would be afraid I might buy one that is too heavy!.  Hope to hear from you.</p>
+<p><strong>When choosing the weight for a blanket the general rule of thumb is 10% of a persons’ weight give or take a couple of pounds.  And yes some people tend towards lighter or heavier.  In general 10% of an adult&#8217;s weight can sometimes make for a heavy blanket.  For example if a persons&#8217; weight is 140 lbs 10% of that weight would be equivalent to a 14lb blanket (6.35kg).  A 14lb blanket can be a very heavy blanket and often in an adults&#8217; case, especially for women it might be recommended to go down in weight 2 or 3 lbs i.e. (11lbs) for a more user friendly comfortable blanket.</strong></p>
+<p><strong>I personally use a weighted blanket and have chosen to go with 10% of my body weight which was 14lbs.  At first I thought it was ok and I enjoyed the weight  but over time and through the seasons I found it to be too heavy and cumbersome.  I now use a blanket 11lbs and  find it more comfortable.</strong></p>
+<p><strong>X-Large size is suitable for adults 100cm by 158cm</strong></p>
+<p><strong>Can custom make to any width.</strong></p>
+<p>We are hoping to order some weighted items for our son and my husband&#8217;s friend Paul suggested we get in touch with you as he has ordered from you previously and highly recommended you. We are unsure of sizes, etc and we were hoping you might be able to offer us some advice and an idea on prices also. Kind Regards, Sharon</p>
+<p><strong> If you happen to be  in the Cork area we can arrange a visit to show some items if that works.  Choosing a blanket we are thinking of 10% of the child&#8217;s weight  give or take a lb or two.  We look at his height to determine the best size as he gets older.</strong></p>
+<p>Many thanks for your time today re discussion on weighted blankets and use with our residents here in St.Vincent’s.  Can we go ahead and order 2 large blankets with 6lbs of weight as recommended.  <em>Practice Development , S</em><em>t.Vincent&#8217;s Hospital</em></p>
+<p>I have just stumbled across your website.  I am an occupational therapist working with adults with autism.  One of the adults I am working with at the moment would really benefit from a weighted blanket.  He is currently providing himself with deep pressure while lying on the couch by wrapping himself in a blanket and relaxing.</p>
+<p>This person is 28 years old and is 17 stone.</p>
+<p>Could you make any recommendations for this person?  Are your blankets waterproof/washable?</p>
+<p><strong>Thanks for your enquiry.  Yes my blankets are washable.  To wash simply place inside a duvet cover and washed on a regular cycle.</strong></p>
+<p><strong>They are not waterproof. Please find information attached regarding care and washing and flamability certification.</strong></p>
+<p><strong>Recommended  weight,  generally we think of 10% of the persons weight and we go from there depending on the vitality health and well being of a person. As you can appreciate a   very active strong person who gets a lot of exercise can probably handle more weight than a person who gets little exercise.</strong></p>
+<p><strong>17 stone equals 238lbs</strong></p>
+<p><strong>10% of 238 is 23lbs</strong></p>
+<p><strong>Recommended blanket weight 19lb to 23lbs</strong></p>
+<p><strong>Recommended blanket size 125cm x 158cm</strong></p>
+<p>As per our telephone conversation earlier this evening can you please advise if you have a weighted blanket 5/6 lb for a 4 year old boy in stock.  I would also like to order the BeanbagX large -chocolate brown</p>
+<p><strong>Recommended 5lb blanket  for 4 year old.  Yes I have both beanbag and blanket in stock.</strong></p>
+<p>Your website was recommended to me by my  OT.  I am looking for a bean bag and a sensory weighted blanket for my daughter  Marydith.  She suffers  from sensory processing disorder, she also has aspergers and anxiety&#8230;.I was hoping the sensory blanket would help her in getting to sleep at night as this is a problem for us so I suppose I would require a large blanket as I think we would mainly using this on her bed.  The bean bag would be for more during day etc&#8230;.again the OT recommends a large size that would offer Marydith  a hug type feeling.</p>
+<p>I would like your help in getting the size / weight of these items correct for Marydith. She is 12 and would be of slim build and approx 5.2 in height&#8230;</p>
+<p>Also re colour &#8211; I can see choice of colour but are the colours available to view on your site. Many thanks G<em>illian</em></p>
+<p><strong>I can arrange a visit if that suits and bring a few sizes of blankets and 2 sizes of beanbags.  Can you let me know Marydith&#8217;s weight please.  I would recommend an x-large size blanket</strong></p>
+<p>Hi, What is the best color for 2 blankets for our primary  school in Carrigaline</p>
+<p><strong>Hi, Royal blue is a very popular colour for schools</strong></p>
+<p><strong>Sometimes choosing the school colours works.</strong></p>
+<p><strong>Blue one side and red the underside is also a common colour for schools</strong></p>
+<p><strong>Solid colours are preferable and recommended for calm  i.e.  meditarian turquoise, royal blue, all grey, all forrest green,  all cerice.</strong></p>
+<p><strong>Choosing colours which represents softness and warmth – cerice pink</strong></p>
+<p><strong>A colour for vitality and energy – fire engine red</strong></p>
+<p><strong>A colour that’s close to nature – forrest/bottle green, emerald green, tan</strong></p>
+<p><strong>A Colour that’s neutral &#8211;  mid grey</strong></p>
+<p><strong>There are a variety of prints in stock also</strong></p>
+<p><strong>Please find attached prints I have in stock and prints I am ordering at the moment.</strong></p>
+<p>How can you use weighted snakes?</p>
+<p><strong> S<span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: #444444;">hort wide snakes, long narrow snakes and lap pads are available.   The snakes can be used  for the dual purpose for shoulder and lap.  Segmented in a way that allows the weight to sit firmly and snugly on shoulders.  These lap snakes can be placed on shoulders or laid on a child&#8217;s lap or dropped over  thighs.  It can be hugged close to the body.   Super soft squishy fleece offers warmth and tactile sensation.   Another tool that can help in sending grounding signals to the body.  The right weighted item can ground anxiousness or ease fidgeting  enough to just allow a child/adult  to enjoy their surroundings and regroup themselves when needed.  Comes in two choices a  multi colour one and a plain colour.</span></strong></p>
+<h1 style="margin-bottom: 16.3pt;"><b><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: black;">Care and Washing of All Weighted Products</span></b></h1>
+<p style="margin-bottom: 16.3pt;"><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: #444444;">The blanket can be washed in your machine at 40 degrees.     It can withstand warm temperatures but cold water is often recommended to protect colour and fabric.   Hand washing is also protective of blanket.</span></p>
+<p style="margin-bottom: 16.3pt;"><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: #444444;">The blanket can be dried on a regular cycle.   Cotten fabric require more drying time than synthetics such as fleece.  It is recommended  to check the blanket every 15 to 20 minutes in the dryer.  Line drying is often  recommended for preservation of blanket fabric.</span></p>
+<h2 style="margin-bottom: 16.3pt;"><b><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: black;">Poly Pellets weights</span></b></h2>
+<p style="margin-bottom: 16.3pt;"><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: #444444;">The pellets  are a smooth and round polypropylene product.  They are non-toxic  and hypoallergenic.  They are also non-porous making them withstand washing temperatures. The poly pellets weights are evenly distributed throughout the blanket.  All seams on weighted items are doubled stitched with commercial thread for reinforcement and safety.</span></p>
+<p style="margin-bottom: 16.3pt;"><span lang="GA" style="font-size: 11.0pt; font-family: 'Georgia','serif'; color: #444444;">Allow 10 days to two weeks or so from time of order for all custom made blankets.</span></p>
+<p style="margin-bottom: 16.3pt;">All of the products are hand-made here in County Cork, Ireland.</p>
+<p>CE approved.</p>
+<p style="margin-bottom: 16.3pt;">10 year guarantee</p>
+																	</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+
+				
+			<div id="comments">
+
+
+
+
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+
+			<li id="search" class="widget-container widget_search">
+				<form role="search" method="get" id="searchform" class="searchform" action="../">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form>			</li>
+
+			<li id="archives" class="widget-container">
+				<h3 class="widget-title">Archives</h3>
+				<ul>
+						<li><a href='../2026/06/'>June 2026</a></li>
+	<li><a href='../2026/05/'>May 2026</a></li>
+				</ul>
+			</li>
+
+			<li id="meta" class="widget-container">
+				<h3 class="widget-title">Meta</h3>
+				<ul>
+										<li><a rel="nofollow" href="../_unavailable.html">Log in</a></li>
+									</ul>
+			</li>
+
+					</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="footer-widget-area" role="complementary">
+
+				<div id="first" class="widget-area">
+					<ul class="xoxo">
+											</ul>
+				</div><!-- #first .widget-area -->
+
+
+
+
+			</div><!-- #footer-widget-area -->
+
+			<div id="site-info">
+				<a href="../" title="a Julia Hannon original" rel="home">
+					a Julia Hannon original				</a>
+							</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress.				</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<p class="woocommerce-store-notice demo_store">Irish Hand-Made Beanbags and other Sensory Products <a href="#" class="woocommerce-store-notice__dismiss-link">Dismiss</a></p>	<script type="text/javascript">
+		var c = document.body.className;
+		c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+		document.body.className = c;
+	</script>
+	<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"..\/_unavailable.html","is_cart":"","cart_redirect_after_add":"yes"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_1c825ef898de51a8fa6ebada1d1920ed","fragment_name":"wc_fragments_1c825ef898de51a8fa6ebada1d1920ed"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/js/jquery.zoom_.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/js/jquery.bxSlider_2.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var obj = {"zlevel":"3"};
+var wdm_zwoom_object = {"sourceimageurl":null,"previous_image":"..\/wp-content\/plugins\/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs\/images\/prev.png","next_image":"..\/wp-content\/plugins\/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs\/images\/next.png","thumbnail_image_height":"","thumbnail_image_width":"150","single_image_width":"300","single_image_height":"","admin_ajax_url":"https:\/\/www.sensorybeanbags.com\/wp-admin\/admin-ajax.php","sourceimageurlforzoom":null,"sourceimagesinglesrc":null,"zoomleveloption":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/zwoom-woocommerce-product-image-zoom-extension-by-wisdmlabs/js/swap_images.min.js'></script>
+<script type='text/javascript' src='../wp-content/plugins/wens-responsive-column-layout-shortcodes/assets/js/custom.js'></script>
+<script type='text/javascript' src='../wp-includes/js/wp-embed.min.js'></script>
+    	<script type="text/javascript">
+		(function($) {
+		$(function(){
+			if( typeof(wc_product_sliders_app) !== 'undefined' ) {
+				wc_product_sliders_app.start();
+			}
+		});
+		})(jQuery);
+		</script>
+    </body>
+</html>

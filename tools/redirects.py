@@ -8,10 +8,11 @@ deploy copies to the site root: redirects/about-julie-hannon/index.html is
 served at /about-julie-hannon/ and forwards to about.html. Cloudflare Pages can
 redirect, so tools/dist.py gives it the same list as a _redirects file instead.
 
-The addresses known from the old site are in OLD. Once legacy/ holds the copy
-of the old site, every page in it gets a forwarding page too: shop and product
+The old site's main pages are in OLD, its shop filters in SECTIONS. Every
+other page in the copy in legacy/ gets a forwarding page too: shop and product
 pages go to the matching new page, and anything with no equivalent on the new
-site (the reference articles, for instance) goes to its archived copy.
+site (the reference articles, image pages, the videos page) goes to its
+archived copy.
 
 tools/build.py and tools/mirror_legacy.py both run this, so there is no need to
 run it by hand.
@@ -28,15 +29,36 @@ LEGACY = ROOT / "legacy"
 
 OLD = {
     "shop": "beanbags.html",
+    "online-store": "beanbags.html",
     "sensory-beanbag-information": "beanbags.html",
+    "product-information": "beanbags.html",
+    "product-information/price-list": "beanbags.html",
+    "sensory-products-sizes-and-prices": "beanbags.html",
+    "choosing-fabric-colours": "beanbags.html",
     "weighted-products-information": "weighted.html",
     "frequently-asked-questions-faq": "order.html",
     "agency-testing-approvals": "order.html",
-    "about-julie-hannon": "about.html",
-    "testimonials": "about.html",
+    "refunds-and-returns": "order.html",
+    "contact-julie-hannon": "order.html",
+    "order-form": "order.html",
+    "order-tracking": "order.html",
+    "thank-you-for-your-order": "order.html",
+    "online-worldpay-3ds": "order.html",
     "cart": "order.html",
     "checkout": "order.html",
     "my-account": "order.html",
+    "about-julie-hannon": "about.html",
+    "testimonials": "about.html",
+}
+# The shop's option filters (weight, colour, size), whole sections at a time
+SECTIONS = {
+    "weightedblanket-weight": "weighted.html",
+    "weighted-blanket-size": "weighted.html",
+    "wt-blnkt-col-in": "weighted.html",
+    "wt-blnkt-col-out": "weighted.html",
+    "attribute-snake-colour": "weighted.html",
+    "attribute-snake-size": "weighted.html",
+    "beanbag-colour": "beanbags.html",
 }
 SHOP_SECTIONS = {"shop", "product", "product-category", "product-tag"}
 WEIGHTED = re.compile(r"weight|blanket|lap|snake", re.I)
@@ -73,6 +95,8 @@ def old_pages():
 def destination(path):
     if path in OLD:
         return OLD[path]
+    if path.split("/")[0] in SECTIONS:
+        return SECTIONS[path.split("/")[0]]
     if path.split("/")[0] in SHOP_SECTIONS:
         return "weighted.html" if WEIGHTED.search(path) else "beanbags.html"
     if (LEGACY / path / "index.html").exists():

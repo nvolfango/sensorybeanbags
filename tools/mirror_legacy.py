@@ -89,7 +89,8 @@ CSS_IMPORT = re.compile(r"""@import\s+(?:"([^"]*)"|'([^']*)')""", re.I)
 TAG = re.compile(r"<[a-zA-Z][^>]*>")
 ATTR = re.compile(r"""(\s)([\w:.-]+)(\s*=\s*)("[^"]*"|'[^']*'|[^\s"'=<>`]+)""")
 STYLE_BLOCK = re.compile(r"(<style\b[^>]*>)(.*?)(</style>)", re.I | re.S)
-LOOSE_URL = re.compile(r"""https?:\\?/\\?/[^\s"'<>()\[\]{},;]+""")
+LOOSE_URL = re.compile(r"""https?:\\?/\\?/[^\s"'<>()\[\]{},;&]+""")
+JS_ESCAPE = re.compile(r"\\u([0-9a-fA-F]{4})")
 DROP_LINKS = re.compile(
     r"""<link\b[^>]*\brel\s*=\s*["']?(?:canonical|shortlink|alternate|pingback|edituri|wlwmanifest|"""
     r"""https://api\.w\.org/)(?=[\s"'>])[^>]*>[ \t]*\n?""",
@@ -127,6 +128,12 @@ behind them, so they were not copied.</p>
 </body>
 </html>
 """
+
+
+def unescape_js(url):
+    """A URL as written inside a script or JSON, with its \\/ and \\uXXXX escapes undone."""
+    url = url.rstrip("\\").replace("\\/", "/")
+    return JS_ESCAPE.sub(lambda m: chr(int(m.group(1), 16)), url)
 
 
 def is_static(path):
@@ -363,7 +370,7 @@ class Mirror:
                 for link, k in finder.found:
                     self.enqueue(urllib.parse.urljoin(base, link), k)
                 for m in LOOSE_URL.finditer(text):
-                    loose = self.norm(m.group(0).rstrip("\\").replace("\\/", "/"))
+                    loose = self.norm(unescape_js(m.group(0)))
                     if loose and self.is_old_site(loose) and is_static(urllib.parse.urlsplit(loose).path):
                         self.enqueue(loose, "asset")
             elif ctype == "text/css":
@@ -433,14 +440,19 @@ class Mirror:
         return ATTR.sub(attr, tag)
 
     def rewrite_loose(self, text, base, here):
-        """Old-site file URLs left in scripts and JSON, e.g. slider images."""
+        """Old-site URLs left in scripts and JSON: product option images, plugin folders."""
         def sub(m):
             found = m.group(0).rstrip("\\")
-            escaped = "\\/" in found
-            new = self.map_url(found.replace("\\/", "/"), base, here)
-            if new == found.replace("\\/", "/"):
-                return m.group(0)
-            return (new.replace("/", "\\/") if escaped else new) + m.group(0)[len(found):]
+            plain = unescape_js(found)
+            new = self.map_url(plain, base, here)
+            if new == plain:
+                n = self.norm(plain)
+                folder = urllib.parse.unquote(urllib.parse.urlsplit(n).path).strip("/") if n else ""
+                if not (n and self.is_old_site(n) and folder.startswith(("wp-content/", "wp-includes/"))
+                        and (OUT / folder).is_dir()):
+                    return m.group(0)
+                new = posixpath.relpath(folder, here or ".") + ("/" if plain.endswith("/") else "")
+            return (new.replace("/", "\\/") if "\\/" in found else new) + m.group(0)[len(found):]
 
         return LOOSE_URL.sub(sub, text)
 
@@ -482,12 +494,15 @@ class Mirror:
                 print("  %s  (%s)" % (url, why))
 
 
-def check(old_hosts):
-    """Every relative link inside legacy/ must reach a file. Returns True when none are broken."""
+def check(old_hosts, missing_upstream=()):
+    """Every relative link inside legacy/ must reach a file. Returns True when none are broken.
+
+    Files in `missing_upstream` (paths under legacy/) were missing on the old site
+    too, so links to them are reported but not counted as broken."""
     if not OUT.is_dir():
         print("There is no legacy/ yet: run this without --check to make it.")
         return False
-    broken, absolute = [], set()
+    broken, absolute, already = [], set(), set()
     files = [f for f in OUT.rglob("*") if f.suffix in (".html", ".css")]
     for f in files:
         text = f.read_text("utf-8", "replace")
@@ -513,10 +528,15 @@ def check(old_hosts):
             if target.is_dir():
                 target = target / "index.html"
             if not target.exists():
-                broken.append("%s -> %s" % (f.relative_to(ROOT), ref))
+                if target.is_relative_to(OUT) and target.relative_to(OUT).as_posix() in missing_upstream:
+                    already.add(target.relative_to(OUT).as_posix())
+                else:
+                    broken.append("%s -> %s" % (f.relative_to(ROOT), ref))
     print("Checked %d files in legacy/: %d broken links." % (len(files), len(broken)))
     for b in broken[:40]:
         print("  " + b)
+    if already:
+        print("Not counted, because the old site was missing them too: %s" % ", ".join(sorted(already)))
     if absolute:
         print("%d links still point at the old site's address or root; after the domain moves they reach"
               " the new site instead:" % len(absolute))
@@ -539,7 +559,8 @@ def main():
         mirror.run()
         mirror.report()
         print("Wrote %d forwarding pages for old addresses in redirects/." % redirects.write())
-    sys.exit(0 if check(mirror.hosts) else 1)
+    missing = {mirror.local_path(url, "application/octet-stream") for url in mirror.failed}
+    sys.exit(0 if check(mirror.hosts, missing) else 1)
 
 
 if __name__ == "__main__":
