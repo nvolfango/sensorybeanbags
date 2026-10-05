@@ -65,21 +65,21 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   "CE approved" on every page; the Declaration covers beanbags.
 - **Returns wording.** Unchanged: the cancellation sentence on `order.html`
   ("get in touch as soon as you can") is ours, not hers.
-- **Card payments / Stripe.** Round two: "Stripe — can leave it for the
-  moment." The fee comparison from the round-two document still stands.
-  October 2026: Julie cannot get past Stripe's verification; Nathan is to help
-  her through it (find out exactly what it asks for). Not to be run through
-  Nathan's own Stripe account in the meantime: Stripe requires the account
-  holder to be the business being paid, and pays out only to a bank account in
-  the account holder's name. Revolut, bank transfer and cash on delivery carry
-  on as now.
-- **Shop shape, decided October 2026.** Weighted products are always ordered
-  through Julie: the customer emails or calls, she agrees weight, size and
-  price, then sends payment details (a Stripe payment link once she has
-  Stripe). `weighted.html` has an "Email Julie to order" button with a
-  pre-filled email listing what she needs. Beanbags may get an online
-  checkout later (a cart with Stripe Checkout behind a small Cloudflare
-  function); not started, waits on Stripe.
+- **Card payments: dropped for now (October 2026).** Nathan: forget Stripe;
+  Julie sorts payment out with customers by bank transfer. The site keeps
+  listing Revolut, bank transfer, cash on delivery in Cork, and invoicing for
+  schools (ETB registered). No online checkout. If card payments come back:
+  Julie could not get past Stripe's verification, and the business must not be
+  run through Nathan's own Stripe account — Stripe requires the account holder
+  to be the business being paid, and pays out only to a bank account in that
+  holder's name. The fee comparison in the round-two document still stands.
+- **Shop shape, decided October 2026.** Every order goes through Julie: the
+  customer emails or calls, she agrees size, colour, weight and price, then
+  sends payment details. `weighted.html` has an "Email Julie to order" button
+  with a pre-filled email listing what she needs for a weighted product. If an
+  online checkout is ever wanted, it would be for beanbags only (a cart with
+  Stripe Checkout behind a small Cloudflare function); weighted products stay
+  with Julie.
 - **Hosting, decided October 2026:** Cloudflare — Pages for the site, DNS,
   and later the Registrar. Steps in `README.md` under "Hosting". The accounts
   are to be in Julie's name.
@@ -231,13 +231,13 @@ shows an identifiable child, get the parent's written permission first.
 
 There is no privacy or cookie policy, because the site sets no cookies, runs no
 analytics and has no forms — nothing is collected. If analytics, a contact form
-or a checkout (see the Stripe question) is added, a privacy policy becomes
-necessary, and Stripe's own terms will need linking.
+or a checkout is ever added, a privacy policy becomes necessary, and a payment
+provider's own terms will need linking.
 
 ## 6. Before going live
 
 - [ ] **While the old site is still live:** run `python3 tools/mirror_legacy.py`, check it reports no broken links, browse `/legacy/` on the preview, and commit `legacy/`. Once the domain points here the old site can no longer be copied from sensorybeanbags.com. Keep the WordPress hosting until this is done.
-- [ ] Settle the shop question with Julie (Stripe or no cart) and decide from there
+- [x] Shop question settled (October 2026): no cart or card payments at launch; orders by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
 - [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site). Do not replace it with one that blocks `/legacy/`: those pages carry their own `noindex`, which search engines only see if they can fetch them.
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
