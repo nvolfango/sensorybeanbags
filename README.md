@@ -109,9 +109,12 @@ and in the `/sensorybeanbags/` prefix the GitHub preview needs.
 
 Moving to Cloudflare, in this order:
 
-1. Create a Cloudflare account **in Julie's name, with her email**, and add
-   Nathan as a member (Manage Account → Members). It is her business; the
-   domain and hosting should be hers.
+1. Nathan creates the Cloudflare account (free plan) and invites Julie as a
+   member with the **Super Administrator** role (Manage Account → Members).
+   Once she has joined, she adds her own card under Billing, so the domain is
+   paid for by her; this must happen before step 8, because the transfer fee
+   includes a year's renewal. Nothing moves when she joins — it is the same
+   account with her in it — so Nathan can step back to a lesser role later.
 2. Workers & Pages → Create → Pages → Connect to Git, and pick this
    repository. Production branch `main`, framework preset None, build command
    `python3 tools/dist.py cloudflare`, build output directory `dist`. If the
@@ -130,9 +133,11 @@ Moving to Cloudflare, in this order:
    `www.sensorybeanbags.com`. Cloudflare sets up HTTPS itself.
 8. Once the new site is live and settled, cancel the Netfronts hosting, turn
    off GitHub Pages for this repository, and transfer the domain registration
-   to Cloudflare Registrar. That needs the domain unlocked and a transfer code
-   from Netfronts, and is not possible within 60 days of a registration or a
-   previous transfer. The site does not change when the registration moves.
+   to Cloudflare Registrar, with **Julie as the registrant contact** — that is
+   what makes the domain legally hers. It needs the domain unlocked and a
+   transfer code from Netfronts, and is not possible within 60 days of a
+   registration or a previous transfer. The site does not change when the
+   registration moves. Until then the domain renews at Netfronts.
 
 ### Old URLs
 

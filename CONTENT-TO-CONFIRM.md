@@ -81,8 +81,10 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   Stripe Checkout behind a small Cloudflare function); weighted products stay
   with Julie.
 - **Hosting, decided October 2026:** Cloudflare — Pages for the site, DNS,
-  and later the Registrar. Steps in `README.md` under "Hosting". The accounts
-  are to be in Julie's name.
+  and later the Registrar. Steps in `README.md` under "Hosting". Nathan sets
+  up the account and invites Julie as Super Administrator; she pays (her card
+  under Billing, in place before the domain transfer) and is the registrant
+  contact on the domain.
 - **Trial logistics.** The schools page says Julie calls back after the two
   weeks (her flyer text says "I'll call back in two weeks"). Nothing on the
   page about deposits or collection — if the trial needs conditions, she
