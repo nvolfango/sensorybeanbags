@@ -34,18 +34,9 @@ jobs:
             exit 1
           fi
 
-      # Assemble only what should be served. src/, tools/ and .git stay behind.
-      # legacy/ is the archived copy of the old WordPress site (tools/mirror_legacy.py);
-      # redirects/ holds a forwarding page at each old address (tools/redirects.py).
+      # Assemble only what should be served into dist/ (see tools/dist.py).
       - name: Collect the deployable files
-        run: |
-          mkdir _site
-          cp *.html robots.txt .nojekyll _site/
-          cp -r assets _site/
-          if [ -d legacy ]; then cp -r legacy _site/; fi
-          cp -r redirects/. _site/
-          find _site -type f -not -path '_site/legacy/*' | sort
-          echo "legacy/: $(find _site/legacy -type f 2>/dev/null | wc -l) files"
+        run: python3 tools/dist.py github
 
       - uses: actions/configure-pages@v5
         with:
@@ -53,7 +44,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: dist
 
       - id: deployment
         uses: actions/deploy-pages@v4

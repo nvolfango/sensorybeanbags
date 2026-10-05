@@ -66,8 +66,23 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 - **Returns wording.** Unchanged: the cancellation sentence on `order.html`
   ("get in touch as soon as you can") is ours, not hers.
 - **Card payments / Stripe.** Round two: "Stripe — can leave it for the
-  moment." Parked at her request; the fee comparison from the round-two
-  document still stands. "Online" as a way to pay is parked with it.
+  moment." The fee comparison from the round-two document still stands.
+  October 2026: Julie cannot get past Stripe's verification; Nathan is to help
+  her through it (find out exactly what it asks for). Not to be run through
+  Nathan's own Stripe account in the meantime: Stripe requires the account
+  holder to be the business being paid, and pays out only to a bank account in
+  the account holder's name. Revolut, bank transfer and cash on delivery carry
+  on as now.
+- **Shop shape, decided October 2026.** Weighted products are always ordered
+  through Julie: the customer emails or calls, she agrees weight, size and
+  price, then sends payment details (a Stripe payment link once she has
+  Stripe). `weighted.html` has an "Email Julie to order" button with a
+  pre-filled email listing what she needs. Beanbags may get an online
+  checkout later (a cart with Stripe Checkout behind a small Cloudflare
+  function); not started, waits on Stripe.
+- **Hosting, decided October 2026:** Cloudflare — Pages for the site, DNS,
+  and later the Registrar. Steps in `README.md` under "Hosting". The accounts
+  are to be in Julie's name.
 - **Trial logistics.** The schools page says Julie calls back after the two
   weeks (her flyer text says "I'll call back in two weeks"). Nothing on the
   page about deposits or collection — if the trial needs conditions, she
@@ -227,5 +242,5 @@ necessary, and Stripe's own terms will need linking.
 - [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site). Do not replace it with one that blocks `/legacy/`: those pages carry their own `noindex`, which search engines only see if they can fetch them.
 - [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
 - [ ] Update `BASE_URL` in `tools/build.py` to the real domain
-- [ ] Update the paths in `404.html` (they assume the `/sensorybeanbags/` preview subdirectory)
+- [x] Paths in `404.html` assume the `/sensorybeanbags/` preview subdirectory — `tools/dist.py cloudflare` removes the prefix for the live site, so nothing to do
 - [x] Forwarding pages from the old WordPress addresses to the new pages — `redirects/`, made by `tools/redirects.py`; see "Old URLs" in `README.md`. Only the ten known addresses until `legacy/` exists; making the copy adds the rest automatically.

@@ -47,7 +47,7 @@ OUT = ROOT / "legacy"
 START = "https://sensorybeanbags.com/"
 USER_AGENT = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
               "Chrome/124.0 Safari/537.36 sensorybeanbags-legacy-copy")
-MAX_BYTES = 50 * 1024 * 1024  # GitHub refuses any file over 100 MB
+MAX_BYTES = 25 * 1024 * 1024  # Cloudflare Pages refuses larger files
 MAX_PAGES = 3000
 
 STATIC_EXT = {

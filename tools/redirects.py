@@ -5,7 +5,8 @@ Forwarding pages for the old WordPress addresses.
 GitHub Pages cannot send real redirects, so each old address gets a tiny page
 that sends the visitor straight on. They are written to redirects/, which the
 deploy copies to the site root: redirects/about-julie-hannon/index.html is
-served at /about-julie-hannon/ and forwards to about.html.
+served at /about-julie-hannon/ and forwards to about.html. Cloudflare Pages can
+redirect, so tools/dist.py gives it the same list as a _redirects file instead.
 
 The addresses known from the old site are in OLD. Once legacy/ holds the copy
 of the old site, every page in it gets a forwarding page too: shop and product
@@ -19,6 +20,7 @@ run it by hand.
 import pathlib
 import re
 import shutil
+import urllib.parse
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "redirects"
@@ -78,21 +80,37 @@ def destination(path):
     return "index.html"
 
 
+def forwards():
+    """(old path, new destination) pairs, leaving out any path the new site itself uses."""
+    taken = {p.name for p in ROOT.iterdir()} - {OUT.name}
+    for path in sorted(old_pages()):
+        if path.split("/")[0] not in taken:
+            yield path, destination(path)
+
+
 def write():
     """Rewrites redirects/ from scratch. Returns how many forwarding pages it wrote."""
     if OUT.exists():
         shutil.rmtree(OUT)
-    taken = {p.name for p in ROOT.iterdir()}
     count = 0
-    for path in sorted(old_pages()):
-        if path.split("/")[0] in taken:
-            continue  # a real file or folder of the new site already lives there
-        href = "../" * (path.count("/") + 1) + destination(path)
+    for path, dest in forwards():
+        href = "../" * (path.count("/") + 1) + dest
         target = OUT / path / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(PAGE.replace("__HREF__", href), encoding="utf-8")
         count += 1
     return count
+
+
+def cloudflare_rules():
+    """The same forwards as a Cloudflare Pages _redirects file: real 301 redirects."""
+    lines = ["# Old WordPress addresses to their new pages. Made by tools/redirects.py."]
+    for path, dest in forwards():
+        dest = "/" + (dest[: -len(".html")] if dest.endswith(".html") else dest)
+        dest = "/" if dest == "/index" else dest  # Cloudflare serves about.html at /about
+        old = "/" + urllib.parse.quote(path)
+        lines += ["%s %s 301" % (old, dest), "%s/ %s 301" % (old, dest)]
+    return "\n".join(lines) + "\n"
 
 
 if __name__ == "__main__":

@@ -88,6 +88,7 @@ src/pages/                     page content, edit these
 tools/build.py                 wraps page content in the shared header and footer
 tools/mirror_legacy.py         copies the old WordPress site into legacy/
 tools/redirects.py             forwarding pages for the old addresses (run by build.py)
+tools/dist.py                  puts what each host should publish into dist/
 legacy/                        archived copy of the old site, served at /legacy/
 redirects/                     generated; deployed to the site root, not to /redirects/
 .github/workflows/pages.yml    deploys to GitHub Pages on push to main
@@ -95,26 +96,53 @@ redirects/                     generated; deployed to the site root, not to /red
 
 ## Hosting
 
-Currently on GitHub Pages, free, deployed by GitHub Actions on every push to
-`main`. Suitable for the live site too — GitHub Pages serves a custom domain
-over HTTPS at no cost.
+The **preview** is on GitHub Pages, deployed by GitHub Actions on every push to
+`main`. The **live site** will be on Cloudflare (decided October 2026):
+Cloudflare Pages for the site, Cloudflare DNS, and later Cloudflare Registrar
+for the domain. Cloudflare Pages is free, allows business and e-commerce sites
+(GitHub Pages does not), sends real redirects, and can run a small server
+function if an online checkout is ever added.
 
-To point sensorybeanbags.com at it later:
+`python3 tools/dist.py github|cloudflare` puts exactly what each host should
+publish into `dist/`; the two differ only in how old addresses are redirected
+and in the `/sensorybeanbags/` prefix the GitHub preview needs.
 
-1. Work through the "Before going live" checklist in `CONTENT-TO-CONFIRM.md`.
-2. Add a `CNAME` file at the repository root containing `sensorybeanbags.com`.
-3. At the domain registrar, point the apex `A` records at GitHub's addresses
-   (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) and `www` at
-   `<user>.github.io`.
-4. Enable "Enforce HTTPS" in the repository's Pages settings.
+Moving to Cloudflare, in this order:
+
+1. Create a Cloudflare account **in Julie's name, with her email**, and add
+   Nathan as a member (Manage Account → Members). It is her business; the
+   domain and hosting should be hers.
+2. Workers & Pages → Create → Pages → Connect to Git, and pick this
+   repository. Production branch `main`, framework preset None, build command
+   `python3 tools/dist.py cloudflare`, build output directory `dist`. If the
+   build cannot find Python, add the environment variable `PYTHON_VERSION` =
+   `3.11`.
+3. Check the `*.pages.dev` address Cloudflare gives: the pages, an old address
+   such as `/about-julie-hannon/` (it should redirect), and `/legacy/`.
+4. **While the old site is still live**, make the copy of it — see "The old
+   website, kept as a backup" below.
+5. Add `sensorybeanbags.com` to Cloudflare (free plan). It imports the
+   existing DNS records; compare them with the list at Netfronts, especially
+   any `MX` (email) and `TXT` (verification) records, before going further.
+6. Work through "Before going live" in `CONTENT-TO-CONFIRM.md`.
+7. At Netfronts, change the domain's nameservers to the two Cloudflare gives.
+   In the Pages project → Custom domains, add `sensorybeanbags.com` and
+   `www.sensorybeanbags.com`. Cloudflare sets up HTTPS itself.
+8. Once the new site is live and settled, cancel the Netfronts hosting, turn
+   off GitHub Pages for this repository, and transfer the domain registration
+   to Cloudflare Registrar. That needs the domain unlocked and a transfer code
+   from Netfronts, and is not possible within 60 days of a registration or a
+   previous transfer. The site does not change when the registration moves.
 
 ### Old URLs
 
-GitHub Pages cannot send real redirects, so every old WordPress address gets a
-small forwarding page instead, in `redirects/` (the deploy copies it to the
-site root): `redirects/about-julie-hannon/index.html` is served at
-`/about-julie-hannon/` and sends the visitor straight to `about.html`.
-`tools/build.py` regenerates them, so there is nothing to maintain by hand.
+On Cloudflare every old WordPress address is a real 301 redirect, from a
+`_redirects` file `tools/dist.py` writes. GitHub Pages cannot send real
+redirects, so for the preview each old address gets a small forwarding page
+instead, in `redirects/` (the deploy copies it to the site root):
+`redirects/about-julie-hannon/index.html` is served at `/about-julie-hannon/`
+and sends the visitor straight to `about.html`. Both come from the same list,
+and `tools/build.py` regenerates them, so there is nothing to maintain by hand.
 
 Where they go is set in `tools/redirects.py`. The old addresses already known
 — `/shop`, `/sensory-beanbag-information`, `/weighted-products-information`,
