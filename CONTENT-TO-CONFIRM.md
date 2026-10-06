@@ -275,7 +275,8 @@ provider's own terms will need linking.
 - [ ] Cloudflare: SSL/TLS → Edge Certificates → Always Use HTTPS on (could not test plain http from the build environment)
 - [ ] Optional: redirect `www` to the bare domain (Rules → Redirect Rules, "Redirect from WWW to root" template); canonical tags already point at the bare domain
 - [ ] Google Search Console: add the domain (it can verify through Cloudflare DNS) and submit `https://sensorybeanbags.com/sitemap.xml`
-- [ ] Transfer the registration to Cloudflare (README, Hosting step 8): Julie's card on the account first, Julie as registrant
+- [ ] Transfer the registration to Cloudflare (README, Hosting step 8): Julie's card on the account first, Julie as registrant. Current expiry at Netfronts: January 2027, so no renewal needed before transferring; the transfer adds a year. Julie invited to the Cloudflare account as Super Administrator (October 2026); waiting on her to accept and add her card.
+- [x] `www` redirects to the bare domain (Cloudflare Redirect Rule, "Redirect from WWW to root"), checked live
 - [ ] Cancel Netfronts hosting once settled (and after the transfer), then delete every DNS record pointing at `64.92.125.36` and the email leftovers (MX, SPF, DKIM, SRV, caldav/carddav TXT, `_acme-challenge`, `_cpanel-dcv`). The old WordPress (with the odd 2026 "Testing" posts) keeps running until then, so do not leave it long
 - [x] Paths in `404.html` assume the `/sensorybeanbags/` preview subdirectory — `tools/dist.py cloudflare` removes the prefix for the live site, so nothing to do
 - [x] Forwarding pages from the old WordPress addresses to the new pages — `redirects/`, made by `tools/redirects.py`; see "Old URLs" in `README.md`. Only the ten known addresses until `legacy/` exists; making the copy adds the rest automatically.
