@@ -271,6 +271,11 @@ provider's own terms will need linking.
 - [x] `robots.txt` now lets search engines in, with a sitemap, and does not block `/legacy/` (those pages carry their own `noindex`, which search engines only see if they can fetch them). The GitHub preview gets a robots file that shuts everything out instead (`tools/dist.py github`).
 - [x] `noindex` removed from the built pages; `tools/dist.py github` adds it back to every page of the GitHub preview, so the preview never competes with the real site
 - [x] `BASE_URL` is `https://sensorybeanbags.com`; canonical links use Cloudflare's addresses without `.html`
-- [ ] Go live: once Cloudflare shows the domain Active and this is on `main`, attach `sensorybeanbags.com` and `www.sensorybeanbags.com` in the Pages project → Custom domains
+- [x] **Live on Cloudflare, 7 October 2026.** DNS moved from Netfronts (old nameservers `dns1/dns2.validns.com`), `sensorybeanbags.com` and `www` are proxied CNAMEs to `sensorybeanbags.pages.dev`. Checked live: all pages over HTTPS, all 366 old-address redirects correct and their 97 destinations loading, `/legacy/` noindexed, notes page not public, robots and sitemap served.
+- [ ] Cloudflare: SSL/TLS → Edge Certificates → Always Use HTTPS on (could not test plain http from the build environment)
+- [ ] Optional: redirect `www` to the bare domain (Rules → Redirect Rules, "Redirect from WWW to root" template); canonical tags already point at the bare domain
+- [ ] Google Search Console: add the domain (it can verify through Cloudflare DNS) and submit `https://sensorybeanbags.com/sitemap.xml`
+- [ ] Transfer the registration to Cloudflare (README, Hosting step 8): Julie's card on the account first, Julie as registrant
+- [ ] Cancel Netfronts hosting once settled (and after the transfer), then delete every DNS record pointing at `64.92.125.36` and the email leftovers (MX, SPF, DKIM, SRV, caldav/carddav TXT, `_acme-challenge`, `_cpanel-dcv`). The old WordPress (with the odd 2026 "Testing" posts) keeps running until then, so do not leave it long
 - [x] Paths in `404.html` assume the `/sensorybeanbags/` preview subdirectory — `tools/dist.py cloudflare` removes the prefix for the live site, so nothing to do
 - [x] Forwarding pages from the old WordPress addresses to the new pages — `redirects/`, made by `tools/redirects.py`; see "Old URLs" in `README.md`. Only the ten known addresses until `legacy/` exists; making the copy adds the rest automatically.
