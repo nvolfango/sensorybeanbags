@@ -1,5 +1,7 @@
-# PREVIEW SITE — this is a staging copy of sensorybeanbags.com hosted on GitHub Pages
-# for review only. It must not be indexed, or it will compete with the live site.
-# Delete this file (and the noindex meta tag in tools/build.py) before going live.
+# Every page of sensorybeanbags.com may be indexed. The archived old site under
+# /legacy/ carries its own noindex tags, which search engines can only see if
+# they may fetch those pages, so it must not be blocked here.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://sensorybeanbags.com/sitemap.xml

@@ -268,8 +268,9 @@ provider's own terms will need linking.
 - [ ] Nathan to browse `/legacy/` on the preview before the domain moves.
 - [x] Shop question settled (October 2026): no cart or card payments at launch; orders by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
-- [ ] Delete `robots.txt` (it currently blocks all indexing — correct for a preview, wrong for the real site). Do not replace it with one that blocks `/legacy/`: those pages carry their own `noindex`, which search engines only see if they can fetch them.
-- [ ] Remove the `noindex` meta tag from `tools/build.py`, then rebuild
-- [ ] Update `BASE_URL` in `tools/build.py` to the real domain
+- [x] `robots.txt` now lets search engines in, with a sitemap, and does not block `/legacy/` (those pages carry their own `noindex`, which search engines only see if they can fetch them). The GitHub preview gets a robots file that shuts everything out instead (`tools/dist.py github`).
+- [x] `noindex` removed from the built pages; `tools/dist.py github` adds it back to every page of the GitHub preview, so the preview never competes with the real site
+- [x] `BASE_URL` is `https://sensorybeanbags.com`; canonical links use Cloudflare's addresses without `.html`
+- [ ] Go live: once Cloudflare shows the domain Active and this is on `main`, attach `sensorybeanbags.com` and `www.sensorybeanbags.com` in the Pages project → Custom domains
 - [x] Paths in `404.html` assume the `/sensorybeanbags/` preview subdirectory — `tools/dist.py cloudflare` removes the prefix for the live site, so nothing to do
 - [x] Forwarding pages from the old WordPress addresses to the new pages — `redirects/`, made by `tools/redirects.py`; see "Old URLs" in `README.md`. Only the ten known addresses until `legacy/` exists; making the copy adds the rest automatically.

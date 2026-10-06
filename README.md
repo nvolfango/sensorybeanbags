@@ -79,7 +79,7 @@ python3 -m http.server 8000
 ```
 index.html, beanbags.html, …   built pages — these are what get served
 404.html                       not-found page
-robots.txt                     blocks indexing (PREVIEW ONLY — delete before launch)
+robots.txt                     lets search engines in (the preview gets one that shuts them out)
 assets/css/site.css            the entire stylesheet
 assets/js/site.js              mobile menu toggle, and nothing else
 assets/img/                    product photographs — see assets/img/README.md
@@ -152,9 +152,10 @@ Moving to Cloudflare, in this order:
    not change the owner details at Netfronts beforehand (that can lock the
    domain against transfer for 60 days), keep Auto Renew on there until the
    transfer is done, and renew first if expiry is within a couple of weeks.
-9. Once the new site is live and settled, cancel the Netfronts hosting, delete
-   the DNS records that still point at its server, and turn off GitHub Pages
-   for this repository.
+9. Once the new site is live and settled, cancel the Netfronts hosting and
+   delete the DNS records that still point at its server. GitHub Pages can
+   stay as a private preview: `tools/dist.py github` keeps every page of it
+   out of search engines.
 
 ### Old URLs
 

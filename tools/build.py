@@ -25,7 +25,7 @@ TAGLINE = "a Julie Hannon original"
 EMAIL = "marihannon@gmail.com"
 PHONE_DISPLAY = "087 131 9619"
 PHONE_LINK = "+353871319619"
-BASE_URL = "https://nvolfango.github.io/sensorybeanbags"
+BASE_URL = "https://sensorybeanbags.com"
 
 NAV = [
     ("index.html", "Home"),
@@ -65,8 +65,6 @@ LAYOUT = """<!doctype html>
 <meta property="og:description" content="__DESC__">
 <meta property="og:url" content="__CANONICAL__">
 <meta name="theme-color" content="#1F5F5B">
-<!-- PREVIEW ONLY: remove this line (and robots.txt) when the site goes live on sensorybeanbags.com -->
-<meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="data:image/svg+xml,__FAVICON__">
 <!-- Apply a remembered theme choice before first paint, so there is no flash -->
 <script>(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}})();</script>
@@ -214,7 +212,7 @@ def build():
         body = raw[m.end():]
 
         name = page.name
-        canonical = BASE_URL + "/" + ("" if name == "index.html" else name)
+        canonical = BASE_URL + "/" + ("" if name == "index.html" else name[: -len(".html")])
 
         html = LAYOUT
         for token, value in [
