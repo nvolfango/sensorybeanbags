@@ -229,6 +229,21 @@ body. All are in her PDF if wanted.
 Write real alt text — many visitors use screen readers. If any new photograph
 shows an identifiable child, get the parent's written permission first.
 
+## 4a. DNS and the domain at Netfronts
+
+- Netfronts hosts the old site (cPanel server `64.92.125.36`) and is the
+  domain's registrar. Original nameservers: `dns1.validns.com`,
+  `dns2.validns.com` — putting these back at Netfronts undoes the move to
+  Cloudflare DNS.
+- **No email at @sensorybeanbags.com is used** (Nathan, October 2026). The
+  MX, `mail`, SPF, DKIM, SRV and caldav/carddav records Cloudflare imported
+  from cPanel are leftovers; delete them with everything else pointing at
+  `64.92.125.36` once Netfronts is cancelled. No email routing needed.
+- Until go-live, the imported records for `sensorybeanbags.com` and `www`
+  stay DNS only (grey cloud) so the old site keeps loading through
+  Cloudflare DNS.
+- Keep Auto Renew on at Netfronts until the registration is transferred.
+
 ## 4b. The old WordPress site
 
 WordPress 5.0 and WooCommerce 3.5 (2018), Twenty Ten theme. Two posts appeared
