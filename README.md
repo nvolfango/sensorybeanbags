@@ -140,13 +140,21 @@ Moving to Cloudflare, in this order:
    replace the old records that point at Netfronts. Cloudflare sets up HTTPS
    itself, usually within minutes. This, not the nameserver change, is the
    moment the new site replaces the old one.
-8. Once the new site is live and settled, cancel the Netfronts hosting, turn
-   off GitHub Pages for this repository, and transfer the domain registration
-   to Cloudflare Registrar, with **Julie as the registrant contact** — that is
-   what makes the domain legally hers. It needs the domain unlocked and a
-   transfer code from Netfronts, and is not possible within 60 days of a
-   registration or a previous transfer. The site does not change when the
-   registration moves. Until then the domain renews at Netfronts.
+8. **Transfer the registration** to Cloudflare Registrar any time after the
+   domain shows as Active in Cloudflare — no need to wait for go-live or for
+   the renewal date: the time left carries over and the transfer adds a year.
+   At Netfronts turn off Registrar Lock and use Get EPP Code (it goes to the
+   account holder's email); in Cloudflare, Domain Registration → Transfer
+   Domains, enter the code, and give **Julie's details as the registrant
+   contact** — that is what makes the domain legally hers. The fee is a
+   year's renewal on the account's card, so add Julie's card first. Netfronts
+   may email her to approve; otherwise it completes in about five days. Do
+   not change the owner details at Netfronts beforehand (that can lock the
+   domain against transfer for 60 days), keep Auto Renew on there until the
+   transfer is done, and renew first if expiry is within a couple of weeks.
+9. Once the new site is live and settled, cancel the Netfronts hosting, delete
+   the DNS records that still point at its server, and turn off GitHub Pages
+   for this repository.
 
 ### Old URLs
 
