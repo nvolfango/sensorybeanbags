@@ -112,12 +112,16 @@ The **preview** is on GitHub Pages, deployed by GitHub Actions on every push to
 `main`. The **live site** will be on Cloudflare (decided October 2026):
 Cloudflare Pages for the site, Cloudflare DNS, and later Cloudflare Registrar
 for the domain. Cloudflare Pages is free, allows business and e-commerce sites
-(GitHub Pages does not), sends real redirects, and can run a small server
-function if an online checkout is ever added.
+(GitHub Pages does not), sends real redirects, and runs the small server
+function behind the checkout. Cloudflare also builds every other branch as a
+preview; the `stage` branch is the **staging site**, `stage.sensorybeanbags.com`
+— see "Staging site" below.
 
 `python3 tools/dist.py github|cloudflare` puts exactly what each host should
 publish into `dist/`; the two differ only in how old addresses are redirected
-and in the `/sensorybeanbags/` prefix the GitHub preview needs.
+and in the `/sensorybeanbags/` prefix the GitHub preview needs. On Cloudflare
+the same command knows which branch it is building (`CF_PAGES_BRANCH`) and
+makes a test copy of anything that is not `main`.
 
 Moving to Cloudflare, in this order:
 
@@ -283,6 +287,57 @@ node --test tests/checkout.test.mjs
 ```
 
 They also run in the GitHub workflow before every preview deploy.
+
+## Staging site
+
+`stage.sensorybeanbags.com` is the `stage` branch of the same Cloudflare Pages
+project, built by the same command. It is the place to try a change, and the
+checkout, before it goes live:
+
+- Cloudflare builds every branch that is not `main` as a preview, at
+  `<branch>.<project>.pages.dev`. `stage` is simply the branch with a domain
+  of its own. Preview builds use the **Preview** environment's variables, so
+  the staging checkout talks to PayPal's **sandbox** and never takes real
+  money, as long as those variables hold the sandbox app (see "Switching it
+  on" above).
+- `tools/dist.py` sees the branch name Cloudflare gives it and, for anything
+  but `main`, makes a test copy: a banner on every page ("Test copy of the
+  website"), `noindex` on every page, a `robots.txt` that shuts crawlers out,
+  no sitemap, and `notes.html` kept, so Julie can review there instead of on
+  the GitHub preview. Cloudflare already noindexes its own `*.pages.dev`
+  addresses; this makes sure the custom domain is covered too. The basket
+  page also says "Test mode: no real money is taken" whenever the function
+  reports the sandbox, on any copy of the site.
+- To try it locally: `CF_PAGES_BRANCH=stage python3 tools/dist.py cloudflare`,
+  then `wrangler pages dev dist` as above.
+
+The flow: push a change to `stage` (or merge a branch into it), check it at
+`stage.sensorybeanbags.com` including a sandbox payment, then merge `stage`
+into `main`, which is the live site. Keep `stage` at or ahead of `main`, never
+behind it, so the staging site always shows at least what is live.
+
+### Setting up the staging domain (once)
+
+1. Push the `stage` branch and let Cloudflare build it once: Workers & Pages →
+   the project → Deployments shows it under Preview, at
+   `stage.<project>.pages.dev`. That address works straight away and is enough
+   for testing; the steps below only give it the nicer name. ("Preview
+   deployments" in Settings → Builds must include it; the default, all
+   non-production branches, does.)
+2. Put the sandbox app's `PAYPAL_ENV` = `sandbox`, `PAYPAL_CLIENT_ID` and
+   `PAYPAL_CLIENT_SECRET` in the **Preview** environment (Settings → Variables
+   and Secrets), then retry the latest `stage` deployment so they apply.
+3. The domain's DNS must be on Cloudflare (step 4 of "Hosting" above). Then:
+   Custom domains → Set up a custom domain → `stage.sensorybeanbags.com` →
+   Continue → Activate domain. Cloudflare adds a CNAME record named `stage`.
+4. In DNS, edit that `stage` CNAME: change its target from
+   `<project>.pages.dev` to `stage.<project>.pages.dev`, and keep it
+   **proxied** (orange cloud). Cloudflare only routes a branch domain through
+   a proxied record; unproxied, it would silently show the live branch.
+5. Optional but worth it: put Cloudflare Access in front of
+   `stage.sensorybeanbags.com` (Zero Trust → Access → Applications, free for
+   up to 50 users, a one-time code by email), so only Julie and Nathan can
+   open a shop that takes pretend money.
 
 ## The old website, kept as a backup
 

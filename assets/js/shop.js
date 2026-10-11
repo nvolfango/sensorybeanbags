@@ -314,11 +314,22 @@
   function setupPayment() {
     fetchJson("api/checkout/config").then(function (res) {
       if (!res.ok || !res.data.clientId) throw new Error(res.data.error || "config");
+      if (res.data.env === "sandbox") sandboxNotice();
       return loadSdk(res.data);
     }).then(renderButtons).catch(function (err) {
       if (window.console) console.warn("Online payment unavailable:", err && err.message);
       unavailable();
     });
+  }
+
+  // The staging site, and any other copy set to PayPal's sandbox, says so
+  // above the buttons: a real card or PayPal login would be refused there.
+  function sandboxNotice() {
+    var host = parts.pay.querySelector("#paypal-buttons");
+    parts.pay.insertBefore(el("div", { class: "note", "data-sandbox-notice": true }, [el("p", {}, [
+      el("strong", { text: "Test mode: no real money is taken. " }),
+      "This copy of the site pays into PayPal\u2019s sandbox. Use a PayPal sandbox buyer account or one of its test cards; a real card or PayPal login will not work here."
+    ])]), host);
   }
 
   function loadSdk(cfg) {

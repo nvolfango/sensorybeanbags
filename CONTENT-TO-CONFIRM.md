@@ -110,7 +110,11 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   and later the Registrar. Steps in `README.md` under "Hosting". Nathan sets
   up the account and invites Julie as Super Administrator; she pays (her card
   under Billing, in place before the domain transfer) and is the registrant
-  contact on the domain.
+  contact on the domain. **Staging (11 October 2026):** the `stage` branch is
+  a test copy of the site at `stage.sensorybeanbags.com`, built by the same
+  Cloudflare project with the sandbox PayPal variables, banner on every page,
+  hidden from search engines, with `notes.html` kept so Julie can review
+  there. Changes go to `stage` first, then `main`.
 - **Trial logistics.** The schools page says Julie calls back after the two
   weeks (her flyer text says "I'll call back in two weeks"). Nothing on the
   page about deposits or collection — if the trial needs conditions, she
@@ -298,6 +302,7 @@ and the discount for several items. Julie should read both once.
 - [ ] Nathan to browse `/legacy/` on the preview before the domain moves.
 - [x] Shop question settled (11 October 2026): fleece beanbags online through PayPal; everything else by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
 - [ ] PayPal: live Client ID and Secret from Julie's account in the Cloudflare project (Production), sandbox ones in Preview, "PayPal account optional" on — see `README.md`, "Online checkout"
+- [ ] `stage.sensorybeanbags.com` attached to the `stage` branch (a proxied CNAME to `stage.<project>.pages.dev`), a sandbox payment made there — see `README.md`, "Staging site"
 - [ ] One real order placed and refunded, and Julie happy with the email she gets
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
 - [x] `robots.txt` now lets search engines in, with a sitemap, and does not block `/legacy/` (those pages carry their own `noindex`, which search engines only see if they can fetch them). The GitHub preview gets a robots file that shuts everything out instead (`tools/dist.py github`).
