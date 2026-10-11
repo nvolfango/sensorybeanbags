@@ -27,6 +27,11 @@
       <span class="brand-text"><b>Sensory Beanbags</b><span>a Julie Hannon original</span></span>
     </a>
 
+    <a class="basket-link" href="cart.html" data-basket-link>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 13h-11z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+      <span>Basket</span><b class="basket-count" data-basket-count hidden>0</b>
+    </a>
+
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       Menu
@@ -185,6 +190,47 @@
     <div class="note">
       <p><strong>Not sure which size?</strong> Large and X-Large cover most homes. Go bigger only if you have the floor space &mdash; the larger sizes have more give, which is what makes them good for jumping into and rolling about in. Call 087 131 9619 and Julie will talk it through with you.</p>
     </div>
+
+    <form class="order-form" id="order-online" data-order-form action="cart.html" method="get">
+      <h3>Order a fleece beanbag online</h3>
+      <p>Pick a size and colour, add it to your basket, then pay by debit or credit card or PayPal. Delivery is &euro;15 per beanbag by courier or An Post anywhere in Ireland, and free in Cork city. Lycra beanbags are made on request &mdash; email or call to order one.</p>
+      <div class="field-row">
+        <label class="field">Size
+          <select name="sku" required>
+            <option value="fleece-medium" data-name="Medium fleece sensory beanbag" data-price="195">Medium &mdash; 24 in / 61 cm &mdash; &euro;195</option>
+            <option value="fleece-large" data-name="Large fleece sensory beanbag" data-price="225" selected>Large &mdash; 30 in / 76 cm &mdash; &euro;225</option>
+            <option value="fleece-x-large" data-name="X-Large fleece sensory beanbag" data-price="260">X-Large &mdash; 36 in / 92 cm &mdash; &euro;260</option>
+            <option value="fleece-xx-large" data-name="XX-Large fleece sensory beanbag" data-price="345">XX-Large &mdash; 46 in / 117 cm &mdash; &euro;345</option>
+            <option value="fleece-xxx-large" data-name="XXX-Large fleece sensory beanbag" data-price="415">XXX-Large &mdash; 56 in / 143 cm &mdash; &euro;415</option>
+          </select>
+        </label>
+        <label class="field">Fleece colour
+          <select name="colour" required>
+            <option value="Royal Blue">Royal Blue</option>
+            <option value="Purple">Purple</option>
+            <option value="Bottle Green">Bottle Green</option>
+            <option value="Chocolate Brown">Chocolate Brown</option>
+            <option value="Mid Grey">Mid Grey</option>
+            <option value="Mid Tan">Mid Tan</option>
+            <option value="Wine">Wine</option>
+            <option value="Fire Engine Red">Fire Engine Red</option>
+            <option value="Cerise Pink">Cerise Pink</option>
+            <option value="Turquoise">Turquoise</option>
+            <option value="Emerald Green">Emerald Green</option>
+            <option value="Forest Green">Forest Green</option>
+            <option value="Orange">Orange</option>
+          </select>
+        </label>
+        <label class="field">Quantity
+          <input type="number" name="qty" inputmode="numeric" min="1" max="10" value="1" required>
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--primary" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 13h-11z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg> Add to basket</button>
+        <a class="btn btn--ghost" href="cart.html">View basket <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <p class="form-status" data-order-status role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -385,11 +431,12 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 Sensory Beanbags &mdash; a Julie Hannon original</span>
-      <span>Hand-made in Ireland &middot; CE approved</span>
+      <span>Hand-made in Ireland &middot; CE approved &middot; <a href="privacy.html">Privacy</a></span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/shop.js" defer></script>
 </body>
 </html>

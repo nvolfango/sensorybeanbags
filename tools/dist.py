@@ -12,7 +12,10 @@ only copies.
 Cloudflare serves the real site, sensorybeanbags.com. It gets a _redirects
 file of real redirects for the old WordPress addresses, a sitemap.xml, the
 robots.txt that lets search engines in, 404.html without the preview's
-/sensorybeanbags/ prefix, and no notes.html (Julie's review notes).
+/sensorybeanbags/ prefix, no notes.html (Julie's review notes), and a
+_routes.json so that only /api/* (the checkout, in functions/) runs code.
+Cloudflare deploys functions/ itself from the repository root; it is not
+copied here.
 
 GitHub Pages serves the preview, which must never compete with the real site
 in search results: every page gets a noindex tag and robots.txt shuts all
@@ -34,7 +37,9 @@ PREVIEW_PREFIX = "/sensorybeanbags/"
 CLOUDFLARE_MAX_BYTES = 25 * 1024 * 1024  # Cloudflare Pages refuses larger files
 CLOUDFLARE_MAX_FILES = 20000
 CLOUDFLARE_MAX_REDIRECTS = 2000
-NOT_IN_SITEMAP = {"404.html", "notes.html"}
+NOT_IN_SITEMAP = {"404.html", "notes.html", "cart.html"}
+# Only the checkout API invokes the Pages Function; everything else is a plain file.
+ROUTES = '{"version": 1, "include": ["/api/*"], "exclude": []}\n'
 PREVIEW_ROBOTS = """# PREVIEW SITE: a staging copy of sensorybeanbags.com for review only.
 # It must never be indexed, or it would compete with the real site.
 User-agent: *
@@ -76,6 +81,7 @@ def assemble(target):
 
     rules = redirects.cloudflare_rules()
     (DIST / "_redirects").write_text(rules, encoding="utf-8")
+    (DIST / "_routes.json").write_text(ROUTES, encoding="utf-8")
     page = DIST / "404.html"
     page.write_text(page.read_text(encoding="utf-8").replace(PREVIEW_PREFIX, "/"), encoding="utf-8")
 

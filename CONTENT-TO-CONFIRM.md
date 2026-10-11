@@ -65,21 +65,47 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
   "CE approved" on every page; the Declaration covers beanbags.
 - **Returns wording.** Unchanged: the cancellation sentence on `order.html`
   ("get in touch as soon as you can") is ours, not hers.
-- **Card payments: dropped for now (October 2026).** Nathan: forget Stripe;
-  Julie sorts payment out with customers by bank transfer. The site keeps
-  listing Revolut, bank transfer, cash on delivery in Cork, and invoicing for
-  schools (ETB registered). No online checkout. If card payments come back:
-  Julie could not get past Stripe's verification, and the business must not be
-  run through Nathan's own Stripe account — Stripe requires the account holder
-  to be the business being paid, and pays out only to a bank account in that
-  holder's name. The fee comparison in the round-two document still stands.
-- **Shop shape, decided October 2026.** Every order goes through Julie: the
-  customer emails or calls, she agrees size, colour, weight and price, then
-  sends payment details. `weighted.html` has an "Email Julie to order" button
-  with a pre-filled email listing what she needs for a weighted product. If an
-  online checkout is ever wanted, it would be for beanbags only (a cart with
-  Stripe Checkout behind a small Cloudflare function); weighted products stay
-  with Julie.
+- **Card payments: back, through PayPal (Nathan, 11 October 2026).** The old
+  site took card payments through Julie's PayPal account (WooCommerce's
+  PayPal gateway, and before that PayPal buttons on the order-form page), so
+  the checkout is rebuilt on that account: a basket for fleece beanbags on
+  `beanbags.html` and `cart.html`, PayPal's buttons (PayPal account or guest
+  card payment), and a Cloudflare Pages Function that prices the basket and
+  takes the payment (`functions/api/checkout/`). Stripe is dead; none of the
+  Stripe account problems apply, because the PayPal account is Julie's own.
+  **It stays switched off until these are done** (steps in `README.md`,
+  "Online checkout"):
+  - Julie's PayPal REST credentials (live Client ID and Secret) from
+    developer.paypal.com, logged in as her — best done together on a call;
+    sandbox ones too, for testing;
+  - "PayPal account optional" on in her PayPal account (guest card payments);
+  - the three variables in the Cloudflare Pages project (Production: live;
+    Preview: sandbox), then a redeploy;
+  - one real order, refunded, to see what she receives.
+  Until then the basket works but the pay box says online payment is not
+  switched on and offers to email the order to Julie.
+- **Delivery for online orders: €15 per beanbag** by courier or An Post, which
+  is what the old checkout charged ("15 Euro automatically added per item"),
+  or free with "Cork city" chosen. Her round-two answer was "10 to 15 depending
+  on weight"; if she wants €10 for the Medium and Large it is the `delivery`
+  figure per size in `assets/data/catalogue.json`. Cork city is the customer's
+  own choice; the function refuses the payment if the address is not in
+  County Cork at all, and Julie judges the rest.
+- **Returns wording for online orders.** The old site's refunds page gave the
+  14-day cooling-off for anything "not made specially for you"; the new FAQ
+  says everything is made to order and cannot be returned for a change of
+  mind, and the basket page repeats that. With distance selling back, Julie
+  should confirm that is the position she wants, and `privacy.html` (new,
+  short) states what she receives from PayPal and how long she keeps it —
+  worth her reading once.
+- **Shop shape, October 2026.** Fleece beanbags online; everything else
+  through Julie: the customer emails or calls, she agrees size, colour, weight
+  and price, then sends payment details. `weighted.html` has an "Email Julie
+  to order" button with a pre-filled email listing what she needs for a
+  weighted product. Lycra stays "made on request" as the old FAQ had it. The
+  old price list has exact prices for blankets by size and weight, lap pads
+  and snakes, so weighted products could be added to the catalogue if she
+  ever wants them sold online.
 - **Hosting, decided October 2026:** Cloudflare — Pages for the site, DNS,
   and later the Registrar. Steps in `README.md` under "Hosting". Nathan sets
   up the account and invites Julie as Super Administrator; she pays (her card
@@ -257,16 +283,22 @@ should be switched off soon after the move rather than left running.
 
 ## 5. Legal
 
-There is no privacy or cookie policy, because the site sets no cookies, runs no
-analytics and has no forms — nothing is collected. If analytics, a contact form
-or a checkout is ever added, a privacy policy becomes necessary, and a payment
-provider's own terms will need linking.
+`privacy.html` (October 2026, with the checkout) says what the site stores in
+the browser (theme, basket), what PayPal collects, what Julie receives with a
+payment and what she does with it, and how to ask her about it; it links
+PayPal's Irish privacy statement and the Data Protection Commission. The site
+still sets no cookies and runs no analytics; PayPal's script loads on the
+basket page only. There is no separate terms page: the "Before you pay" box on
+`cart.html` states made-to-order, Ireland-only delivery, the returns position
+and the discount for several items. Julie should read both once.
 
 ## 6. Before going live
 
 - [x] Copy of the old site in `legacy/`, made 5 October 2026 with `python3 tools/mirror_legacy.py --start https://www.sensorybeanbags.com/`: 190 pages, 600 files, 65 MB, no broken links. Only 28 are real pages and 8 products; the rest are pages WordPress makes by itself (83 image pages, 59 shop filter pages, archives). Missing on the old site too, so not copied: `/author`, `/product-information/order-form-2`, two zoom-plugin images. To refresh it, run the same command while the old site is still up.
 - [ ] Nathan to browse `/legacy/` on the preview before the domain moves.
-- [x] Shop question settled (October 2026): no cart or card payments at launch; orders by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
+- [x] Shop question settled (11 October 2026): fleece beanbags online through PayPal; everything else by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
+- [ ] PayPal: live Client ID and Secret from Julie's account in the Cloudflare project (Production), sandbox ones in Preview, "PayPal account optional" on — see `README.md`, "Online checkout"
+- [ ] One real order placed and refunded, and Julie happy with the email she gets
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
 - [x] `robots.txt` now lets search engines in, with a sitemap, and does not block `/legacy/` (those pages carry their own `noindex`, which search engines only see if they can fetch them). The GitHub preview gets a robots file that shuts everything out instead (`tools/dist.py github`).
 - [x] `noindex` removed from the built pages; `tools/dist.py github` adds it back to every page of the GitHub preview, so the preview never competes with the real site

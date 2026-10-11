@@ -34,6 +34,15 @@ jobs:
             exit 1
           fi
 
+      # The checkout function (functions/) only runs on Cloudflare, but its
+      # tests run here against a stand-in for PayPal, so a broken change to
+      # it cannot reach main unnoticed.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test the checkout function
+        run: node --test tests/checkout.test.mjs
+
       # Assemble only what should be served into dist/ (see tools/dist.py).
       - name: Collect the deployable files
         run: python3 tools/dist.py github

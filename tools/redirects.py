@@ -44,9 +44,10 @@ OLD = {
     "order-tracking": "order.html",
     "thank-you-for-your-order": "order.html",
     "online-worldpay-3ds": "order.html",
-    "cart": "order.html",
-    "checkout": "order.html",
+    "cart": "cart.html",
+    "checkout": "cart.html",
     "my-account": "order.html",
+    "privacy-policy": "privacy.html",
     "about-julie-hannon": "about.html",
     "testimonials": "about.html",
 }
@@ -133,7 +134,9 @@ def cloudflare_rules():
         dest = "/" + (dest[: -len(".html")] if dest.endswith(".html") else dest)
         dest = "/" if dest == "/index" else dest  # Cloudflare serves about.html at /about
         old = "/" + urllib.parse.quote(path)
-        lines += ["%s %s 301" % (old, dest), "%s/ %s 301" % (old, dest)]
+        if old != dest:  # /cart is the new basket itself; only its trailing-slash form needs a rule
+            lines.append("%s %s 301" % (old, dest))
+        lines.append("%s/ %s 301" % (old, dest))
     return "\n".join(lines) + "\n"
 
 

@@ -9,9 +9,15 @@ HTML is committed and works on its own. Re-run it only after editing the shared
 chrome below or a file in src/pages/. It also rewrites redirects/, the
 forwarding pages for the old site's addresses (see redirects.py).
 
+The online shop's sizes, colours and prices live in assets/data/catalogue.json;
+this fills the order form on the beanbags page from it and checks the prices
+in the size table match.
+
     python3 tools/build.py
 """
 
+from html import escape
+import json
 import pathlib
 import re
 
@@ -19,6 +25,7 @@ import redirects
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "pages"
+CATALOGUE = json.loads((ROOT / "assets" / "data" / "catalogue.json").read_text(encoding="utf-8"))
 
 SITE_NAME = "Sensory Beanbags"
 TAGLINE = "a Julie Hannon original"
@@ -49,6 +56,7 @@ ICONS = {
     "mail": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>',
     "pin": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
     "arrow": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>',
+    "basket": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 8h13l-1 13h-11z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>',
 }
 
 LAYOUT = """<!doctype html>
@@ -58,7 +66,7 @@ LAYOUT = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>__TITLE__</title>
 <meta name="description" content="__DESC__">
-<link rel="canonical" href="__CANONICAL__">
+__HEADEXTRA__<link rel="canonical" href="__CANONICAL__">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="__SITE__">
 <meta property="og:title" content="__TITLE__">
@@ -78,6 +86,11 @@ LAYOUT = """<!doctype html>
     <a class="brand" href="index.html">
       __LOGO__
       <span class="brand-text"><b>__SITE__</b><span>__TAGLINE__</span></span>
+    </a>
+
+    <a class="basket-link" href="cart.html" data-basket-link__BASKETCURRENT__>
+      __BASKETICON__
+      <span>Basket</span><b class="basket-count" data-basket-count hidden>0</b>
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
@@ -135,12 +148,13 @@ __FOOTERNAV__
     </div>
     <div class="footer-bottom">
       <span>&copy; __YEAR__ __SITE__ &mdash; __TAGLINE__</span>
-      <span>Hand-made in Ireland &middot; CE approved</span>
+      <span>Hand-made in Ireland &middot; CE approved &middot; <a href="privacy.html">Privacy</a></span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/shop.js" defer></script>
 </body>
 </html>
 """
@@ -174,6 +188,35 @@ CONTACT_PANEL = """<section>
   </div>
 </section>
 """
+
+def shop_tokens():
+    """The order form's options on the beanbags page, from the catalogue."""
+    sizes = []
+    for p in CATALOGUE["products"]:
+        selected = ' selected' if p["size"] == "Large" else ""
+        sizes.append('            <option value="%s" data-name="%s" data-price="%d"%s>%s &mdash; %s &mdash; &euro;%d</option>'
+                     % (escape(p["sku"]), escape(p["name"]), p["price"], selected,
+                        escape(p["size"]), escape(p["across"]), p["price"]))
+    colours = ['            <option value="%s">%s</option>' % (escape(c), escape(c)) for c in CATALOGUE["colours"]]
+    deliveries = sorted({p["delivery"] for p in CATALOGUE["products"]})
+    courier = "%d" % deliveries[0] if len(deliveries) == 1 else "%d&ndash;%d" % (deliveries[0], deliveries[-1])
+    return {
+        "{{SHOP_SIZE_OPTIONS}}": "\n".join(sizes),
+        "{{SHOP_COLOUR_OPTIONS}}": "\n".join(colours),
+        "{{COURIER_PRICE}}": courier,
+        "{{MAX_QTY}}": str(CATALOGUE.get("maxQuantity", 10)),
+    }
+
+
+def check_prices(page, body):
+    """The size table on the beanbags page is written by hand; make sure it agrees with the catalogue."""
+    if page != "beanbags.html":
+        return
+    for p in CATALOGUE["products"]:
+        if "&euro;%d" % p["price"] not in body:
+            raise SystemExit("%s: the catalogue says %s is EUR %d, but that price is not on the page. "
+                             "Change one to match the other." % (page, p["size"], p["price"]))
+
 
 def nav_html(current, indent, cta=True):
     out = []
@@ -212,6 +255,10 @@ def build():
         body = raw[m.end():]
 
         name = page.name
+        check_prices(name, body)
+        head_extra = ""
+        if meta.get("robots"):
+            head_extra = '<meta name="robots" content="%s">\n' % escape(meta["robots"])
         canonical = BASE_URL + "/" + ("" if name == "index.html" else name[: -len(".html")])
 
         html = LAYOUT
@@ -223,6 +270,9 @@ def build():
             ("__TAGLINE__", TAGLINE),
             ("__LOGO__", LOGO_SVG),
             ("__FAVICON__", FAVICON),
+            ("__HEADEXTRA__", head_extra),
+            ("__BASKETICON__", ICONS["basket"]),
+            ("__BASKETCURRENT__", ' aria-current="page"' if name == "cart.html" else ""),
             ("__NAVITEMS__", nav_html(name, " " * 8)),
             ("__FOOTERNAV__", footer_nav_html(" " * 10)),
             ("__PHONE__", PHONE_DISPLAY),
@@ -235,6 +285,8 @@ def build():
 
         # Shared snippets available inside page bodies
         html = html.replace("{{CONTACT}}", CONTACT_PANEL)
+        for token, value in shop_tokens().items():
+            html = html.replace(token, value)
         html = html.replace("{{PHONE}}", PHONE_DISPLAY)
         html = html.replace("{{PHONELINK}}", PHONE_LINK)
         html = html.replace("{{EMAIL}}", EMAIL)

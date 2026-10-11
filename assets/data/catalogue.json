@@ -1,0 +1,71 @@
+{
+  "currency": "EUR",
+  "products": [
+    {
+      "sku": "fleece-medium",
+      "size": "Medium",
+      "name": "Medium fleece sensory beanbag",
+      "across": "24 in / 61 cm",
+      "price": 195,
+      "delivery": 15
+    },
+    {
+      "sku": "fleece-large",
+      "size": "Large",
+      "name": "Large fleece sensory beanbag",
+      "across": "30 in / 76 cm",
+      "price": 225,
+      "delivery": 15
+    },
+    {
+      "sku": "fleece-x-large",
+      "size": "X-Large",
+      "name": "X-Large fleece sensory beanbag",
+      "across": "36 in / 92 cm",
+      "price": 260,
+      "delivery": 15
+    },
+    {
+      "sku": "fleece-xx-large",
+      "size": "XX-Large",
+      "name": "XX-Large fleece sensory beanbag",
+      "across": "46 in / 117 cm",
+      "price": 345,
+      "delivery": 15
+    },
+    {
+      "sku": "fleece-xxx-large",
+      "size": "XXX-Large",
+      "name": "XXX-Large fleece sensory beanbag",
+      "across": "56 in / 143 cm",
+      "price": 415,
+      "delivery": 15
+    }
+  ],
+  "colours": [
+    "Royal Blue",
+    "Purple",
+    "Bottle Green",
+    "Chocolate Brown",
+    "Mid Grey",
+    "Mid Tan",
+    "Wine",
+    "Fire Engine Red",
+    "Cerise Pink",
+    "Turquoise",
+    "Emerald Green",
+    "Forest Green",
+    "Orange"
+  ],
+  "delivery": {
+    "courier": {
+      "label": "Courier or An Post, to your door anywhere in Ireland",
+      "note": "Normally arrives the day after it is sent."
+    },
+    "cork": {
+      "label": "Cork city — free delivery",
+      "note": "Julie delivers in the Cork city area herself and will arrange a day with you."
+    }
+  },
+  "maxQuantity": 10
+}

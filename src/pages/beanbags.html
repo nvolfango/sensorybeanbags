@@ -131,6 +131,31 @@ description: Therapeutic sensory beanbags in five sizes, in warm fleece or cooli
     <div class="note">
       <p><strong>Not sure which size?</strong> Large and X-Large cover most homes. Go bigger only if you have the floor space &mdash; the larger sizes have more give, which is what makes them good for jumping into and rolling about in. Call {{PHONE}} and Julie will talk it through with you.</p>
     </div>
+
+    <form class="order-form" id="order-online" data-order-form action="cart.html" method="get">
+      <h3>Order a fleece beanbag online</h3>
+      <p>Pick a size and colour, add it to your basket, then pay by debit or credit card or PayPal. Delivery is &euro;{{COURIER_PRICE}} per beanbag by courier or An Post anywhere in Ireland, and free in Cork city. Lycra beanbags are made on request &mdash; email or call to order one.</p>
+      <div class="field-row">
+        <label class="field">Size
+          <select name="sku" required>
+{{SHOP_SIZE_OPTIONS}}
+          </select>
+        </label>
+        <label class="field">Fleece colour
+          <select name="colour" required>
+{{SHOP_COLOUR_OPTIONS}}
+          </select>
+        </label>
+        <label class="field">Quantity
+          <input type="number" name="qty" inputmode="numeric" min="1" max="{{MAX_QTY}}" value="1" required>
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--primary" type="submit">{{ICON:basket}} Add to basket</button>
+        <a class="btn btn--ghost" href="cart.html">View basket {{ICON:arrow}}</a>
+      </div>
+      <p class="form-status" data-order-status role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 

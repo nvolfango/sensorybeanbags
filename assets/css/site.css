@@ -605,3 +605,123 @@ blockquote.quote footer { color: var(--ink-3); font-size: .95rem; font-weight: 6
 
 /* A tick list followed by a closing remark needs air between them. */
 .ticks + p { margin-top: 1.25rem; }
+
+/* --- Basket link in the header ------------------------------------------ */
+/* Sits beside the Menu button on small screens and after the nav links on
+   wide ones, so it is always visible, menu open or closed. */
+.basket-link {
+  display: inline-flex; align-items: center; gap: .45rem; order: 1;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: 999px;
+  padding: .5rem .9rem; font-size: .95rem; font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+}
+.basket-link:hover { border-color: var(--brand); color: var(--brand); }
+.basket-link[aria-current="page"] { border-color: var(--brand); background: var(--brand-soft); color: var(--brand-ink); }
+.basket-link svg { width: 18px; height: 18px; flex: none; }
+.basket-count {
+  display: inline-grid; place-items: center;
+  min-width: 1.45em; height: 1.45em; padding: 0 .35em;
+  border-radius: 999px; background: var(--brand); color: var(--on-brand);
+  font-size: .78rem; line-height: 1; font-weight: 700;
+}
+.basket-count[hidden] { display: none; }
+.nav-toggle { order: 2; }
+.nav { order: 3; }
+@media (min-width: 1080px) {
+  .nav { order: 0; }
+  .basket-link { order: 1; margin-left: .25rem; }
+}
+
+/* --- Forms: the order form and the basket -------------------------------- */
+button.btn { font-family: inherit; line-height: 1.25; }
+.field { display: grid; gap: .35rem; font-weight: 600; font-size: .95rem; color: var(--ink-2); }
+.field select, .field input {
+  font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+  padding: .6rem .8rem; min-height: 2.9rem; width: 100%;
+}
+.field select:hover, .field input:hover { border-color: var(--brand); }
+.field-row {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+}
+.field-row .field:first-child { grid-column: 1 / -1; }
+@media (min-width: 720px) {
+  .field-row { grid-template-columns: 2fr 1.4fr .8fr; }
+  .field-row .field:first-child { grid-column: auto; }
+}
+.order-form {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.5rem; margin-top: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+.order-form h3 { margin-bottom: .35rem; }
+.order-form > p { color: var(--ink-2); }
+.order-form .btn-row { margin-top: 1.25rem; align-items: center; }
+.form-status { margin: 1rem 0 0; font-weight: 600; color: var(--brand-ink); }
+.form-status:empty { display: none; }
+
+.link-button {
+  background: none; border: 0; padding: 0; font: inherit; font-size: .9rem;
+  color: var(--brand); text-decoration: underline; text-underline-offset: .18em; cursor: pointer;
+}
+.link-button:hover { color: var(--brand-hover); }
+
+/* --- Basket page --------------------------------------------------------- */
+.basket-table td { vertical-align: middle; }
+.basket-table .qty { display: flex; align-items: center; gap: .9rem; flex-wrap: wrap; }
+.basket-table .qty select {
+  font: inherit; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+  padding: .4rem .5rem; min-width: 4.5rem;
+}
+.basket-table .colour { color: var(--ink-2); }
+
+.basket-empty { text-align: center; padding: 1.5rem 0 .5rem; }
+.basket-empty .btn-row { justify-content: center; }
+
+.delivery-options { border: 0; padding: 0; margin: 1.5rem 0; min-width: 0; }
+.delivery-options legend { font-weight: 700; font-size: 1.2rem; padding: 0; margin-bottom: .75rem; }
+.delivery-options label {
+  display: grid; grid-template-columns: auto 1fr auto; gap: .2rem .8rem; align-items: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: .9rem 1rem; margin-bottom: .6rem; cursor: pointer;
+}
+.delivery-options label:hover { border-color: var(--brand); }
+.delivery-options label:has(input:checked) { border-color: var(--brand); background: var(--brand-soft); }
+.delivery-options input { margin: .3em 0 0; accent-color: var(--brand); grid-row: span 2; width: 1.1em; height: 1.1em; }
+.delivery-options b { color: var(--ink); }
+.delivery-options small { grid-column: 2; display: block; color: var(--ink-3); font-size: .875rem; }
+.delivery-options .cost { font-weight: 700; color: var(--brand-ink); white-space: nowrap; }
+
+.totals { list-style: none; margin: 0 0 1.5rem auto; padding: 0; display: grid; gap: .4rem; max-width: 22rem; }
+.totals li { display: flex; justify-content: space-between; gap: 1rem; color: var(--ink-2); }
+.totals li.grand { border-top: 1px solid var(--line-strong); padding-top: .5rem; margin-top: .25rem; font-size: 1.2rem; font-weight: 700; color: var(--ink); }
+
+.pay-box {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow-sm);
+}
+.pay-box h2 { font-size: 1.35rem; margin-bottom: .35rem; }
+.pay-box > p { color: var(--ink-2); }
+.paypal-buttons { max-width: 420px; margin: 1.25rem 0; min-height: 3rem; }
+.pay-message { margin: 1rem 0 0; font-weight: 600; }
+.pay-message:empty { display: none; }
+.pay-message.is-error { border-left: 4px solid var(--accent); padding-left: 1rem; }
+.pay-alt { border-top: 1px solid var(--line); margin-top: 1.5rem; padding-top: 1.25rem; }
+.pay-alt p:last-child { margin-bottom: 0; }
+
+.thanks {
+  background: var(--brand-soft); border: 1px solid var(--brand);
+  border-radius: var(--radius-lg); padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+.thanks h2 { color: var(--brand-ink); }
+.thanks dl { display: grid; grid-template-columns: max-content 1fr; gap: .45rem 1.25rem; margin: 1.25rem 0; }
+.thanks dt { font-weight: 700; color: var(--ink-2); }
+.thanks dd { margin: 0; }
+.thanks dd ul { margin: 0; padding-left: 1.1rem; }
+@media (max-width: 480px) {
+  .thanks dl { grid-template-columns: 1fr; gap: .15rem; }
+  .thanks dd { margin-bottom: .6rem; }
+}
