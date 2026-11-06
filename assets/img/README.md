@@ -28,6 +28,12 @@ with `pdfimages`, re-encoded at quality 82):
 - `sensory-room-lycra.jpg` — X-Large lycra beanbags (turquoise, royal blue, navy) in a
   school sensory room with therapy balls and mats. `schools.html`.
 
+**From Julie, November 2026** (sent by message, small phone image, 331 × 442):
+
+- `weighted-snake-pink.jpg` — pink fleece snake with a rainbow underside, her
+  caption "Weighted Snake 19cm x 108cm – 4lb - 75 euro". Figure beside the lap
+  pads on `weighted.html`. A larger original would look sharper.
+
 Sent but not used (kept out to avoid crowding; in her PDF if wanted): a
 turquoise/cerise weighted blanket on grass (the existing rainbow blanket photo
 is better and she said keep it if so), a navy lycra/fleece 4 lb snake, three

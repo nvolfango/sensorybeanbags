@@ -122,6 +122,14 @@ directly. Source is `src/pages/notes.html`; keep it in step with this file.
 
 ## 2. Answered (applied)
 
+**From November 2026 (by message):**
+
+- Snake card: "compressing" is now "compression", as she asked.
+- Her pink snake photo is on `weighted.html` with her caption, "Weighted
+  snake, 19 × 108 cm, 4 lb — €75", and the snake card adds that size. Read as
+  a further size alongside the existing short/wide and long/narrow ones; if it
+  replaces one of them, the card text changes.
+
 **From round two (October 2026):**
 
 - Home page h1 helps "children **and adults**" (her ask) and ends "…regulate"
