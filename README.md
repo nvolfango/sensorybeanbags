@@ -258,8 +258,9 @@ tried against PayPal's sandbox before it reaches `main`.
 4. **Check.** `https://sensorybeanbags.com/api/checkout/config` should answer
    with the client ID and `"env": "live"`; if it says `NOT_CONFIGURED`, a
    variable is missing or `PAYPAL_ENV` is not exactly `live` or `sandbox`.
-   Then make one real order for a Medium beanbag and refund it from PayPal, to
-   see the whole thing end to end, including what lands in Julie's inbox.
+   Do not make a refunded test order: PayPal keeps its fee on refunds. The
+   sandbox purchase on the staging site tests the code; look at the first
+   real order together with Julie, including what lands in her inbox.
 
 ### Changing prices, colours or the delivery charge
 

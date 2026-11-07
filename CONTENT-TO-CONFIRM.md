@@ -311,7 +311,9 @@ and the discount for several items. Julie should read both once.
 - [x] Shop question settled (11 October 2026): fleece beanbags online through PayPal; everything else by phone or email, paid by bank transfer, Revolut or cash on delivery in Cork
 - [ ] PayPal: live Client ID and Secret from Julie's account in the Cloudflare project (Production), sandbox ones in Preview, "PayPal account optional" on — see `README.md`, "Online checkout"
 - [ ] `stage.sensorybeanbags.com` attached to the `stage` branch (a proxied CNAME to `stage.<project>.pages.dev`), a sandbox payment made there — see `README.md`, "Staging site"
-- [ ] One real order placed and refunded, and Julie happy with the email she gets
+- [x] Live PayPal Client ID and Secret received from Julie (November 2026); they go in the Cloudflare project's Production variables. The sandbox pair for stage can come from Nathan's own developer account, since sandbox money is pretend
+- [x] No refunded test order (decided November 2026): PayPal keeps its fee on a refund, up to about EUR 6 on the cheapest order. The sandbox purchase on stage tests the code; the first real order, looked at with Julie, tests her account and the email she gets
+- [ ] Julie: "PayPal account optional" on, and payment notification emails on
 - [ ] Settle the logo / "Sensory Beanbags + More" name question
 - [x] `robots.txt` now lets search engines in, with a sitemap, and does not block `/legacy/` (those pages carry their own `noindex`, which search engines only see if they can fetch them). The GitHub preview gets a robots file that shuts everything out instead (`tools/dist.py github`).
 - [x] `noindex` removed from the built pages; `tools/dist.py github` adds it back to every page of the GitHub preview, so the preview never competes with the real site
